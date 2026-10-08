@@ -1,0 +1,17 @@
+{
+  "name": "workspace-effect-bootstrap",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit",
+    "start": "node dist/main.js"
+  },
+  "dependencies": {
+    "effect": "4.0.2"
+  },
+  "devDependencies": {
+    "typescript": "5.8.3"
+  }
+}

@@ -1,0 +1,185 @@
+{
+  "check": "contract_fixture_validation",
+  "schemas_checked": 2,
+  "fixtures": 22,
+  "passed": 22,
+  "failed": 0,
+  "results": [
+    {
+      "path": "contracts/examples/valid/deleted-message.json",
+      "expected_valid": true,
+      "observed_valid": true,
+      "passed": true,
+      "validation_errors": []
+    },
+    {
+      "path": "contracts/examples/valid/draft-task.json",
+      "expected_valid": true,
+      "observed_valid": true,
+      "passed": true,
+      "validation_errors": []
+    },
+    {
+      "path": "contracts/examples/valid/work-contract.json",
+      "expected_valid": true,
+      "observed_valid": true,
+      "passed": true,
+      "validation_errors": []
+    },
+    {
+      "path": "contracts/examples/valid/message.json",
+      "expected_valid": true,
+      "observed_valid": true,
+      "passed": true,
+      "validation_errors": []
+    },
+    {
+      "path": "contracts/examples/valid/task.json",
+      "expected_valid": true,
+      "observed_valid": true,
+      "passed": true,
+      "validation_errors": []
+    },
+    {
+      "path": "contracts/examples/valid/run.json",
+      "expected_valid": true,
+      "observed_valid": true,
+      "passed": true,
+      "validation_errors": []
+    },
+    {
+      "path": "contracts/examples/valid/artifact.json",
+      "expected_valid": true,
+      "observed_valid": true,
+      "passed": true,
+      "validation_errors": []
+    },
+    {
+      "path": "contracts/examples/valid/action.json",
+      "expected_valid": true,
+      "observed_valid": true,
+      "passed": true,
+      "validation_errors": []
+    },
+    {
+      "path": "contracts/examples/valid/approval.json",
+      "expected_valid": true,
+      "observed_valid": true,
+      "passed": true,
+      "validation_errors": []
+    },
+    {
+      "path": "contracts/examples/valid/checkpoint.json",
+      "expected_valid": true,
+      "observed_valid": true,
+      "passed": true,
+      "validation_errors": []
+    },
+    {
+      "path": "contracts/examples/valid/create-message.json",
+      "expected_valid": true,
+      "observed_valid": true,
+      "passed": true,
+      "validation_errors": []
+    },
+    {
+      "path": "contracts/examples/valid/event.json",
+      "expected_valid": true,
+      "observed_valid": true,
+      "passed": true,
+      "validation_errors": []
+    },
+    {
+      "path": "contracts/examples/invalid/agent-approval.json",
+      "expected_valid": false,
+      "observed_valid": false,
+      "passed": true,
+      "validation_errors": [
+        "'human' was expected"
+      ]
+    },
+    {
+      "path": "contracts/examples/invalid/zero-generation.json",
+      "expected_valid": false,
+      "observed_valid": false,
+      "passed": true,
+      "validation_errors": [
+        "0 is less than the minimum of 1"
+      ]
+    },
+    {
+      "path": "contracts/examples/invalid/numeric-large-sequence.json",
+      "expected_valid": false,
+      "observed_valid": false,
+      "passed": true,
+      "validation_errors": [
+        "9007199254740993 is not of type 'string'"
+      ]
+    },
+    {
+      "path": "contracts/examples/invalid/secret-in-checkpoint.json",
+      "expected_valid": false,
+      "observed_valid": false,
+      "passed": true,
+      "validation_errors": [
+        "Additional properties are not allowed ('raw_secret' was unexpected)"
+      ]
+    },
+    {
+      "path": "contracts/examples/invalid/negative-budget.json",
+      "expected_valid": false,
+      "observed_valid": false,
+      "passed": true,
+      "validation_errors": [
+        "'-1' does not match '^(0|[1-9][0-9]{0,18})$'"
+      ]
+    },
+    {
+      "path": "contracts/examples/invalid/unsafe-link.json",
+      "expected_valid": false,
+      "observed_valid": false,
+      "passed": true,
+      "validation_errors": [
+        "{'format': 'workspace_richtext_v1', 'blocks': [{'type': 'paragraph', 'content': [{'type': 'link', 'text': 'unsafe', 'href': 'javascript:alert(1)'}]}]} is not valid under any of the given schemas",
+        "{'type': 'paragraph', 'content': [{'type': 'link', 'text': 'unsafe', 'href': 'javascript:alert(1)'}]} is not valid under any of the given schemas"
+      ]
+    },
+    {
+      "path": "contracts/examples/invalid/invalid-timestamp.json",
+      "expected_valid": false,
+      "observed_valid": false,
+      "passed": true,
+      "validation_errors": [
+        "'tomorrow' is not a 'date-time'"
+      ]
+    },
+    {
+      "path": "contracts/examples/invalid/invalid-digest.json",
+      "expected_valid": false,
+      "observed_valid": false,
+      "passed": true,
+      "validation_errors": [
+        "'looks-valid' does not match '^sha256:[a-f0-9]{64}$'"
+      ]
+    },
+    {
+      "path": "contracts/examples/invalid/deleted-message-retains-body.json",
+      "expected_valid": false,
+      "observed_valid": false,
+      "passed": true,
+      "validation_errors": [
+        "{'format': 'workspace_richtext_v1', 'blocks': [{'type': 'paragraph', 'content': [{'type': 'text', 'text': 'Please clarify the checkout error.'}]}]} is not of type 'null'"
+      ]
+    },
+    {
+      "path": "contracts/examples/invalid/live-message-null-body.json",
+      "expected_valid": false,
+      "observed_valid": false,
+      "passed": true,
+      "validation_errors": [
+        "None is not of type 'object'"
+      ]
+    }
+  ],
+  "limit": "Structural fixtures only; not runtime authorization or API implementation."
+}

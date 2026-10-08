@@ -1,0 +1,26 @@
+{
+  "status": "passed_prearchive_checks",
+  "coherence": {
+    "status": "passed",
+    "evidence": "verification/handoff-coherence.json"
+  },
+  "synthetic_fixture": {
+    "status": "passed",
+    "messages": 100000,
+    "indexed_rows": 100000,
+    "seed": 4108,
+    "evidence": "verification/synthetic-fixture-generation.json",
+    "note": "Generator run only; no native latency benchmark."
+  },
+  "offline_reader": {
+    "status": "passed_static_structure",
+    "embedded_documents": 82,
+    "duplicate_ids": 0,
+    "external_asset_dependencies": 0,
+    "limitation": "Not rendered or browser-interaction tested in preparation environment."
+  },
+  "archive_integrity": {
+    "reproduction_command": "python scripts/check_integrity.py",
+    "note": "Hash manifest is finalized after all payload files. Final ZIP extraction is checked separately during delivery."
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "benk",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Native collaboration for humans and agents; simulation-first foundation.",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "workspaces": [
+    "packages/domain",
+    "packages/simulator",
+    "services/control-plane",
+    "services/agent-engine"
+  ],
+  "scripts": {
+    "build:core": "npm run build -w @benk/domain && npm run build -w @benk/simulator",
+    "build": "npm run build:core && npm run build -w @benk/control-plane && npm run build -w @benk/agent-engine",
+    "test:core": "npm test -w @benk/domain && npm test -w @benk/simulator",
+    "test": "npm run test:core && npm test -w @benk/control-plane",
+    "check": "npm run build && npm test && python3 scripts/check_repo.py",
+    "check:handoff": "python3 docs/handoff/scripts/verify_all.py",
+    "demo": "npm run build:core && node packages/simulator/demo.mjs",
+    "demo:reference": "node docs/handoff/reference/core/demo.mjs",
+    "dev:desktop": "cargo run -p benk-desktop",
+    "dev:control-plane": "npm run build && node services/control-plane/src/server.mjs",
+    "dev:agent-engine": "npm run build && node services/agent-engine/dist/main.js",
+    "doctor": "python3 scripts/doctor.py",
+    "test:sqlite": "python3 docs/handoff/scripts/test_sqlite.py",
+    "test:contracts": "python3 docs/handoff/scripts/validate_contracts.py",
+    "format:rust": "cargo fmt --all -- --check"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3"
+  }
+}

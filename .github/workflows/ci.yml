@@ -1,0 +1,48 @@
+name: Benk foundation CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: benk-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  typescript-and-contracts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - run: |
+          if test -f package-lock.json; then npm ci --ignore-scripts; else npm install --ignore-scripts; fi
+      - run: python3 -m pip install -r docs/handoff/requirements-qa.txt
+      - run: npm run check
+      - run: npm run check:handoff
+  rust-core:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - run: rustup toolchain install 1.99.0 --profile minimal
+      - run: |
+          if test -f Cargo.lock; then cargo test --locked; else cargo test; fi
+  native-macos-compile:
+    runs-on: macos-15
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - run: rustup toolchain install 1.99.0 --profile minimal
+      - run: |
+          if test -f Cargo.lock; then cargo check --locked -p benk-desktop; else cargo check -p benk-desktop; fi

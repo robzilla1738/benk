@@ -1,0 +1,33 @@
+{
+  "version": "1.0",
+  "date": "2026-10-08",
+  "product_name": "Human–Agent Workspace",
+  "prepared_for": "Robert",
+  "fixed_stack": [
+    "Rust",
+    "GPUI",
+    "TypeScript",
+    "Effect"
+  ],
+  "artifact_type": "Build specification with tested reference modules and unverified integration scaffolds",
+  "product_implementation_status": "not_built",
+  "product_ticket_status": "All tickets begin todo",
+  "reference_tests": {
+    "typescript": 232,
+    "sqlite": 16,
+    "contract_fixtures": 22
+  },
+  "not_claimed": [
+    "Slack feature parity",
+    "industry leadership",
+    "product-market fit",
+    "native performance achieved",
+    "compiled GPUI or Effect integration",
+    "secure sandbox implementation",
+    "deployed cloud service",
+    "compliance certification"
+  ],
+  "start_here": "00_START_HERE.md",
+  "agent_prompt": "01_BUILD_AGENT_PROMPT.md",
+  "reader": "INDEX.html"
+}

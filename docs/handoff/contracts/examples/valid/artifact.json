@@ -1,0 +1,17 @@
+{
+  "artifact_id": "art_checkout",
+  "id": "av_checkout01",
+  "workspace_id": "ws_alpha",
+  "task_id": "task_checkout",
+  "run_id": "run_checkout",
+  "version": 1,
+  "kind": "patch",
+  "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "blob_ref": "artifact://ws_alpha/av_checkout01",
+  "mime_type": "text/x-diff",
+  "size_bytes": "180",
+  "audience_ids": [
+    "chn_checkout"
+  ],
+  "created_at": "2026-10-08T15:03:00Z"
+}

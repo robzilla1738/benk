@@ -1,0 +1,19 @@
+SIMULATED DOMAIN WALKTHROUGH — no UI, model, shell, credentials, or external action
+Task -> ready
+Task -> active
+Run -> preparing
+Run -> running
+Run -> succeeded
+Task -> awaiting_review
+Task -> accepted
+Valid dispatch preflight: { allowed: true }
+Changed artifact preflight: { allowed: false, reason: 'ApprovalStale' }
+Usage settlement: {
+  ok: true,
+  value: {
+    budget: { limit: '5000000', spent: '750000', reserved: '0' },
+    overLimit: false,
+    exceededReservation: false
+  }
+}
+Task acceptance above is only a reducer illustration; real human review is NOT implemented.

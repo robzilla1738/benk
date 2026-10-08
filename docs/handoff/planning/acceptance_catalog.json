@@ -1,0 +1,2594 @@
+[
+  {
+    "id": "AT-001",
+    "requirement_id": "REQ-001",
+    "ticket_id": "T001",
+    "phase": "F0",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Repository and toolchain audit\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "A new engineer can reproduce the selected baseline from recorded commands and lockfiles.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/00_decisions_and_assumptions.md"
+  },
+  {
+    "id": "AT-002",
+    "requirement_id": "REQ-002",
+    "ticket_id": "T001",
+    "phase": "F0",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Repository and toolchain audit\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Missing tools or external dependencies are reported as unavailable, never represented as tested.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/00_decisions_and_assumptions.md"
+  },
+  {
+    "id": "AT-003",
+    "requirement_id": "REQ-003",
+    "ticket_id": "T002",
+    "phase": "F0",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Contract and fixture ownership\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "Rust/TypeScript serialization uses the same IDs, revisions, decimal sequences, and error contract.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/08_domain_and_state_machines.md"
+  },
+  {
+    "id": "AT-004",
+    "requirement_id": "REQ-004",
+    "ticket_id": "T002",
+    "phase": "F0",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Contract and fixture ownership\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "A breaking payload or inconsistent generated OpenAPI fails the contract check.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/08_domain_and_state_machines.md"
+  },
+  {
+    "id": "AT-005",
+    "requirement_id": "REQ-005",
+    "ticket_id": "T003",
+    "phase": "F0",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"GPUI bootstrap and native package pin\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "The selected GPUI release, compiler, and native SDK produce a reproducible windowed release build.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/06_gpui_desktop.md"
+  },
+  {
+    "id": "AT-006",
+    "requirement_id": "REQ-006",
+    "ticket_id": "T003",
+    "phase": "F0",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"GPUI bootstrap and native package pin\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Current-main and published-crate API differences cannot be silently mixed.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/06_gpui_desktop.md"
+  },
+  {
+    "id": "AT-007",
+    "requirement_id": "REQ-007",
+    "ticket_id": "T004",
+    "phase": "F0",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Composer, IME, and accessibility risk spike\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "IME composition, selection, clipboard, undo, and keyboard/screen-reader traversal work on the chosen matrix.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/29_accessibility_and_internationalization.md"
+  },
+  {
+    "id": "AT-008",
+    "requirement_id": "REQ-008",
+    "ticket_id": "T004",
+    "phase": "F0",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Composer, IME, and accessibility risk spike\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Enter during active IME composition never sends a message or loses input.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/29_accessibility_and_internationalization.md"
+  },
+  {
+    "id": "AT-009",
+    "requirement_id": "REQ-009",
+    "ticket_id": "T005",
+    "phase": "F0",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"SQLite cache, drafts, and migrations\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "Drafts and message/search projections survive process restart and migrate without loss.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/09_sync_offline_and_conflicts.md"
+  },
+  {
+    "id": "AT-010",
+    "requirement_id": "REQ-010",
+    "ticket_id": "T005",
+    "phase": "F0",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"SQLite cache, drafts, and migrations\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Account/workspace mixing, failed transactions, and revoked-content search leakage are rejected.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/09_sync_offline_and_conflicts.md"
+  },
+  {
+    "id": "AT-011",
+    "requirement_id": "REQ-011",
+    "ticket_id": "T006",
+    "phase": "F0",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Threat model and authority boundaries\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "Every privileged surface has an owner, threat model, policy source, and negative test plan.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/11_permissions_security_and_privacy.md"
+  },
+  {
+    "id": "AT-012",
+    "requirement_id": "REQ-012",
+    "ticket_id": "T006",
+    "phase": "F0",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Threat model and authority boundaries\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "A separate but unrestricted process is not accepted as a sandbox.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/11_permissions_security_and_privacy.md"
+  },
+  {
+    "id": "AT-013",
+    "requirement_id": "REQ-013",
+    "ticket_id": "T007",
+    "phase": "F1",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Verified identity, tenancy, and memberships\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "An authenticated human sees and mutates only permitted workspace resources across clients.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/11_permissions_security_and_privacy.md"
+  },
+  {
+    "id": "AT-014",
+    "requirement_id": "REQ-014",
+    "ticket_id": "T007",
+    "phase": "F1",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Verified identity, tenancy, and memberships\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Cross-tenant IDs, revoked sessions, and forged actor/role fields cannot disclose or modify data.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/11_permissions_security_and_privacy.md"
+  },
+  {
+    "id": "AT-015",
+    "requirement_id": "REQ-015",
+    "ticket_id": "T008",
+    "phase": "F0",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Effect service runtime and typed errors\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "Startup validates configuration and services expose typed failures with scoped resource cleanup.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/07_effect_services.md"
+  },
+  {
+    "id": "AT-016",
+    "requirement_id": "REQ-016",
+    "ticket_id": "T008",
+    "phase": "F0",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Effect service runtime and typed errors\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Missing secrets, interrupted work, and malformed requests fail closed without content leakage.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/07_effect_services.md"
+  },
+  {
+    "id": "AT-017",
+    "requirement_id": "REQ-017",
+    "ticket_id": "T009",
+    "phase": "F1",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Native timeline and pending sends\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "Cached navigation and durable local sends work while the agent engine is stopped.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/03_experience_specification.md"
+  },
+  {
+    "id": "AT-018",
+    "requirement_id": "REQ-018",
+    "ticket_id": "T009",
+    "phase": "F1",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Native timeline and pending sends\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Slow network, oversized content, variable row heights, and failed sends do not freeze input or discard drafts.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/03_experience_specification.md"
+  },
+  {
+    "id": "AT-019",
+    "requirement_id": "REQ-019",
+    "ticket_id": "T010",
+    "phase": "F1",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Shared messaging transaction and outbox\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "One operation produces one accepted message/revision and one consistent event history.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/09_sync_offline_and_conflicts.md"
+  },
+  {
+    "id": "AT-020",
+    "requirement_id": "REQ-020",
+    "ticket_id": "T010",
+    "phase": "F1",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Shared messaging transaction and outbox\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Lost responses, duplicate requests, changed idempotency payloads, and concurrent edits do not duplicate or overwrite work.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/09_sync_offline_and_conflicts.md"
+  },
+  {
+    "id": "AT-021",
+    "requirement_id": "REQ-021",
+    "ticket_id": "T011",
+    "phase": "F1",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Resumable selective synchronization\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "Reconnect converges messages, read state, and pending intent without losing local drafts.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/09_sync_offline_and_conflicts.md"
+  },
+  {
+    "id": "AT-022",
+    "requirement_id": "REQ-022",
+    "ticket_id": "T011",
+    "phase": "F1",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Resumable selective synchronization\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Expired cursors, revoked membership, late commits, duplicates, and tombstones cannot leak or resurrect content.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/09_sync_offline_and_conflicts.md"
+  },
+  {
+    "id": "AT-023",
+    "requirement_id": "REQ-023",
+    "ticket_id": "T012",
+    "phase": "F1",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Task and versioned work-contract model\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "A message becomes a bounded task with a human-confirmed current contract.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/08_domain_and_state_machines.md"
+  },
+  {
+    "id": "AT-024",
+    "requirement_id": "REQ-024",
+    "ticket_id": "T012",
+    "phase": "F1",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Task and versioned work-contract model\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Changing acceptance criteria or authority cannot mutate an already-bound contract invisibly.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/08_domain_and_state_machines.md"
+  },
+  {
+    "id": "AT-025",
+    "requirement_id": "REQ-025",
+    "ticket_id": "T013",
+    "phase": "F1",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Authoritative policy and dispatch guards\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "Current owner, agent, source, action, environment, audience, and policy permissions intersect before dispatch.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/11_permissions_security_and_privacy.md"
+  },
+  {
+    "id": "AT-026",
+    "requirement_id": "REQ-026",
+    "ticket_id": "T013",
+    "phase": "F1",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Authoritative policy and dispatch guards\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Client-supplied approval flags or permission facts never become trusted authority.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/11_permissions_security_and_privacy.md"
+  },
+  {
+    "id": "AT-027",
+    "requirement_id": "REQ-027",
+    "ticket_id": "T014",
+    "phase": "F1",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Durable coordinator baseline and replay\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "Run state survives worker restarts and durable approval waits with one current coordinator.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/07_effect_services.md"
+  },
+  {
+    "id": "AT-028",
+    "requirement_id": "REQ-028",
+    "ticket_id": "T014",
+    "phase": "F1",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Durable coordinator baseline and replay\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "History replay, worker upgrade, and duplicate delivery cannot create a second authoritative run.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/07_effect_services.md"
+  },
+  {
+    "id": "AT-029",
+    "requirement_id": "REQ-029",
+    "ticket_id": "T015",
+    "phase": "F1",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Deterministic simulated agent\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "The simulator produces stable artifacts/evidence through the real task/run interfaces.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/22_first_vertical_slice.md"
+  },
+  {
+    "id": "AT-030",
+    "requirement_id": "REQ-030",
+    "ticket_id": "T015",
+    "phase": "F1",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Deterministic simulated agent\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Simulation is visible and cannot accept credentials or perform actual external actions.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/22_first_vertical_slice.md"
+  },
+  {
+    "id": "AT-031",
+    "requirement_id": "REQ-031",
+    "ticket_id": "T016",
+    "phase": "F1",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Native workroom and progress cards\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "A teammate can see outcome, owner, environment, state, blockers, and artifacts without opening a terminal.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/03_experience_specification.md"
+  },
+  {
+    "id": "AT-032",
+    "requirement_id": "REQ-032",
+    "ticket_id": "T016",
+    "phase": "F1",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Native workroom and progress cards\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "High-volume activity never floods the human timeline or steals scroll/focus.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/03_experience_specification.md"
+  },
+  {
+    "id": "AT-033",
+    "requirement_id": "REQ-033",
+    "ticket_id": "T017",
+    "phase": "F1",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Protected artifact upload and versions\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "Permitted users can inspect exact versioned artifacts and protected derivatives.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/14_review_artifacts_and_previews.md"
+  },
+  {
+    "id": "AT-034",
+    "requirement_id": "REQ-034",
+    "ticket_id": "T017",
+    "phase": "F1",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Protected artifact upload and versions\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Incomplete, oversized, wrong-digest, cross-task, and unauthorized uploads do not become accepted artifacts.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/14_review_artifacts_and_previews.md"
+  },
+  {
+    "id": "AT-035",
+    "requirement_id": "REQ-035",
+    "ticket_id": "T018",
+    "phase": "F1",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Version-bound review and acceptance\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "Acceptance names exact contract/artifact versions and preserves historical decisions.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/14_review_artifacts_and_previews.md"
+  },
+  {
+    "id": "AT-036",
+    "requirement_id": "REQ-036",
+    "ticket_id": "T018",
+    "phase": "F1",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Version-bound review and acceptance\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Agent success, stale artifact versions, or unauthorized reviewers cannot auto-accept work.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/14_review_artifacts_and_previews.md"
+  },
+  {
+    "id": "AT-037",
+    "requirement_id": "REQ-037",
+    "ticket_id": "T019",
+    "phase": "F1",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Authenticated browser reviewer\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "A second person reviews work without installing the desktop app or relying on the initiator being online.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/15_browser_mobile_and_media.md"
+  },
+  {
+    "id": "AT-038",
+    "requirement_id": "REQ-038",
+    "ticket_id": "T019",
+    "phase": "F1",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Authenticated browser reviewer\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Forwarded/expired/revoked links and changed approval bindings cannot broaden access.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/15_browser_mobile_and_media.md"
+  },
+  {
+    "id": "AT-039",
+    "requirement_id": "REQ-039",
+    "ticket_id": "T020",
+    "phase": "F1",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"First complete two-human vertical slice\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "Two users complete the flow without narrated assistance or manual database edits.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/22_first_vertical_slice.md"
+  },
+  {
+    "id": "AT-040",
+    "requirement_id": "REQ-040",
+    "ticket_id": "T020",
+    "phase": "F1",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"First complete two-human vertical slice\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Offline/restart, failed-check, and changed-artifact variations remain clear and safe.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/22_first_vertical_slice.md"
+  },
+  {
+    "id": "AT-041",
+    "requirement_id": "REQ-041",
+    "ticket_id": "T021",
+    "phase": "F2",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Authenticated broker capability protocol\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "Every tool request is bound to run generation, permitted resources, expiry, and action intent.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/10_agent_execution_and_handoff.md"
+  },
+  {
+    "id": "AT-042",
+    "requirement_id": "REQ-042",
+    "ticket_id": "T021",
+    "phase": "F2",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Authenticated broker capability protocol\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Guessing a socket path, replaying a grant, or forging a session frame cannot execute a tool.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/10_agent_execution_and_handoff.md"
+  },
+  {
+    "id": "AT-043",
+    "requirement_id": "REQ-043",
+    "ticket_id": "T022",
+    "phase": "F2",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Local sandbox and process enforcement\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "A disposable local run executes permitted commands without host-wide authority.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/10_agent_execution_and_handoff.md"
+  },
+  {
+    "id": "AT-044",
+    "requirement_id": "REQ-044",
+    "ticket_id": "T022",
+    "phase": "F2",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Local sandbox and process enforcement\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Symlink traversal, malicious repository scripts, secret inheritance, and broker bypass attempts are contained.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/10_agent_execution_and_handoff.md"
+  },
+  {
+    "id": "AT-045",
+    "requirement_id": "REQ-045",
+    "ticket_id": "T023",
+    "phase": "F2",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Connector credentials and installation\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "Users can install the least-privilege integration required for one project and see data destinations.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/13_integrations_and_migration.md"
+  },
+  {
+    "id": "AT-046",
+    "requirement_id": "REQ-046",
+    "ticket_id": "T023",
+    "phase": "F2",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Connector credentials and installation\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Token expiry, webhook replay, revoked scopes, and unintended token audiences fail safely.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/13_integrations_and_migration.md"
+  },
+  {
+    "id": "AT-047",
+    "requirement_id": "REQ-047",
+    "ticket_id": "T024",
+    "phase": "F2",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"First real coding-agent adapter\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "The real adapter produces bounded changes/artifacts through the same task/run contract.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/10_agent_execution_and_handoff.md"
+  },
+  {
+    "id": "AT-048",
+    "requirement_id": "REQ-048",
+    "ticket_id": "T024",
+    "phase": "F2",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"First real coding-agent adapter\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Unsupported capabilities, malformed tool output, and requested privilege expansion are explicit and denied by default.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/10_agent_execution_and_handoff.md"
+  },
+  {
+    "id": "AT-049",
+    "requirement_id": "REQ-049",
+    "ticket_id": "T025",
+    "phase": "F2",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Transactional action intents and approvals\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "A valid current decision authorizes one specific publication/action with a stable operation ID.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/11_permissions_security_and_privacy.md"
+  },
+  {
+    "id": "AT-050",
+    "requirement_id": "REQ-050",
+    "ticket_id": "T025",
+    "phase": "F2",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Transactional action intents and approvals\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Concurrent consumption, replay, changed destination/artifact, and uncertain provider results cannot duplicate or broaden effects.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/11_permissions_security_and_privacy.md"
+  },
+  {
+    "id": "AT-051",
+    "requirement_id": "REQ-051",
+    "ticket_id": "T026",
+    "phase": "F2",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Usage reservations and spending limits\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "Budget checks reserve before dispatch and reconcile actual usage, including failed attempts.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/10_agent_execution_and_handoff.md"
+  },
+  {
+    "id": "AT-052",
+    "requirement_id": "REQ-052",
+    "ticket_id": "T026",
+    "phase": "F2",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Usage reservations and spending limits\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Concurrent reservations, duplicate settlements, and estimate overruns cannot hide spend or continue unlimited work.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/10_agent_execution_and_handoff.md"
+  },
+  {
+    "id": "AT-053",
+    "requirement_id": "REQ-053",
+    "ticket_id": "T027",
+    "phase": "F2",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Cancellation and process lifecycle\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "Users can stop new work and understand which in-flight operations are still reconciling.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/30_failure_and_recovery_playbook.md"
+  },
+  {
+    "id": "AT-054",
+    "requirement_id": "REQ-054",
+    "ticket_id": "T027",
+    "phase": "F2",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Cancellation and process lifecycle\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "A provider timeout or process signal does not falsely report already-completed external effects as undone.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/30_failure_and_recovery_playbook.md"
+  },
+  {
+    "id": "AT-055",
+    "requirement_id": "REQ-055",
+    "ticket_id": "T028",
+    "phase": "F2",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Isolated hosted execution runner\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "Shared work can continue independently of a laptop under one durable coordinator.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/10_agent_execution_and_handoff.md"
+  },
+  {
+    "id": "AT-056",
+    "requirement_id": "REQ-056",
+    "ticket_id": "T028",
+    "phase": "F2",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Isolated hosted execution runner\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Host sockets, cloud metadata, broad credentials, and noisy-neighbor resource escapes are unavailable.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/10_agent_execution_and_handoff.md"
+  },
+  {
+    "id": "AT-057",
+    "requirement_id": "REQ-057",
+    "ticket_id": "T029",
+    "phase": "F2",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Checkpoint handoff and generation fencing\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "Supported work resumes locally/cloud-side from a known checkpoint with resolved destination credentials.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/10_agent_execution_and_handoff.md"
+  },
+  {
+    "id": "AT-058",
+    "requirement_id": "REQ-058",
+    "ticket_id": "T029",
+    "phase": "F2",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Checkpoint handoff and generation fencing\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Delayed old-runner output and unresolved external actions cannot create split authority or blind retries.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/10_agent_execution_and_handoff.md"
+  },
+  {
+    "id": "AT-059",
+    "requirement_id": "REQ-059",
+    "ticket_id": "T030",
+    "phase": "F2",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Inspectable context and source permissions\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "Users inspect/correct the sources a run uses and their model/output destinations.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/12_context_search_and_memory.md"
+  },
+  {
+    "id": "AT-060",
+    "requirement_id": "REQ-060",
+    "ticket_id": "T030",
+    "phase": "F2",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Inspectable context and source permissions\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Private source summaries, stale ACLs, and hidden source titles cannot leak into broader audiences.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/12_context_search_and_memory.md"
+  },
+  {
+    "id": "AT-061",
+    "requirement_id": "REQ-061",
+    "ticket_id": "T031",
+    "phase": "F2",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Local and server permission-aware search\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "Authorized cached results arrive promptly and server results extend them without disrupting selection.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/12_context_search_and_memory.md"
+  },
+  {
+    "id": "AT-062",
+    "requirement_id": "REQ-062",
+    "ticket_id": "T031",
+    "phase": "F2",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Local and server permission-aware search\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Revoked/deleted content, autocomplete, result counts, and cross-account caches do not reveal private sources.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/12_context_search_and_memory.md"
+  },
+  {
+    "id": "AT-063",
+    "requirement_id": "REQ-063",
+    "ticket_id": "T032",
+    "phase": "F2",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Decision-focused inbox and notifications\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "Users can identify what needs action and still access chronological/unfiltered activity.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/03_experience_specification.md"
+  },
+  {
+    "id": "AT-064",
+    "requirement_id": "REQ-064",
+    "ticket_id": "T032",
+    "phase": "F2",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Decision-focused inbox and notifications\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Repeated agent updates, reconnects, and muted channels do not create notification floods.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/03_experience_specification.md"
+  },
+  {
+    "id": "AT-065",
+    "requirement_id": "REQ-065",
+    "ticket_id": "T033",
+    "phase": "F2",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Adapter and model-destination conformance\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "Supported adapters declare and pass their actual read/write/cancel/checkpoint/reporting capabilities.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/10_agent_execution_and_handoff.md"
+  },
+  {
+    "id": "AT-066",
+    "requirement_id": "REQ-066",
+    "ticket_id": "T033",
+    "phase": "F2",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Adapter and model-destination conformance\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "An unsupported provider capability or unapproved model destination cannot silently fall back to broader behavior.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/10_agent_execution_and_handoff.md"
+  },
+  {
+    "id": "AT-067",
+    "requirement_id": "REQ-067",
+    "ticket_id": "T034",
+    "phase": "F2",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Isolated generated previews\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "Permitted reviewers inspect a generated preview without exposing privileged application interfaces.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/14_review_artifacts_and_previews.md"
+  },
+  {
+    "id": "AT-068",
+    "requirement_id": "REQ-068",
+    "ticket_id": "T034",
+    "phase": "F2",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Isolated generated previews\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Preview scripts cannot access broker routes, app cookies, arbitrary local ports, or forbidden network destinations.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/14_review_artifacts_and_previews.md"
+  },
+  {
+    "id": "AT-069",
+    "requirement_id": "REQ-069",
+    "ticket_id": "T035",
+    "phase": "F2",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Cross-component observability and safe diagnostics\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "Operators trace a run/action and identify queues, costs, failures, and recovery state.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/17_infrastructure_operations_and_delivery.md"
+  },
+  {
+    "id": "AT-070",
+    "requirement_id": "REQ-070",
+    "ticket_id": "T035",
+    "phase": "F2",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Cross-component observability and safe diagnostics\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Default logs/telemetry never include raw prompts, source text, credentials, or sensitive URLs.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/17_infrastructure_operations_and_delivery.md"
+  },
+  {
+    "id": "AT-071",
+    "requirement_id": "REQ-071",
+    "ticket_id": "T036",
+    "phase": "F2",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Native and system performance regression suite\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "Launch, cached switch/search, input, and concurrent streams are measured against declared budgets.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/16_performance_and_capacity.md"
+  },
+  {
+    "id": "AT-072",
+    "requirement_id": "REQ-072",
+    "ticket_id": "T036",
+    "phase": "F2",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Native and system performance regression suite\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Idle redraw loops, unbounded caches, log floods, and background work cannot hide behind average latency.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/16_performance_and_capacity.md"
+  },
+  {
+    "id": "AT-073",
+    "requirement_id": "REQ-073",
+    "ticket_id": "T037",
+    "phase": "F0",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Native media risk spike\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "A reproducible test demonstrates basic native media capture/render/lifecycle on the first platform.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/15_browser_mobile_and_media.md"
+  },
+  {
+    "id": "AT-074",
+    "requirement_id": "REQ-074",
+    "ticket_id": "T037",
+    "phase": "F0",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Native media risk spike\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "SDK availability alone is not accepted as proof of screen-sharing or accessibility support.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/15_browser_mobile_and_media.md"
+  },
+  {
+    "id": "AT-075",
+    "requirement_id": "REQ-075",
+    "ticket_id": "T038",
+    "phase": "F3",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Calls and audio collaboration\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "Native/browser participants maintain usable audio with clear device/capture state.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/15_browser_mobile_and_media.md"
+  },
+  {
+    "id": "AT-076",
+    "requirement_id": "REQ-076",
+    "ticket_id": "T038",
+    "phase": "F3",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Calls and audio collaboration\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Device changes, sleep, network loss, and permission revocation do not leave hidden capture active.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/15_browser_mobile_and_media.md"
+  },
+  {
+    "id": "AT-077",
+    "requirement_id": "REQ-077",
+    "ticket_id": "T039",
+    "phase": "F3",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Screen sharing and media privacy\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "Users know what is shared and can reliably stop it across the supported platform matrix.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/15_browser_mobile_and_media.md"
+  },
+  {
+    "id": "AT-078",
+    "requirement_id": "REQ-078",
+    "ticket_id": "T039",
+    "phase": "F3",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Screen sharing and media privacy\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Recording/transcription remains off without implemented consent, access, and retention controls.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/15_browser_mobile_and_media.md"
+  },
+  {
+    "id": "AT-079",
+    "requirement_id": "REQ-079",
+    "ticket_id": "T040",
+    "phase": "F2",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Signed desktop updates and rollback\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "A client upgrades reproducibly while preserving drafts and compatible cache data.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/17_infrastructure_operations_and_delivery.md"
+  },
+  {
+    "id": "AT-080",
+    "requirement_id": "REQ-080",
+    "ticket_id": "T040",
+    "phase": "F2",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Signed desktop updates and rollback\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Unsigned/corrupt updates and interrupted migrations do not execute or destroy user work.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/17_infrastructure_operations_and_delivery.md"
+  },
+  {
+    "id": "AT-081",
+    "requirement_id": "REQ-081",
+    "ticket_id": "T041",
+    "phase": "F3",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Windows compatibility and native acceptance\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "Published Windows support matches actual recorded build and behavior evidence.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/06_gpui_desktop.md"
+  },
+  {
+    "id": "AT-082",
+    "requirement_id": "REQ-082",
+    "ticket_id": "T041",
+    "phase": "F3",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Windows compatibility and native acceptance\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Framework source support is not substituted for tested end-user workflows.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/06_gpui_desktop.md"
+  },
+  {
+    "id": "AT-083",
+    "requirement_id": "REQ-083",
+    "ticket_id": "T042",
+    "phase": "F3",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Linux compatibility and native acceptance\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "Published Linux support names tested distributions/backends and known limitations.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/06_gpui_desktop.md"
+  },
+  {
+    "id": "AT-084",
+    "requirement_id": "REQ-084",
+    "ticket_id": "T042",
+    "phase": "F3",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Linux compatibility and native acceptance\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Untested compositor/assistive-technology behavior is not presented as supported parity.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/06_gpui_desktop.md"
+  },
+  {
+    "id": "AT-085",
+    "requirement_id": "REQ-085",
+    "ticket_id": "T043",
+    "phase": "F3",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Staged migration and structured export\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "Authorized content imports/export reproducibly with provenance and explicit omissions.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/13_integrations_and_migration.md"
+  },
+  {
+    "id": "AT-086",
+    "requirement_id": "REQ-086",
+    "ticket_id": "T043",
+    "phase": "F3",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Staged migration and structured export\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Private channels, inaccessible files, repeated pages, and malformed identities cannot silently leak or duplicate.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/13_integrations_and_migration.md"
+  },
+  {
+    "id": "AT-087",
+    "requirement_id": "REQ-087",
+    "ticket_id": "T044",
+    "phase": "F3",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Narrow Slack coexistence bridge\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "Teams can evaluate one project without moving all daily communication.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/13_integrations_and_migration.md"
+  },
+  {
+    "id": "AT-088",
+    "requirement_id": "REQ-088",
+    "ticket_id": "T044",
+    "phase": "F3",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Narrow Slack coexistence bridge\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Mirrored edits/deletes, retries, and source revocation do not create loops or broaden access.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/13_integrations_and_migration.md"
+  },
+  {
+    "id": "AT-089",
+    "requirement_id": "REQ-089",
+    "ticket_id": "T045",
+    "phase": "F3",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Saved items, reminders, and scheduled sends\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "Users can save work and schedule permitted messages/reminders across devices.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/04_communication_and_parity.md"
+  },
+  {
+    "id": "AT-090",
+    "requirement_id": "REQ-090",
+    "ticket_id": "T045",
+    "phase": "F3",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Saved items, reminders, and scheduled sends\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Revoked access, DST changes, duplicate scheduling, and stale permissions cannot send unauthorized messages.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/04_communication_and_parity.md"
+  },
+  {
+    "id": "AT-091",
+    "requirement_id": "REQ-091",
+    "ticket_id": "T046",
+    "phase": "F3",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Profiles, status, and notification preferences\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "Ordinary team communication preferences work predictably across clients.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/04_communication_and_parity.md"
+  },
+  {
+    "id": "AT-092",
+    "requirement_id": "REQ-092",
+    "ticket_id": "T046",
+    "phase": "F3",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Profiles, status, and notification preferences\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Muted/private content does not leak in push previews or cross-account notification routing.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/04_communication_and_parity.md"
+  },
+  {
+    "id": "AT-093",
+    "requirement_id": "REQ-093",
+    "ticket_id": "T047",
+    "phase": "F3",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Mobile messaging and safe review participation\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "A teammate can participate in critical communication/review without the desktop app.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/15_browser_mobile_and_media.md"
+  },
+  {
+    "id": "AT-094",
+    "requirement_id": "REQ-094",
+    "ticket_id": "T047",
+    "phase": "F3",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Mobile messaging and safe review participation\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "A small screen cannot obscure important approval details or allow stale/revoked decisions.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/15_browser_mobile_and_media.md"
+  },
+  {
+    "id": "AT-095",
+    "requirement_id": "REQ-095",
+    "ticket_id": "T048",
+    "phase": "F3",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Daily communication edge-case completeness\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "Target teams complete ordinary daily chat workflows with consistent semantics.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/04_communication_and_parity.md"
+  },
+  {
+    "id": "AT-096",
+    "requirement_id": "REQ-096",
+    "ticket_id": "T048",
+    "phase": "F3",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Daily communication edge-case completeness\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Deleted thread roots, group membership changes, long content, and concurrent edits preserve privacy and user intent.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/04_communication_and_parity.md"
+  },
+  {
+    "id": "AT-097",
+    "requirement_id": "REQ-097",
+    "ticket_id": "T049",
+    "phase": "F3",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Collaborative documents\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "Concurrent document editing converges without mixing document content with approval authority.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/04_communication_and_parity.md"
+  },
+  {
+    "id": "AT-098",
+    "requirement_id": "REQ-098",
+    "ticket_id": "T049",
+    "phase": "F3",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Collaborative documents\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Offline merges cannot grant permissions, mutate accepted evidence versions, or bypass deletion policy.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/04_communication_and_parity.md"
+  },
+  {
+    "id": "AT-099",
+    "requirement_id": "REQ-099",
+    "ticket_id": "T050",
+    "phase": "F3",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Lightweight lists and work views\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "Teams organize work with shared task identity and current permissions.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/04_communication_and_parity.md"
+  },
+  {
+    "id": "AT-100",
+    "requirement_id": "REQ-100",
+    "ticket_id": "T050",
+    "phase": "F3",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Lightweight lists and work views\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "View-specific edits cannot diverge from task state or expose hidden tasks.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/04_communication_and_parity.md"
+  },
+  {
+    "id": "AT-101",
+    "requirement_id": "REQ-101",
+    "ticket_id": "T051",
+    "phase": "F4",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Versioned reusable workflow recipes\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "An installed recipe revalidates input, policy, budget, and approvals on every run.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/28_developer_platform_and_workflows.md"
+  },
+  {
+    "id": "AT-102",
+    "requirement_id": "REQ-102",
+    "ticket_id": "T051",
+    "phase": "F4",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Versioned reusable workflow recipes\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Recipe updates and schedules cannot auto-grant new tools or continue under revoked ownership.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/28_developer_platform_and_workflows.md"
+  },
+  {
+    "id": "AT-103",
+    "requirement_id": "REQ-103",
+    "ticket_id": "T052",
+    "phase": "F4",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Guests and externally shared spaces\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "Permitted outside reviewers collaborate without obtaining general workspace access.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/27_enterprise_and_admin.md"
+  },
+  {
+    "id": "AT-104",
+    "requirement_id": "REQ-104",
+    "ticket_id": "T052",
+    "phase": "F4",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Guests and externally shared spaces\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Joining a group or forwarding a link cannot reveal previously private history by accident.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/27_enterprise_and_admin.md"
+  },
+  {
+    "id": "AT-105",
+    "requirement_id": "REQ-105",
+    "ticket_id": "T053",
+    "phase": "F4",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Enterprise SSO integration\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "Organization identity policy applies across native/browser/mobile sessions.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/27_enterprise_and_admin.md"
+  },
+  {
+    "id": "AT-106",
+    "requirement_id": "REQ-106",
+    "ticket_id": "T053",
+    "phase": "F4",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Enterprise SSO integration\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Misconfigured issuer/audience, account linking, and admin role changes do not widen access.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/27_enterprise_and_admin.md"
+  },
+  {
+    "id": "AT-107",
+    "requirement_id": "REQ-107",
+    "ticket_id": "T054",
+    "phase": "F4",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Provisioning and deprovisioning\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "Removing a user stops future authority and identifies agents/workflows requiring reassignment.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/27_enterprise_and_admin.md"
+  },
+  {
+    "id": "AT-108",
+    "requirement_id": "REQ-108",
+    "ticket_id": "T054",
+    "phase": "F4",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Provisioning and deprovisioning\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Out-of-order provisioning and stale sessions cannot resurrect revoked access.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/27_enterprise_and_admin.md"
+  },
+  {
+    "id": "AT-109",
+    "requirement_id": "REQ-109",
+    "ticket_id": "T055",
+    "phase": "F4",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Retention, holds, and deletion propagation\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "Deletion affects permitted stores, indexes, derivatives, and export rules with documented limitations.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/27_enterprise_and_admin.md"
+  },
+  {
+    "id": "AT-110",
+    "requirement_id": "REQ-110",
+    "ticket_id": "T055",
+    "phase": "F4",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Retention, holds, and deletion propagation\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Immutable logs, offline devices, and backups are not falsely represented as instantly purged.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/27_enterprise_and_admin.md"
+  },
+  {
+    "id": "AT-111",
+    "requirement_id": "REQ-111",
+    "ticket_id": "T056",
+    "phase": "F4",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Audit exports and privileged support access\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "Admins can investigate authorized events without default access to every private message.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/27_enterprise_and_admin.md"
+  },
+  {
+    "id": "AT-112",
+    "requirement_id": "REQ-112",
+    "ticket_id": "T056",
+    "phase": "F4",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Audit exports and privileged support access\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Support tools or exports cannot bypass resource policy or leak secrets/source text.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/27_enterprise_and_admin.md"
+  },
+  {
+    "id": "AT-113",
+    "requirement_id": "REQ-113",
+    "ticket_id": "T057",
+    "phase": "F4",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Company-managed runners\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "Customer infrastructure executes bounded shared work with clear data/model destinations.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/27_enterprise_and_admin.md"
+  },
+  {
+    "id": "AT-114",
+    "requirement_id": "REQ-114",
+    "ticket_id": "T057",
+    "phase": "F4",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Company-managed runners\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "A local runner is not marketed as full self-hosting or allowed to create its own shared authority.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/27_enterprise_and_admin.md"
+  },
+  {
+    "id": "AT-115",
+    "requirement_id": "REQ-115",
+    "ticket_id": "T058",
+    "phase": "F4",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Enterprise execution-policy console\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "Admins understand and change enforced execution policy with safe preview and rollout.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/27_enterprise_and_admin.md"
+  },
+  {
+    "id": "AT-116",
+    "requirement_id": "REQ-116",
+    "ticket_id": "T058",
+    "phase": "F4",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Enterprise execution-policy console\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Policy edits cannot silently preserve stale approvals or leave forbidden work running unchecked.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/27_enterprise_and_admin.md"
+  },
+  {
+    "id": "AT-117",
+    "requirement_id": "REQ-117",
+    "ticket_id": "T059",
+    "phase": "F4",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Regional data placement and restore strategy\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "Claims match databases, artifacts, workflow histories, backups, telemetry, and model routing.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/27_enterprise_and_admin.md"
+  },
+  {
+    "id": "AT-118",
+    "requirement_id": "REQ-118",
+    "ticket_id": "T059",
+    "phase": "F4",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Regional data placement and restore strategy\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Single-region labels cannot hide cross-region or external-provider transfers.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/27_enterprise_and_admin.md"
+  },
+  {
+    "id": "AT-119",
+    "requirement_id": "REQ-119",
+    "ticket_id": "T060",
+    "phase": "F4",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Public SDK and webhook platform\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "Third parties build safe task/artifact/approval integrations using stable contracts.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/28_developer_platform_and_workflows.md"
+  },
+  {
+    "id": "AT-120",
+    "requirement_id": "REQ-120",
+    "ticket_id": "T060",
+    "phase": "F4",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Public SDK and webhook platform\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "API clients have no privileged back door around the same human/agent permissions.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/28_developer_platform_and_workflows.md"
+  },
+  {
+    "id": "AT-121",
+    "requirement_id": "REQ-121",
+    "ticket_id": "T061",
+    "phase": "F5",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Reviewed integration marketplace\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "Installed extensions disclose and stay within their permitted execution/data scope.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/28_developer_platform_and_workflows.md"
+  },
+  {
+    "id": "AT-122",
+    "requirement_id": "REQ-122",
+    "ticket_id": "T061",
+    "phase": "F5",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Reviewed integration marketplace\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Popularity or connector text cannot substitute for executable-code review and isolation.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/28_developer_platform_and_workflows.md"
+  },
+  {
+    "id": "AT-123",
+    "requirement_id": "REQ-123",
+    "ticket_id": "T062",
+    "phase": "F5",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Bounded multi-agent delegation\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "Parallel work improves accepted outcomes after accounting for review and cost.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/28_developer_platform_and_workflows.md"
+  },
+  {
+    "id": "AT-124",
+    "requirement_id": "REQ-124",
+    "ticket_id": "T062",
+    "phase": "F5",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Bounded multi-agent delegation\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Recursive delegation and shared working-copy mutations cannot escape authority or budget limits.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/28_developer_platform_and_workflows.md"
+  },
+  {
+    "id": "AT-125",
+    "requirement_id": "REQ-125",
+    "ticket_id": "T063",
+    "phase": "F2",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Privacy-aware activation and outcome analytics\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "Teams can measure activation, retention, review effort, rework, and cost consistently.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/20_adoption_pricing_and_metrics.md"
+  },
+  {
+    "id": "AT-126",
+    "requirement_id": "REQ-126",
+    "ticket_id": "T063",
+    "phase": "F2",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Privacy-aware activation and outcome analytics\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Task splitting, failed-run exclusion, or content-bearing telemetry cannot inflate or leak metrics.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/20_adoption_pricing_and_metrics.md"
+  },
+  {
+    "id": "AT-127",
+    "requirement_id": "REQ-127",
+    "ticket_id": "T064",
+    "phase": "F3",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Transparent usage and pricing experiment\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "Customers understand human collaboration charges versus execution usage and estimates.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/20_adoption_pricing_and_metrics.md"
+  },
+  {
+    "id": "AT-128",
+    "requirement_id": "REQ-128",
+    "ticket_id": "T064",
+    "phase": "F3",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Transparent usage and pricing experiment\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Provider overages, duplicate charges, and failed attempts are not hidden from accounting.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/20_adoption_pricing_and_metrics.md"
+  },
+  {
+    "id": "AT-129",
+    "requirement_id": "REQ-129",
+    "ticket_id": "T065",
+    "phase": "F2",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Design-partner onboarding and paid pilots\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "Teams repeatedly return without founder narration and identify measurable useful outcomes.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/20_adoption_pricing_and_metrics.md"
+  },
+  {
+    "id": "AT-130",
+    "requirement_id": "REQ-130",
+    "ticket_id": "T065",
+    "phase": "F2",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Design-partner onboarding and paid pilots\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Demo praise alone is not treated as retention or willingness to switch.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/20_adoption_pricing_and_metrics.md"
+  },
+  {
+    "id": "AT-131",
+    "requirement_id": "REQ-131",
+    "ticket_id": "T066",
+    "phase": "F2",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Backup, restore, and disaster rehearsal\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "Recovery objectives are supported by actual restore evidence and owner approval.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/17_infrastructure_operations_and_delivery.md"
+  },
+  {
+    "id": "AT-132",
+    "requirement_id": "REQ-132",
+    "ticket_id": "T066",
+    "phase": "F2",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Backup, restore, and disaster rehearsal\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Restored old workers and leases cannot resume as current owners without reconciliation.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/17_infrastructure_operations_and_delivery.md"
+  },
+  {
+    "id": "AT-133",
+    "requirement_id": "REQ-133",
+    "ticket_id": "T067",
+    "phase": "F2",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Independent execution security review\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "Critical authorization, isolation, update, and publication controls have independent evidence.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/18_testing_and_evaluation.md"
+  },
+  {
+    "id": "AT-134",
+    "requirement_id": "REQ-134",
+    "ticket_id": "T067",
+    "phase": "F2",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Independent execution security review\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Unexecuted tests, reference functions, or simulated paths cannot be marked as production security coverage.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/18_testing_and_evaluation.md"
+  },
+  {
+    "id": "AT-135",
+    "requirement_id": "REQ-135",
+    "ticket_id": "T068",
+    "phase": "F3",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Replacement release candidate\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "Target teams can conduct daily work without critical prior-workspace blockers.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/19_roadmap_and_team.md"
+  },
+  {
+    "id": "AT-136",
+    "requirement_id": "REQ-136",
+    "ticket_id": "T068",
+    "phase": "F3",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Replacement release candidate\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Marketing does not claim unsupported platforms, full parity, or certifications without evidence.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/19_roadmap_and_team.md"
+  },
+  {
+    "id": "AT-137",
+    "requirement_id": "REQ-137",
+    "ticket_id": "T069",
+    "phase": "F2",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Distribution license and dependency audit\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "Every redistributed component and executable dependency has recorded provenance and permitted use.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/24_dependency_and_license_policy.md"
+  },
+  {
+    "id": "AT-138",
+    "requirement_id": "REQ-138",
+    "ticket_id": "T069",
+    "phase": "F2",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Distribution license and dependency audit\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "One framework license is not generalized to unrelated repository code or bundled assets.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/24_dependency_and_license_policy.md"
+  },
+  {
+    "id": "AT-139",
+    "requirement_id": "REQ-139",
+    "ticket_id": "T070",
+    "phase": "F3",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Communication replacement gap audit\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "Each supported parity claim names tested behavior, plan/platform scope, and evidence.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/04_communication_and_parity.md"
+  },
+  {
+    "id": "AT-140",
+    "requirement_id": "REQ-140",
+    "ticket_id": "T070",
+    "phase": "F3",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Communication replacement gap audit\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "A candidate inventory or webhook endpoint is not presented as exhaustive Slack equivalence.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/04_communication_and_parity.md"
+  },
+  {
+    "id": "AT-141",
+    "requirement_id": "REQ-141",
+    "ticket_id": "T071",
+    "phase": "F2",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Independent end-to-end acceptance\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "A non-initiator confidently reviews current artifacts and understands evidence/limitations.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/18_testing_and_evaluation.md"
+  },
+  {
+    "id": "AT-142",
+    "requirement_id": "REQ-142",
+    "ticket_id": "T071",
+    "phase": "F2",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Independent end-to-end acceptance\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "A narrated founder demo or manually edited backend is not accepted as a working product flow.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/18_testing_and_evaluation.md"
+  },
+  {
+    "id": "AT-143",
+    "requirement_id": "REQ-143",
+    "ticket_id": "T072",
+    "phase": "F5",
+    "kind": "positive",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Leadership benchmark and expansion decision\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the intended end-to-end behavior with a permitted actor.",
+    "then": "Expansion decisions are supported by measured user value and clear economics.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/20_adoption_pricing_and_metrics.md"
+  },
+  {
+    "id": "AT-144",
+    "requirement_id": "REQ-144",
+    "ticket_id": "T072",
+    "phase": "F5",
+    "kind": "negative",
+    "status": "planned_application_test",
+    "given": "The actual implementation for \"Leadership benchmark and expansion decision\" is running with synthetic/authorized test data and the declared platform/provider versions.",
+    "when": "Exercise the denied, concurrent, stale, interrupted, or unsupported condition described below.",
+    "then": "Feature count, native rendering, or agent activity alone is not treated as industry leadership.",
+    "evidence_required": [
+      "Actual test command or recorded human procedure",
+      "Environment/version and deterministic fixture",
+      "Observed result and relevant safe artifact/log path",
+      "Explicit not-run limitations"
+    ],
+    "spec": "docs/20_adoption_pricing_and_metrics.md"
+  }
+]

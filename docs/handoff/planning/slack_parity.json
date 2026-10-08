@@ -1,0 +1,1432 @@
+[
+  {
+    "id": "PAR-001",
+    "category": "Channels",
+    "capability": "Public channels",
+    "target_phase": "F1",
+    "owner_ticket": "T048",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-002",
+    "category": "Channels",
+    "capability": "Private channels",
+    "target_phase": "F1",
+    "owner_ticket": "T048",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-003",
+    "category": "Channels",
+    "capability": "Channel creation",
+    "target_phase": "F1",
+    "owner_ticket": "T048",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-004",
+    "category": "Channels",
+    "capability": "Channel names and descriptions",
+    "target_phase": "F1",
+    "owner_ticket": "T048",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-005",
+    "category": "Channels",
+    "capability": "Join and leave",
+    "target_phase": "F1",
+    "owner_ticket": "T048",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-006",
+    "category": "Channels",
+    "capability": "Archive and restore",
+    "target_phase": "F1",
+    "owner_ticket": "T048",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-007",
+    "category": "Channels",
+    "capability": "Channel membership controls",
+    "target_phase": "F1",
+    "owner_ticket": "T048",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-008",
+    "category": "Channels",
+    "capability": "Channel topics",
+    "target_phase": "F1",
+    "owner_ticket": "T048",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-009",
+    "category": "Channels",
+    "capability": "Pinned/bookmarked references",
+    "target_phase": "F1",
+    "owner_ticket": "T048",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-010",
+    "category": "Channels",
+    "capability": "Channel browser",
+    "target_phase": "F1",
+    "owner_ticket": "T048",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-011",
+    "category": "Channels",
+    "capability": "Channel organization",
+    "target_phase": "F1",
+    "owner_ticket": "T048",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-012",
+    "category": "Channels",
+    "capability": "Muted channels",
+    "target_phase": "F1",
+    "owner_ticket": "T048",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-013",
+    "category": "Channels",
+    "capability": "Default channels",
+    "target_phase": "F1",
+    "owner_ticket": "T048",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-014",
+    "category": "Channels",
+    "capability": "Channel mention permissions",
+    "target_phase": "F1",
+    "owner_ticket": "T048",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-015",
+    "category": "Messaging",
+    "capability": "Rich text",
+    "target_phase": "F1",
+    "owner_ticket": "T048",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-016",
+    "category": "Messaging",
+    "capability": "Plain-text fallback",
+    "target_phase": "F1",
+    "owner_ticket": "T048",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-017",
+    "category": "Messaging",
+    "capability": "Inline code",
+    "target_phase": "F1",
+    "owner_ticket": "T048",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-018",
+    "category": "Messaging",
+    "capability": "Code blocks",
+    "target_phase": "F1",
+    "owner_ticket": "T048",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-019",
+    "category": "Messaging",
+    "capability": "Lists",
+    "target_phase": "F1",
+    "owner_ticket": "T048",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-020",
+    "category": "Messaging",
+    "capability": "Link formatting",
+    "target_phase": "F1",
+    "owner_ticket": "T048",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-021",
+    "category": "Messaging",
+    "capability": "Direct mentions",
+    "target_phase": "F1",
+    "owner_ticket": "T048",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-022",
+    "category": "Messaging",
+    "capability": "Group/channel mentions",
+    "target_phase": "F1",
+    "owner_ticket": "T048",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-023",
+    "category": "Messaging",
+    "capability": "Message editing",
+    "target_phase": "F1",
+    "owner_ticket": "T048",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-024",
+    "category": "Messaging",
+    "capability": "Message deletion",
+    "target_phase": "F1",
+    "owner_ticket": "T048",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-025",
+    "category": "Messaging",
+    "capability": "Message permalinks",
+    "target_phase": "F1",
+    "owner_ticket": "T048",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-026",
+    "category": "Messaging",
+    "capability": "Copy message link",
+    "target_phase": "F1",
+    "owner_ticket": "T048",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-027",
+    "category": "Messaging",
+    "capability": "Reactions",
+    "target_phase": "F1",
+    "owner_ticket": "T048",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-028",
+    "category": "Messaging",
+    "capability": "Custom reactions",
+    "target_phase": "F1",
+    "owner_ticket": "T048",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-029",
+    "category": "Messaging",
+    "capability": "File attachments",
+    "target_phase": "F1",
+    "owner_ticket": "T048",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-030",
+    "category": "Messaging",
+    "capability": "Drag and drop",
+    "target_phase": "F1",
+    "owner_ticket": "T048",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-031",
+    "category": "Messaging",
+    "capability": "Clipboard paste",
+    "target_phase": "F1",
+    "owner_ticket": "T048",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-032",
+    "category": "Messaging",
+    "capability": "Large message handling",
+    "target_phase": "F1",
+    "owner_ticket": "T048",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-033",
+    "category": "Messaging",
+    "capability": "Failed-send recovery",
+    "target_phase": "F1",
+    "owner_ticket": "T048",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-034",
+    "category": "Messaging",
+    "capability": "Local drafts",
+    "target_phase": "F1",
+    "owner_ticket": "T048",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-035",
+    "category": "Messaging",
+    "capability": "Draft persistence across restart",
+    "target_phase": "F1",
+    "owner_ticket": "T048",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-036",
+    "category": "Messaging",
+    "capability": "Send keyboard preferences",
+    "target_phase": "F1",
+    "owner_ticket": "T048",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-037",
+    "category": "Threads",
+    "capability": "Thread replies",
+    "target_phase": "F1",
+    "owner_ticket": "T048",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-038",
+    "category": "Threads",
+    "capability": "Thread subscriptions",
+    "target_phase": "F1",
+    "owner_ticket": "T048",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-039",
+    "category": "Threads",
+    "capability": "Thread unread state",
+    "target_phase": "F1",
+    "owner_ticket": "T048",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-040",
+    "category": "Threads",
+    "capability": "Thread mentions",
+    "target_phase": "F1",
+    "owner_ticket": "T048",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-041",
+    "category": "Threads",
+    "capability": "Reply context",
+    "target_phase": "F1",
+    "owner_ticket": "T048",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-042",
+    "category": "Threads",
+    "capability": "Deleted root behavior",
+    "target_phase": "F1",
+    "owner_ticket": "T048",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-043",
+    "category": "Threads",
+    "capability": "Share thread reference",
+    "target_phase": "F1",
+    "owner_ticket": "T048",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-044",
+    "category": "Threads",
+    "capability": "Navigate from notification",
+    "target_phase": "F1",
+    "owner_ticket": "T048",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-045",
+    "category": "Direct conversations",
+    "capability": "One-to-one direct messages",
+    "target_phase": "F1",
+    "owner_ticket": "T048",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-046",
+    "category": "Direct conversations",
+    "capability": "Group direct messages",
+    "target_phase": "F1",
+    "owner_ticket": "T048",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-047",
+    "category": "Direct conversations",
+    "capability": "Conversation member display",
+    "target_phase": "F1",
+    "owner_ticket": "T048",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-048",
+    "category": "Direct conversations",
+    "capability": "New-member history rules",
+    "target_phase": "F1",
+    "owner_ticket": "T048",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-049",
+    "category": "Direct conversations",
+    "capability": "Close and reopen conversation",
+    "target_phase": "F1",
+    "owner_ticket": "T048",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-050",
+    "category": "Direct conversations",
+    "capability": "Direct-message notifications",
+    "target_phase": "F1",
+    "owner_ticket": "T048",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-051",
+    "category": "Search",
+    "capability": "Keyword search",
+    "target_phase": "F2",
+    "owner_ticket": "T031",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-052",
+    "category": "Search",
+    "capability": "Exact identifier search",
+    "target_phase": "F2",
+    "owner_ticket": "T031",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-053",
+    "category": "Search",
+    "capability": "People filter",
+    "target_phase": "F2",
+    "owner_ticket": "T031",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-054",
+    "category": "Search",
+    "capability": "Channel filter",
+    "target_phase": "F2",
+    "owner_ticket": "T031",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-055",
+    "category": "Search",
+    "capability": "Date filter",
+    "target_phase": "F2",
+    "owner_ticket": "T031",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-056",
+    "category": "Search",
+    "capability": "File search",
+    "target_phase": "F2",
+    "owner_ticket": "T031",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-057",
+    "category": "Search",
+    "capability": "Search within conversation",
+    "target_phase": "F2",
+    "owner_ticket": "T031",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-058",
+    "category": "Search",
+    "capability": "Search snippets",
+    "target_phase": "F2",
+    "owner_ticket": "T031",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-059",
+    "category": "Search",
+    "capability": "Protected result counts",
+    "target_phase": "F2",
+    "owner_ticket": "T031",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-060",
+    "category": "Search",
+    "capability": "Permission-aware indexing",
+    "target_phase": "F2",
+    "owner_ticket": "T031",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-061",
+    "category": "Search",
+    "capability": "Deleted-content removal",
+    "target_phase": "F2",
+    "owner_ticket": "T031",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-062",
+    "category": "Attention and preferences",
+    "capability": "Unread inbox",
+    "target_phase": "F3",
+    "owner_ticket": "T046",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-063",
+    "category": "Attention and preferences",
+    "capability": "Mentions inbox",
+    "target_phase": "F3",
+    "owner_ticket": "T046",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-064",
+    "category": "Attention and preferences",
+    "capability": "Saved items",
+    "target_phase": "F3",
+    "owner_ticket": "T046",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-065",
+    "category": "Attention and preferences",
+    "capability": "Reminders",
+    "target_phase": "F3",
+    "owner_ticket": "T046",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-066",
+    "category": "Attention and preferences",
+    "capability": "Scheduled messages",
+    "target_phase": "F3",
+    "owner_ticket": "T046",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-067",
+    "category": "Attention and preferences",
+    "capability": "Mark unread",
+    "target_phase": "F3",
+    "owner_ticket": "T046",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-068",
+    "category": "Attention and preferences",
+    "capability": "Do-not-disturb schedule",
+    "target_phase": "F3",
+    "owner_ticket": "T046",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-069",
+    "category": "Attention and preferences",
+    "capability": "Per-channel notification settings",
+    "target_phase": "F3",
+    "owner_ticket": "T046",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-070",
+    "category": "Attention and preferences",
+    "capability": "Notification keywords",
+    "target_phase": "F3",
+    "owner_ticket": "T046",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-071",
+    "category": "Attention and preferences",
+    "capability": "Desktop notifications",
+    "target_phase": "F3",
+    "owner_ticket": "T046",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-072",
+    "category": "Attention and preferences",
+    "capability": "Mobile push",
+    "target_phase": "F3",
+    "owner_ticket": "T046",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-073",
+    "category": "Attention and preferences",
+    "capability": "Multi-device deduplication",
+    "target_phase": "F3",
+    "owner_ticket": "T046",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-074",
+    "category": "Attention and preferences",
+    "capability": "Status and availability",
+    "target_phase": "F3",
+    "owner_ticket": "T046",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-075",
+    "category": "Attention and preferences",
+    "capability": "Profiles",
+    "target_phase": "F3",
+    "owner_ticket": "T046",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-076",
+    "category": "Attention and preferences",
+    "capability": "Multi-workspace switching",
+    "target_phase": "F3",
+    "owner_ticket": "T046",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-077",
+    "category": "Attention and preferences",
+    "capability": "Keyboard navigation",
+    "target_phase": "F3",
+    "owner_ticket": "T046",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-078",
+    "category": "Attention and preferences",
+    "capability": "Navigation history",
+    "target_phase": "F3",
+    "owner_ticket": "T046",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-079",
+    "category": "Files and references",
+    "capability": "Protected file upload",
+    "target_phase": "F3",
+    "owner_ticket": "T017",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-080",
+    "category": "Files and references",
+    "capability": "File download",
+    "target_phase": "F3",
+    "owner_ticket": "T017",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-081",
+    "category": "Files and references",
+    "capability": "Image previews",
+    "target_phase": "F3",
+    "owner_ticket": "T017",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-082",
+    "category": "Files and references",
+    "capability": "Document previews",
+    "target_phase": "F3",
+    "owner_ticket": "T017",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-083",
+    "category": "Files and references",
+    "capability": "Attachment comments/context",
+    "target_phase": "F3",
+    "owner_ticket": "T017",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-084",
+    "category": "Files and references",
+    "capability": "Link unfurls",
+    "target_phase": "F3",
+    "owner_ticket": "T017",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-085",
+    "category": "Files and references",
+    "capability": "File access revocation",
+    "target_phase": "F3",
+    "owner_ticket": "T017",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-086",
+    "category": "Files and references",
+    "capability": "File retention",
+    "target_phase": "F3",
+    "owner_ticket": "T017",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-087",
+    "category": "Files and references",
+    "capability": "Exported attachment reconciliation",
+    "target_phase": "F3",
+    "owner_ticket": "T017",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-088",
+    "category": "Media",
+    "capability": "Audio calls",
+    "target_phase": "F3",
+    "owner_ticket": "T039",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-089",
+    "category": "Media",
+    "capability": "Video calls",
+    "target_phase": "F3",
+    "owner_ticket": "T039",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-090",
+    "category": "Media",
+    "capability": "Screen sharing",
+    "target_phase": "F3",
+    "owner_ticket": "T039",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-091",
+    "category": "Media",
+    "capability": "Device selection",
+    "target_phase": "F3",
+    "owner_ticket": "T039",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-092",
+    "category": "Media",
+    "capability": "Call reconnect",
+    "target_phase": "F3",
+    "owner_ticket": "T039",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-093",
+    "category": "Media",
+    "capability": "Recording/clip policy",
+    "target_phase": "F3",
+    "owner_ticket": "T039",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-094",
+    "category": "Media",
+    "capability": "Accessible call controls",
+    "target_phase": "F3",
+    "owner_ticket": "T039",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-095",
+    "category": "Media",
+    "capability": "Visible capture indicators",
+    "target_phase": "F3",
+    "owner_ticket": "T039",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-096",
+    "category": "Knowledge and lightweight work",
+    "capability": "Collaborative documents",
+    "target_phase": "F3",
+    "owner_ticket": "T050",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-097",
+    "category": "Knowledge and lightweight work",
+    "capability": "Document permissions",
+    "target_phase": "F3",
+    "owner_ticket": "T050",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-098",
+    "category": "Knowledge and lightweight work",
+    "capability": "Document history",
+    "target_phase": "F3",
+    "owner_ticket": "T050",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-099",
+    "category": "Knowledge and lightweight work",
+    "capability": "Lightweight lists",
+    "target_phase": "F3",
+    "owner_ticket": "T050",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-100",
+    "category": "Knowledge and lightweight work",
+    "capability": "Task views",
+    "target_phase": "F3",
+    "owner_ticket": "T050",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-101",
+    "category": "Knowledge and lightweight work",
+    "capability": "Bookmarks",
+    "target_phase": "F3",
+    "owner_ticket": "T050",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-102",
+    "category": "Knowledge and lightweight work",
+    "capability": "Reusable workflows",
+    "target_phase": "F3",
+    "owner_ticket": "T050",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-103",
+    "category": "Knowledge and lightweight work",
+    "capability": "Workflow ownership",
+    "target_phase": "F3",
+    "owner_ticket": "T050",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-104",
+    "category": "Developer platform",
+    "capability": "HTTP APIs",
+    "target_phase": "F4",
+    "owner_ticket": "T060",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-105",
+    "category": "Developer platform",
+    "capability": "Incoming webhooks",
+    "target_phase": "F4",
+    "owner_ticket": "T060",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-106",
+    "category": "Developer platform",
+    "capability": "Outgoing events",
+    "target_phase": "F4",
+    "owner_ticket": "T060",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-107",
+    "category": "Developer platform",
+    "capability": "Interactive cards",
+    "target_phase": "F4",
+    "owner_ticket": "T060",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-108",
+    "category": "Developer platform",
+    "capability": "Command invocation",
+    "target_phase": "F4",
+    "owner_ticket": "T060",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-109",
+    "category": "Developer platform",
+    "capability": "Scoped app installation",
+    "target_phase": "F4",
+    "owner_ticket": "T060",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-110",
+    "category": "Developer platform",
+    "capability": "OAuth-style connector authorization",
+    "target_phase": "F4",
+    "owner_ticket": "T060",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-111",
+    "category": "Developer platform",
+    "capability": "Webhook retries",
+    "target_phase": "F4",
+    "owner_ticket": "T060",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-112",
+    "category": "Developer platform",
+    "capability": "Versioned SDKs",
+    "target_phase": "F4",
+    "owner_ticket": "T060",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-113",
+    "category": "Developer platform",
+    "capability": "Import/export tooling",
+    "target_phase": "F4",
+    "owner_ticket": "T060",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-114",
+    "category": "External collaboration",
+    "capability": "Guest accounts",
+    "target_phase": "F4",
+    "owner_ticket": "T052",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-115",
+    "category": "External collaboration",
+    "capability": "Restricted guest scope",
+    "target_phase": "F4",
+    "owner_ticket": "T052",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-116",
+    "category": "External collaboration",
+    "capability": "External shared channels",
+    "target_phase": "F4",
+    "owner_ticket": "T052",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-117",
+    "category": "External collaboration",
+    "capability": "External invitations",
+    "target_phase": "F4",
+    "owner_ticket": "T052",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-118",
+    "category": "External collaboration",
+    "capability": "External file permissions",
+    "target_phase": "F4",
+    "owner_ticket": "T052",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-119",
+    "category": "External collaboration",
+    "capability": "External participant offboarding",
+    "target_phase": "F4",
+    "owner_ticket": "T052",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-120",
+    "category": "Administration",
+    "capability": "Workspace roles",
+    "target_phase": "F4",
+    "owner_ticket": "T058",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-121",
+    "category": "Administration",
+    "capability": "Identity administration",
+    "target_phase": "F4",
+    "owner_ticket": "T058",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-122",
+    "category": "Administration",
+    "capability": "Member deactivation",
+    "target_phase": "F4",
+    "owner_ticket": "T058",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-123",
+    "category": "Administration",
+    "capability": "SSO",
+    "target_phase": "F4",
+    "owner_ticket": "T058",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-124",
+    "category": "Administration",
+    "capability": "Provisioning",
+    "target_phase": "F4",
+    "owner_ticket": "T058",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-125",
+    "category": "Administration",
+    "capability": "Audit events",
+    "target_phase": "F4",
+    "owner_ticket": "T058",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-126",
+    "category": "Administration",
+    "capability": "Authorized audit export",
+    "target_phase": "F4",
+    "owner_ticket": "T058",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-127",
+    "category": "Administration",
+    "capability": "Retention policies",
+    "target_phase": "F4",
+    "owner_ticket": "T058",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-128",
+    "category": "Administration",
+    "capability": "Discovery/hold workflows",
+    "target_phase": "F4",
+    "owner_ticket": "T058",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-129",
+    "category": "Administration",
+    "capability": "Data placement policy",
+    "target_phase": "F4",
+    "owner_ticket": "T058",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-130",
+    "category": "Administration",
+    "capability": "Billing administration",
+    "target_phase": "F4",
+    "owner_ticket": "T058",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-131",
+    "category": "Administration",
+    "capability": "Integration management",
+    "target_phase": "F4",
+    "owner_ticket": "T058",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-132",
+    "category": "Administration",
+    "capability": "Agent ownership reassignment",
+    "target_phase": "F4",
+    "owner_ticket": "T058",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-133",
+    "category": "Clients and quality",
+    "capability": "macOS native application",
+    "target_phase": "F3",
+    "owner_ticket": "T068",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-134",
+    "category": "Clients and quality",
+    "capability": "Windows native application",
+    "target_phase": "F3",
+    "owner_ticket": "T068",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-135",
+    "category": "Clients and quality",
+    "capability": "Linux supported baseline",
+    "target_phase": "F3",
+    "owner_ticket": "T068",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-136",
+    "category": "Clients and quality",
+    "capability": "Browser participation",
+    "target_phase": "F3",
+    "owner_ticket": "T068",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-137",
+    "category": "Clients and quality",
+    "capability": "Mobile participation",
+    "target_phase": "F3",
+    "owner_ticket": "T068",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-138",
+    "category": "Clients and quality",
+    "capability": "Accessibility",
+    "target_phase": "F3",
+    "owner_ticket": "T068",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-139",
+    "category": "Clients and quality",
+    "capability": "International input",
+    "target_phase": "F3",
+    "owner_ticket": "T068",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-140",
+    "category": "Clients and quality",
+    "capability": "Light/dark themes",
+    "target_phase": "F3",
+    "owner_ticket": "T068",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-141",
+    "category": "Clients and quality",
+    "capability": "Text scaling",
+    "target_phase": "F3",
+    "owner_ticket": "T068",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-142",
+    "category": "Clients and quality",
+    "capability": "Reliable updates",
+    "target_phase": "F3",
+    "owner_ticket": "T068",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  },
+  {
+    "id": "PAR-143",
+    "category": "Clients and quality",
+    "capability": "Offline reading/drafts",
+    "target_phase": "F3",
+    "owner_ticket": "T068",
+    "status": "candidate_target_not_audited",
+    "verification": "Reconcile current Slack behavior/plan and target-customer need; implement and test exact supported semantics.",
+    "claim_rule": "Do not mark parity from feature-name presence alone; record platform, permissions, edge cases, import behavior, and evidence."
+  }
+]

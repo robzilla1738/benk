@@ -1,0 +1,866 @@
+[
+  {
+    "requirement_id": "REQ-001",
+    "ticket_id": "T001",
+    "acceptance_id": "AT-001",
+    "spec": "docs/00_decisions_and_assumptions.md"
+  },
+  {
+    "requirement_id": "REQ-002",
+    "ticket_id": "T001",
+    "acceptance_id": "AT-002",
+    "spec": "docs/00_decisions_and_assumptions.md"
+  },
+  {
+    "requirement_id": "REQ-003",
+    "ticket_id": "T002",
+    "acceptance_id": "AT-003",
+    "spec": "docs/08_domain_and_state_machines.md"
+  },
+  {
+    "requirement_id": "REQ-004",
+    "ticket_id": "T002",
+    "acceptance_id": "AT-004",
+    "spec": "docs/08_domain_and_state_machines.md"
+  },
+  {
+    "requirement_id": "REQ-005",
+    "ticket_id": "T003",
+    "acceptance_id": "AT-005",
+    "spec": "docs/06_gpui_desktop.md"
+  },
+  {
+    "requirement_id": "REQ-006",
+    "ticket_id": "T003",
+    "acceptance_id": "AT-006",
+    "spec": "docs/06_gpui_desktop.md"
+  },
+  {
+    "requirement_id": "REQ-007",
+    "ticket_id": "T004",
+    "acceptance_id": "AT-007",
+    "spec": "docs/29_accessibility_and_internationalization.md"
+  },
+  {
+    "requirement_id": "REQ-008",
+    "ticket_id": "T004",
+    "acceptance_id": "AT-008",
+    "spec": "docs/29_accessibility_and_internationalization.md"
+  },
+  {
+    "requirement_id": "REQ-009",
+    "ticket_id": "T005",
+    "acceptance_id": "AT-009",
+    "spec": "docs/09_sync_offline_and_conflicts.md"
+  },
+  {
+    "requirement_id": "REQ-010",
+    "ticket_id": "T005",
+    "acceptance_id": "AT-010",
+    "spec": "docs/09_sync_offline_and_conflicts.md"
+  },
+  {
+    "requirement_id": "REQ-011",
+    "ticket_id": "T006",
+    "acceptance_id": "AT-011",
+    "spec": "docs/11_permissions_security_and_privacy.md"
+  },
+  {
+    "requirement_id": "REQ-012",
+    "ticket_id": "T006",
+    "acceptance_id": "AT-012",
+    "spec": "docs/11_permissions_security_and_privacy.md"
+  },
+  {
+    "requirement_id": "REQ-013",
+    "ticket_id": "T007",
+    "acceptance_id": "AT-013",
+    "spec": "docs/11_permissions_security_and_privacy.md"
+  },
+  {
+    "requirement_id": "REQ-014",
+    "ticket_id": "T007",
+    "acceptance_id": "AT-014",
+    "spec": "docs/11_permissions_security_and_privacy.md"
+  },
+  {
+    "requirement_id": "REQ-015",
+    "ticket_id": "T008",
+    "acceptance_id": "AT-015",
+    "spec": "docs/07_effect_services.md"
+  },
+  {
+    "requirement_id": "REQ-016",
+    "ticket_id": "T008",
+    "acceptance_id": "AT-016",
+    "spec": "docs/07_effect_services.md"
+  },
+  {
+    "requirement_id": "REQ-017",
+    "ticket_id": "T009",
+    "acceptance_id": "AT-017",
+    "spec": "docs/03_experience_specification.md"
+  },
+  {
+    "requirement_id": "REQ-018",
+    "ticket_id": "T009",
+    "acceptance_id": "AT-018",
+    "spec": "docs/03_experience_specification.md"
+  },
+  {
+    "requirement_id": "REQ-019",
+    "ticket_id": "T010",
+    "acceptance_id": "AT-019",
+    "spec": "docs/09_sync_offline_and_conflicts.md"
+  },
+  {
+    "requirement_id": "REQ-020",
+    "ticket_id": "T010",
+    "acceptance_id": "AT-020",
+    "spec": "docs/09_sync_offline_and_conflicts.md"
+  },
+  {
+    "requirement_id": "REQ-021",
+    "ticket_id": "T011",
+    "acceptance_id": "AT-021",
+    "spec": "docs/09_sync_offline_and_conflicts.md"
+  },
+  {
+    "requirement_id": "REQ-022",
+    "ticket_id": "T011",
+    "acceptance_id": "AT-022",
+    "spec": "docs/09_sync_offline_and_conflicts.md"
+  },
+  {
+    "requirement_id": "REQ-023",
+    "ticket_id": "T012",
+    "acceptance_id": "AT-023",
+    "spec": "docs/08_domain_and_state_machines.md"
+  },
+  {
+    "requirement_id": "REQ-024",
+    "ticket_id": "T012",
+    "acceptance_id": "AT-024",
+    "spec": "docs/08_domain_and_state_machines.md"
+  },
+  {
+    "requirement_id": "REQ-025",
+    "ticket_id": "T013",
+    "acceptance_id": "AT-025",
+    "spec": "docs/11_permissions_security_and_privacy.md"
+  },
+  {
+    "requirement_id": "REQ-026",
+    "ticket_id": "T013",
+    "acceptance_id": "AT-026",
+    "spec": "docs/11_permissions_security_and_privacy.md"
+  },
+  {
+    "requirement_id": "REQ-027",
+    "ticket_id": "T014",
+    "acceptance_id": "AT-027",
+    "spec": "docs/07_effect_services.md"
+  },
+  {
+    "requirement_id": "REQ-028",
+    "ticket_id": "T014",
+    "acceptance_id": "AT-028",
+    "spec": "docs/07_effect_services.md"
+  },
+  {
+    "requirement_id": "REQ-029",
+    "ticket_id": "T015",
+    "acceptance_id": "AT-029",
+    "spec": "docs/22_first_vertical_slice.md"
+  },
+  {
+    "requirement_id": "REQ-030",
+    "ticket_id": "T015",
+    "acceptance_id": "AT-030",
+    "spec": "docs/22_first_vertical_slice.md"
+  },
+  {
+    "requirement_id": "REQ-031",
+    "ticket_id": "T016",
+    "acceptance_id": "AT-031",
+    "spec": "docs/03_experience_specification.md"
+  },
+  {
+    "requirement_id": "REQ-032",
+    "ticket_id": "T016",
+    "acceptance_id": "AT-032",
+    "spec": "docs/03_experience_specification.md"
+  },
+  {
+    "requirement_id": "REQ-033",
+    "ticket_id": "T017",
+    "acceptance_id": "AT-033",
+    "spec": "docs/14_review_artifacts_and_previews.md"
+  },
+  {
+    "requirement_id": "REQ-034",
+    "ticket_id": "T017",
+    "acceptance_id": "AT-034",
+    "spec": "docs/14_review_artifacts_and_previews.md"
+  },
+  {
+    "requirement_id": "REQ-035",
+    "ticket_id": "T018",
+    "acceptance_id": "AT-035",
+    "spec": "docs/14_review_artifacts_and_previews.md"
+  },
+  {
+    "requirement_id": "REQ-036",
+    "ticket_id": "T018",
+    "acceptance_id": "AT-036",
+    "spec": "docs/14_review_artifacts_and_previews.md"
+  },
+  {
+    "requirement_id": "REQ-037",
+    "ticket_id": "T019",
+    "acceptance_id": "AT-037",
+    "spec": "docs/15_browser_mobile_and_media.md"
+  },
+  {
+    "requirement_id": "REQ-038",
+    "ticket_id": "T019",
+    "acceptance_id": "AT-038",
+    "spec": "docs/15_browser_mobile_and_media.md"
+  },
+  {
+    "requirement_id": "REQ-039",
+    "ticket_id": "T020",
+    "acceptance_id": "AT-039",
+    "spec": "docs/22_first_vertical_slice.md"
+  },
+  {
+    "requirement_id": "REQ-040",
+    "ticket_id": "T020",
+    "acceptance_id": "AT-040",
+    "spec": "docs/22_first_vertical_slice.md"
+  },
+  {
+    "requirement_id": "REQ-041",
+    "ticket_id": "T021",
+    "acceptance_id": "AT-041",
+    "spec": "docs/10_agent_execution_and_handoff.md"
+  },
+  {
+    "requirement_id": "REQ-042",
+    "ticket_id": "T021",
+    "acceptance_id": "AT-042",
+    "spec": "docs/10_agent_execution_and_handoff.md"
+  },
+  {
+    "requirement_id": "REQ-043",
+    "ticket_id": "T022",
+    "acceptance_id": "AT-043",
+    "spec": "docs/10_agent_execution_and_handoff.md"
+  },
+  {
+    "requirement_id": "REQ-044",
+    "ticket_id": "T022",
+    "acceptance_id": "AT-044",
+    "spec": "docs/10_agent_execution_and_handoff.md"
+  },
+  {
+    "requirement_id": "REQ-045",
+    "ticket_id": "T023",
+    "acceptance_id": "AT-045",
+    "spec": "docs/13_integrations_and_migration.md"
+  },
+  {
+    "requirement_id": "REQ-046",
+    "ticket_id": "T023",
+    "acceptance_id": "AT-046",
+    "spec": "docs/13_integrations_and_migration.md"
+  },
+  {
+    "requirement_id": "REQ-047",
+    "ticket_id": "T024",
+    "acceptance_id": "AT-047",
+    "spec": "docs/10_agent_execution_and_handoff.md"
+  },
+  {
+    "requirement_id": "REQ-048",
+    "ticket_id": "T024",
+    "acceptance_id": "AT-048",
+    "spec": "docs/10_agent_execution_and_handoff.md"
+  },
+  {
+    "requirement_id": "REQ-049",
+    "ticket_id": "T025",
+    "acceptance_id": "AT-049",
+    "spec": "docs/11_permissions_security_and_privacy.md"
+  },
+  {
+    "requirement_id": "REQ-050",
+    "ticket_id": "T025",
+    "acceptance_id": "AT-050",
+    "spec": "docs/11_permissions_security_and_privacy.md"
+  },
+  {
+    "requirement_id": "REQ-051",
+    "ticket_id": "T026",
+    "acceptance_id": "AT-051",
+    "spec": "docs/10_agent_execution_and_handoff.md"
+  },
+  {
+    "requirement_id": "REQ-052",
+    "ticket_id": "T026",
+    "acceptance_id": "AT-052",
+    "spec": "docs/10_agent_execution_and_handoff.md"
+  },
+  {
+    "requirement_id": "REQ-053",
+    "ticket_id": "T027",
+    "acceptance_id": "AT-053",
+    "spec": "docs/30_failure_and_recovery_playbook.md"
+  },
+  {
+    "requirement_id": "REQ-054",
+    "ticket_id": "T027",
+    "acceptance_id": "AT-054",
+    "spec": "docs/30_failure_and_recovery_playbook.md"
+  },
+  {
+    "requirement_id": "REQ-055",
+    "ticket_id": "T028",
+    "acceptance_id": "AT-055",
+    "spec": "docs/10_agent_execution_and_handoff.md"
+  },
+  {
+    "requirement_id": "REQ-056",
+    "ticket_id": "T028",
+    "acceptance_id": "AT-056",
+    "spec": "docs/10_agent_execution_and_handoff.md"
+  },
+  {
+    "requirement_id": "REQ-057",
+    "ticket_id": "T029",
+    "acceptance_id": "AT-057",
+    "spec": "docs/10_agent_execution_and_handoff.md"
+  },
+  {
+    "requirement_id": "REQ-058",
+    "ticket_id": "T029",
+    "acceptance_id": "AT-058",
+    "spec": "docs/10_agent_execution_and_handoff.md"
+  },
+  {
+    "requirement_id": "REQ-059",
+    "ticket_id": "T030",
+    "acceptance_id": "AT-059",
+    "spec": "docs/12_context_search_and_memory.md"
+  },
+  {
+    "requirement_id": "REQ-060",
+    "ticket_id": "T030",
+    "acceptance_id": "AT-060",
+    "spec": "docs/12_context_search_and_memory.md"
+  },
+  {
+    "requirement_id": "REQ-061",
+    "ticket_id": "T031",
+    "acceptance_id": "AT-061",
+    "spec": "docs/12_context_search_and_memory.md"
+  },
+  {
+    "requirement_id": "REQ-062",
+    "ticket_id": "T031",
+    "acceptance_id": "AT-062",
+    "spec": "docs/12_context_search_and_memory.md"
+  },
+  {
+    "requirement_id": "REQ-063",
+    "ticket_id": "T032",
+    "acceptance_id": "AT-063",
+    "spec": "docs/03_experience_specification.md"
+  },
+  {
+    "requirement_id": "REQ-064",
+    "ticket_id": "T032",
+    "acceptance_id": "AT-064",
+    "spec": "docs/03_experience_specification.md"
+  },
+  {
+    "requirement_id": "REQ-065",
+    "ticket_id": "T033",
+    "acceptance_id": "AT-065",
+    "spec": "docs/10_agent_execution_and_handoff.md"
+  },
+  {
+    "requirement_id": "REQ-066",
+    "ticket_id": "T033",
+    "acceptance_id": "AT-066",
+    "spec": "docs/10_agent_execution_and_handoff.md"
+  },
+  {
+    "requirement_id": "REQ-067",
+    "ticket_id": "T034",
+    "acceptance_id": "AT-067",
+    "spec": "docs/14_review_artifacts_and_previews.md"
+  },
+  {
+    "requirement_id": "REQ-068",
+    "ticket_id": "T034",
+    "acceptance_id": "AT-068",
+    "spec": "docs/14_review_artifacts_and_previews.md"
+  },
+  {
+    "requirement_id": "REQ-069",
+    "ticket_id": "T035",
+    "acceptance_id": "AT-069",
+    "spec": "docs/17_infrastructure_operations_and_delivery.md"
+  },
+  {
+    "requirement_id": "REQ-070",
+    "ticket_id": "T035",
+    "acceptance_id": "AT-070",
+    "spec": "docs/17_infrastructure_operations_and_delivery.md"
+  },
+  {
+    "requirement_id": "REQ-071",
+    "ticket_id": "T036",
+    "acceptance_id": "AT-071",
+    "spec": "docs/16_performance_and_capacity.md"
+  },
+  {
+    "requirement_id": "REQ-072",
+    "ticket_id": "T036",
+    "acceptance_id": "AT-072",
+    "spec": "docs/16_performance_and_capacity.md"
+  },
+  {
+    "requirement_id": "REQ-073",
+    "ticket_id": "T037",
+    "acceptance_id": "AT-073",
+    "spec": "docs/15_browser_mobile_and_media.md"
+  },
+  {
+    "requirement_id": "REQ-074",
+    "ticket_id": "T037",
+    "acceptance_id": "AT-074",
+    "spec": "docs/15_browser_mobile_and_media.md"
+  },
+  {
+    "requirement_id": "REQ-075",
+    "ticket_id": "T038",
+    "acceptance_id": "AT-075",
+    "spec": "docs/15_browser_mobile_and_media.md"
+  },
+  {
+    "requirement_id": "REQ-076",
+    "ticket_id": "T038",
+    "acceptance_id": "AT-076",
+    "spec": "docs/15_browser_mobile_and_media.md"
+  },
+  {
+    "requirement_id": "REQ-077",
+    "ticket_id": "T039",
+    "acceptance_id": "AT-077",
+    "spec": "docs/15_browser_mobile_and_media.md"
+  },
+  {
+    "requirement_id": "REQ-078",
+    "ticket_id": "T039",
+    "acceptance_id": "AT-078",
+    "spec": "docs/15_browser_mobile_and_media.md"
+  },
+  {
+    "requirement_id": "REQ-079",
+    "ticket_id": "T040",
+    "acceptance_id": "AT-079",
+    "spec": "docs/17_infrastructure_operations_and_delivery.md"
+  },
+  {
+    "requirement_id": "REQ-080",
+    "ticket_id": "T040",
+    "acceptance_id": "AT-080",
+    "spec": "docs/17_infrastructure_operations_and_delivery.md"
+  },
+  {
+    "requirement_id": "REQ-081",
+    "ticket_id": "T041",
+    "acceptance_id": "AT-081",
+    "spec": "docs/06_gpui_desktop.md"
+  },
+  {
+    "requirement_id": "REQ-082",
+    "ticket_id": "T041",
+    "acceptance_id": "AT-082",
+    "spec": "docs/06_gpui_desktop.md"
+  },
+  {
+    "requirement_id": "REQ-083",
+    "ticket_id": "T042",
+    "acceptance_id": "AT-083",
+    "spec": "docs/06_gpui_desktop.md"
+  },
+  {
+    "requirement_id": "REQ-084",
+    "ticket_id": "T042",
+    "acceptance_id": "AT-084",
+    "spec": "docs/06_gpui_desktop.md"
+  },
+  {
+    "requirement_id": "REQ-085",
+    "ticket_id": "T043",
+    "acceptance_id": "AT-085",
+    "spec": "docs/13_integrations_and_migration.md"
+  },
+  {
+    "requirement_id": "REQ-086",
+    "ticket_id": "T043",
+    "acceptance_id": "AT-086",
+    "spec": "docs/13_integrations_and_migration.md"
+  },
+  {
+    "requirement_id": "REQ-087",
+    "ticket_id": "T044",
+    "acceptance_id": "AT-087",
+    "spec": "docs/13_integrations_and_migration.md"
+  },
+  {
+    "requirement_id": "REQ-088",
+    "ticket_id": "T044",
+    "acceptance_id": "AT-088",
+    "spec": "docs/13_integrations_and_migration.md"
+  },
+  {
+    "requirement_id": "REQ-089",
+    "ticket_id": "T045",
+    "acceptance_id": "AT-089",
+    "spec": "docs/04_communication_and_parity.md"
+  },
+  {
+    "requirement_id": "REQ-090",
+    "ticket_id": "T045",
+    "acceptance_id": "AT-090",
+    "spec": "docs/04_communication_and_parity.md"
+  },
+  {
+    "requirement_id": "REQ-091",
+    "ticket_id": "T046",
+    "acceptance_id": "AT-091",
+    "spec": "docs/04_communication_and_parity.md"
+  },
+  {
+    "requirement_id": "REQ-092",
+    "ticket_id": "T046",
+    "acceptance_id": "AT-092",
+    "spec": "docs/04_communication_and_parity.md"
+  },
+  {
+    "requirement_id": "REQ-093",
+    "ticket_id": "T047",
+    "acceptance_id": "AT-093",
+    "spec": "docs/15_browser_mobile_and_media.md"
+  },
+  {
+    "requirement_id": "REQ-094",
+    "ticket_id": "T047",
+    "acceptance_id": "AT-094",
+    "spec": "docs/15_browser_mobile_and_media.md"
+  },
+  {
+    "requirement_id": "REQ-095",
+    "ticket_id": "T048",
+    "acceptance_id": "AT-095",
+    "spec": "docs/04_communication_and_parity.md"
+  },
+  {
+    "requirement_id": "REQ-096",
+    "ticket_id": "T048",
+    "acceptance_id": "AT-096",
+    "spec": "docs/04_communication_and_parity.md"
+  },
+  {
+    "requirement_id": "REQ-097",
+    "ticket_id": "T049",
+    "acceptance_id": "AT-097",
+    "spec": "docs/04_communication_and_parity.md"
+  },
+  {
+    "requirement_id": "REQ-098",
+    "ticket_id": "T049",
+    "acceptance_id": "AT-098",
+    "spec": "docs/04_communication_and_parity.md"
+  },
+  {
+    "requirement_id": "REQ-099",
+    "ticket_id": "T050",
+    "acceptance_id": "AT-099",
+    "spec": "docs/04_communication_and_parity.md"
+  },
+  {
+    "requirement_id": "REQ-100",
+    "ticket_id": "T050",
+    "acceptance_id": "AT-100",
+    "spec": "docs/04_communication_and_parity.md"
+  },
+  {
+    "requirement_id": "REQ-101",
+    "ticket_id": "T051",
+    "acceptance_id": "AT-101",
+    "spec": "docs/28_developer_platform_and_workflows.md"
+  },
+  {
+    "requirement_id": "REQ-102",
+    "ticket_id": "T051",
+    "acceptance_id": "AT-102",
+    "spec": "docs/28_developer_platform_and_workflows.md"
+  },
+  {
+    "requirement_id": "REQ-103",
+    "ticket_id": "T052",
+    "acceptance_id": "AT-103",
+    "spec": "docs/27_enterprise_and_admin.md"
+  },
+  {
+    "requirement_id": "REQ-104",
+    "ticket_id": "T052",
+    "acceptance_id": "AT-104",
+    "spec": "docs/27_enterprise_and_admin.md"
+  },
+  {
+    "requirement_id": "REQ-105",
+    "ticket_id": "T053",
+    "acceptance_id": "AT-105",
+    "spec": "docs/27_enterprise_and_admin.md"
+  },
+  {
+    "requirement_id": "REQ-106",
+    "ticket_id": "T053",
+    "acceptance_id": "AT-106",
+    "spec": "docs/27_enterprise_and_admin.md"
+  },
+  {
+    "requirement_id": "REQ-107",
+    "ticket_id": "T054",
+    "acceptance_id": "AT-107",
+    "spec": "docs/27_enterprise_and_admin.md"
+  },
+  {
+    "requirement_id": "REQ-108",
+    "ticket_id": "T054",
+    "acceptance_id": "AT-108",
+    "spec": "docs/27_enterprise_and_admin.md"
+  },
+  {
+    "requirement_id": "REQ-109",
+    "ticket_id": "T055",
+    "acceptance_id": "AT-109",
+    "spec": "docs/27_enterprise_and_admin.md"
+  },
+  {
+    "requirement_id": "REQ-110",
+    "ticket_id": "T055",
+    "acceptance_id": "AT-110",
+    "spec": "docs/27_enterprise_and_admin.md"
+  },
+  {
+    "requirement_id": "REQ-111",
+    "ticket_id": "T056",
+    "acceptance_id": "AT-111",
+    "spec": "docs/27_enterprise_and_admin.md"
+  },
+  {
+    "requirement_id": "REQ-112",
+    "ticket_id": "T056",
+    "acceptance_id": "AT-112",
+    "spec": "docs/27_enterprise_and_admin.md"
+  },
+  {
+    "requirement_id": "REQ-113",
+    "ticket_id": "T057",
+    "acceptance_id": "AT-113",
+    "spec": "docs/27_enterprise_and_admin.md"
+  },
+  {
+    "requirement_id": "REQ-114",
+    "ticket_id": "T057",
+    "acceptance_id": "AT-114",
+    "spec": "docs/27_enterprise_and_admin.md"
+  },
+  {
+    "requirement_id": "REQ-115",
+    "ticket_id": "T058",
+    "acceptance_id": "AT-115",
+    "spec": "docs/27_enterprise_and_admin.md"
+  },
+  {
+    "requirement_id": "REQ-116",
+    "ticket_id": "T058",
+    "acceptance_id": "AT-116",
+    "spec": "docs/27_enterprise_and_admin.md"
+  },
+  {
+    "requirement_id": "REQ-117",
+    "ticket_id": "T059",
+    "acceptance_id": "AT-117",
+    "spec": "docs/27_enterprise_and_admin.md"
+  },
+  {
+    "requirement_id": "REQ-118",
+    "ticket_id": "T059",
+    "acceptance_id": "AT-118",
+    "spec": "docs/27_enterprise_and_admin.md"
+  },
+  {
+    "requirement_id": "REQ-119",
+    "ticket_id": "T060",
+    "acceptance_id": "AT-119",
+    "spec": "docs/28_developer_platform_and_workflows.md"
+  },
+  {
+    "requirement_id": "REQ-120",
+    "ticket_id": "T060",
+    "acceptance_id": "AT-120",
+    "spec": "docs/28_developer_platform_and_workflows.md"
+  },
+  {
+    "requirement_id": "REQ-121",
+    "ticket_id": "T061",
+    "acceptance_id": "AT-121",
+    "spec": "docs/28_developer_platform_and_workflows.md"
+  },
+  {
+    "requirement_id": "REQ-122",
+    "ticket_id": "T061",
+    "acceptance_id": "AT-122",
+    "spec": "docs/28_developer_platform_and_workflows.md"
+  },
+  {
+    "requirement_id": "REQ-123",
+    "ticket_id": "T062",
+    "acceptance_id": "AT-123",
+    "spec": "docs/28_developer_platform_and_workflows.md"
+  },
+  {
+    "requirement_id": "REQ-124",
+    "ticket_id": "T062",
+    "acceptance_id": "AT-124",
+    "spec": "docs/28_developer_platform_and_workflows.md"
+  },
+  {
+    "requirement_id": "REQ-125",
+    "ticket_id": "T063",
+    "acceptance_id": "AT-125",
+    "spec": "docs/20_adoption_pricing_and_metrics.md"
+  },
+  {
+    "requirement_id": "REQ-126",
+    "ticket_id": "T063",
+    "acceptance_id": "AT-126",
+    "spec": "docs/20_adoption_pricing_and_metrics.md"
+  },
+  {
+    "requirement_id": "REQ-127",
+    "ticket_id": "T064",
+    "acceptance_id": "AT-127",
+    "spec": "docs/20_adoption_pricing_and_metrics.md"
+  },
+  {
+    "requirement_id": "REQ-128",
+    "ticket_id": "T064",
+    "acceptance_id": "AT-128",
+    "spec": "docs/20_adoption_pricing_and_metrics.md"
+  },
+  {
+    "requirement_id": "REQ-129",
+    "ticket_id": "T065",
+    "acceptance_id": "AT-129",
+    "spec": "docs/20_adoption_pricing_and_metrics.md"
+  },
+  {
+    "requirement_id": "REQ-130",
+    "ticket_id": "T065",
+    "acceptance_id": "AT-130",
+    "spec": "docs/20_adoption_pricing_and_metrics.md"
+  },
+  {
+    "requirement_id": "REQ-131",
+    "ticket_id": "T066",
+    "acceptance_id": "AT-131",
+    "spec": "docs/17_infrastructure_operations_and_delivery.md"
+  },
+  {
+    "requirement_id": "REQ-132",
+    "ticket_id": "T066",
+    "acceptance_id": "AT-132",
+    "spec": "docs/17_infrastructure_operations_and_delivery.md"
+  },
+  {
+    "requirement_id": "REQ-133",
+    "ticket_id": "T067",
+    "acceptance_id": "AT-133",
+    "spec": "docs/18_testing_and_evaluation.md"
+  },
+  {
+    "requirement_id": "REQ-134",
+    "ticket_id": "T067",
+    "acceptance_id": "AT-134",
+    "spec": "docs/18_testing_and_evaluation.md"
+  },
+  {
+    "requirement_id": "REQ-135",
+    "ticket_id": "T068",
+    "acceptance_id": "AT-135",
+    "spec": "docs/19_roadmap_and_team.md"
+  },
+  {
+    "requirement_id": "REQ-136",
+    "ticket_id": "T068",
+    "acceptance_id": "AT-136",
+    "spec": "docs/19_roadmap_and_team.md"
+  },
+  {
+    "requirement_id": "REQ-137",
+    "ticket_id": "T069",
+    "acceptance_id": "AT-137",
+    "spec": "docs/24_dependency_and_license_policy.md"
+  },
+  {
+    "requirement_id": "REQ-138",
+    "ticket_id": "T069",
+    "acceptance_id": "AT-138",
+    "spec": "docs/24_dependency_and_license_policy.md"
+  },
+  {
+    "requirement_id": "REQ-139",
+    "ticket_id": "T070",
+    "acceptance_id": "AT-139",
+    "spec": "docs/04_communication_and_parity.md"
+  },
+  {
+    "requirement_id": "REQ-140",
+    "ticket_id": "T070",
+    "acceptance_id": "AT-140",
+    "spec": "docs/04_communication_and_parity.md"
+  },
+  {
+    "requirement_id": "REQ-141",
+    "ticket_id": "T071",
+    "acceptance_id": "AT-141",
+    "spec": "docs/18_testing_and_evaluation.md"
+  },
+  {
+    "requirement_id": "REQ-142",
+    "ticket_id": "T071",
+    "acceptance_id": "AT-142",
+    "spec": "docs/18_testing_and_evaluation.md"
+  },
+  {
+    "requirement_id": "REQ-143",
+    "ticket_id": "T072",
+    "acceptance_id": "AT-143",
+    "spec": "docs/20_adoption_pricing_and_metrics.md"
+  },
+  {
+    "requirement_id": "REQ-144",
+    "ticket_id": "T072",
+    "acceptance_id": "AT-144",
+    "spec": "docs/20_adoption_pricing_and_metrics.md"
+  }
+]

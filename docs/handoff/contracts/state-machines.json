@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "task": {
+    "draft": [
+      "ready",
+      "cancelled"
+    ],
+    "ready": [
+      "active",
+      "cancelled"
+    ],
+    "active": [
+      "blocked",
+      "awaiting_review",
+      "cancelled"
+    ],
+    "blocked": [
+      "active",
+      "cancelled"
+    ],
+    "awaiting_review": [
+      "active",
+      "accepted",
+      "cancelled"
+    ],
+    "accepted": [
+      "ready"
+    ],
+    "cancelled": []
+  },
+  "run": {
+    "queued": [
+      "preparing",
+      "cancelling",
+      "failed"
+    ],
+    "preparing": [
+      "running",
+      "awaiting_approval",
+      "paused",
+      "cancelling",
+      "failed"
+    ],
+    "running": [
+      "awaiting_approval",
+      "paused",
+      "reconciling",
+      "cancelling",
+      "succeeded",
+      "failed"
+    ],
+    "awaiting_approval": [
+      "preparing",
+      "running",
+      "paused",
+      "cancelling",
+      "failed"
+    ],
+    "paused": [
+      "preparing",
+      "cancelling",
+      "failed"
+    ],
+    "reconciling": [
+      "running",
+      "cancelling",
+      "succeeded",
+      "failed"
+    ],
+    "cancelling": [
+      "reconciling",
+      "cancelled",
+      "failed"
+    ],
+    "succeeded": [],
+    "failed": [],
+    "cancelled": []
+  },
+  "notes": [
+    "Edges require command-specific authorization and guards.",
+    "accepted -> ready requires a new reviewed task revision and preserved acceptance history.",
+    "Reference reducer does not implement database transactions."
+  ]
+}

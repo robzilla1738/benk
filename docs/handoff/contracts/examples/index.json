@@ -1,0 +1,112 @@
+[
+  {
+    "path": "contracts/examples/valid/deleted-message.json",
+    "definition": "Message",
+    "valid": true
+  },
+  {
+    "path": "contracts/examples/valid/draft-task.json",
+    "definition": "Task",
+    "valid": true
+  },
+  {
+    "path": "contracts/examples/valid/work-contract.json",
+    "definition": "WorkContract",
+    "valid": true
+  },
+  {
+    "path": "contracts/examples/valid/message.json",
+    "definition": "Message",
+    "valid": true
+  },
+  {
+    "path": "contracts/examples/valid/task.json",
+    "definition": "Task",
+    "valid": true
+  },
+  {
+    "path": "contracts/examples/valid/run.json",
+    "definition": "Run",
+    "valid": true
+  },
+  {
+    "path": "contracts/examples/valid/artifact.json",
+    "definition": "ArtifactVersion",
+    "valid": true
+  },
+  {
+    "path": "contracts/examples/valid/action.json",
+    "definition": "ActionIntent",
+    "valid": true
+  },
+  {
+    "path": "contracts/examples/valid/approval.json",
+    "definition": "Approval",
+    "valid": true
+  },
+  {
+    "path": "contracts/examples/valid/checkpoint.json",
+    "definition": "Checkpoint",
+    "valid": true
+  },
+  {
+    "path": "contracts/examples/valid/create-message.json",
+    "definition": "CreateMessage",
+    "valid": true
+  },
+  {
+    "path": "contracts/examples/valid/event.json",
+    "definition": "Event",
+    "valid": true
+  },
+  {
+    "path": "contracts/examples/invalid/agent-approval.json",
+    "definition": "Approval",
+    "valid": false
+  },
+  {
+    "path": "contracts/examples/invalid/zero-generation.json",
+    "definition": "Run",
+    "valid": false
+  },
+  {
+    "path": "contracts/examples/invalid/numeric-large-sequence.json",
+    "definition": "Message",
+    "valid": false
+  },
+  {
+    "path": "contracts/examples/invalid/secret-in-checkpoint.json",
+    "definition": "Checkpoint",
+    "valid": false
+  },
+  {
+    "path": "contracts/examples/invalid/negative-budget.json",
+    "definition": "WorkContract",
+    "valid": false
+  },
+  {
+    "path": "contracts/examples/invalid/unsafe-link.json",
+    "definition": "Message",
+    "valid": false
+  },
+  {
+    "path": "contracts/examples/invalid/invalid-timestamp.json",
+    "definition": "Run",
+    "valid": false
+  },
+  {
+    "path": "contracts/examples/invalid/invalid-digest.json",
+    "definition": "ActionIntent",
+    "valid": false
+  },
+  {
+    "path": "contracts/examples/invalid/deleted-message-retains-body.json",
+    "definition": "Message",
+    "valid": false
+  },
+  {
+    "path": "contracts/examples/invalid/live-message-null-body.json",
+    "definition": "Message",
+    "valid": false
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "type": "message.upserted",
+    "schema_version": 1,
+    "payload_definition": "Message",
+    "delivery": "at_least_once",
+    "visibility": "current resource authorization; payload filtered before delivery",
+    "durability": "durable",
+    "consumer_requirement": "idempotent apply; update local row and scoped cursor atomically"
+  },
+  {
+    "type": "message.purged",
+    "schema_version": 1,
+    "payload_definition": "Purge",
+    "delivery": "at_least_once",
+    "visibility": "current resource authorization; payload filtered before delivery",
+    "durability": "durable",
+    "consumer_requirement": "idempotent apply; update local row and scoped cursor atomically"
+  },
+  {
+    "type": "channel.upserted",
+    "schema_version": 1,
+    "payload_definition": "Channel",
+    "delivery": "at_least_once",
+    "visibility": "current resource authorization; payload filtered before delivery",
+    "durability": "durable",
+    "consumer_requirement": "idempotent apply; update local row and scoped cursor atomically"
+  },
+  {
+    "type": "task.upserted",
+    "schema_version": 1,
+    "payload_definition": "Task",
+    "delivery": "at_least_once",
+    "visibility": "current resource authorization; payload filtered before delivery",
+    "durability": "durable",
+    "consumer_requirement": "idempotent apply; update local row and scoped cursor atomically"
+  },
+  {
+    "type": "run.upserted",
+    "schema_version": 1,
+    "payload_definition": "Run",
+    "delivery": "at_least_once",
+    "visibility": "current resource authorization; payload filtered before delivery",
+    "durability": "durable",
+    "consumer_requirement": "idempotent apply; update local row and scoped cursor atomically"
+  },
+  {
+    "type": "artifact.version_created",
+    "schema_version": 1,
+    "payload_definition": "ArtifactVersion",
+    "delivery": "at_least_once",
+    "visibility": "current resource authorization; payload filtered before delivery",
+    "durability": "durable",
+    "consumer_requirement": "idempotent apply; update local row and scoped cursor atomically"
+  },
+  {
+    "type": "action.upserted",
+    "schema_version": 1,
+    "payload_definition": "ActionIntent",
+    "delivery": "at_least_once",
+    "visibility": "current resource authorization; payload filtered before delivery",
+    "durability": "durable",
+    "consumer_requirement": "idempotent apply; update local row and scoped cursor atomically"
+  },
+  {
+    "type": "approval.recorded",
+    "schema_version": 1,
+    "payload_definition": "Approval",
+    "delivery": "at_least_once",
+    "visibility": "current resource authorization; payload filtered before delivery",
+    "durability": "durable",
+    "consumer_requirement": "idempotent apply; update local row and scoped cursor atomically"
+  },
+  {
+    "type": "task.accepted",
+    "schema_version": 1,
+    "payload_definition": "Acceptance",
+    "delivery": "at_least_once",
+    "visibility": "current resource authorization; payload filtered before delivery",
+    "durability": "durable",
+    "consumer_requirement": "idempotent apply; update local row and scoped cursor atomically"
+  },
+  {
+    "type": "authorization.purged",
+    "schema_version": 1,
+    "payload_definition": "Purge",
+    "delivery": "at_least_once",
+    "visibility": "current resource authorization; payload filtered before delivery",
+    "durability": "durable",
+    "consumer_requirement": "idempotent apply; update local row and scoped cursor atomically"
+  }
+]

@@ -1,0 +1,78 @@
+{
+  "prepared_date": "2026-10-08",
+  "scope": "Handoff reference and static-contract validation, not the product implementation",
+  "environment": {
+    "python": "3.13.5",
+    "node": "v22.16.0",
+    "typescript": "Version 5.8.3",
+    "sqlite": "3.46.1",
+    "rust_cargo": "not installed",
+    "external_package_install": "unavailable in preparation environment"
+  },
+  "checks": [
+    {
+      "name": "TypeScript reference compilation",
+      "status": "passed",
+      "command": "npm run build",
+      "working_directory": "reference/core",
+      "compiler": "TypeScript 5.8.3"
+    },
+    {
+      "name": "Reference domain tests",
+      "status": "passed",
+      "passed": 232,
+      "failed": 0,
+      "command": "npm test",
+      "working_directory": "reference/core",
+      "evidence": "verification/reference-core-tests.tap"
+    },
+    {
+      "name": "SQLite reference tests",
+      "status": "passed",
+      "passed": 16,
+      "failed": 0,
+      "command": "python scripts/test_sqlite.py",
+      "evidence": "verification/sqlite-tests.log"
+    },
+    {
+      "name": "JSON Schema valid/invalid fixtures",
+      "status": "passed",
+      "passed": 22,
+      "failed": 0,
+      "schemas_checked": 2,
+      "command": "python scripts/validate_contracts.py",
+      "evidence": "verification/contract-fixture-results.json"
+    },
+    {
+      "name": "GPUI dependency-backed scaffold",
+      "status": "not_run",
+      "reason": "Rust/Cargo and supported native SDK unavailable"
+    },
+    {
+      "name": "Rust domain seed tests",
+      "status": "not_run",
+      "reason": "Rust/Cargo unavailable"
+    },
+    {
+      "name": "Effect dependency-backed scaffold",
+      "status": "not_run",
+      "reason": "External package installation unavailable; no unverified dependency cache or fabricated lockfile used"
+    },
+    {
+      "name": "PostgreSQL DDL and service integration",
+      "status": "not_run",
+      "reason": "No PostgreSQL service supplied by the preparation environment"
+    },
+    {
+      "name": "Desktop/browser UX, accessibility, media, and performance",
+      "status": "not_run",
+      "reason": "No completed application exists in this handoff"
+    },
+    {
+      "name": "Execution sandbox, provider integration, signing, CI, deployment, compliance",
+      "status": "not_run",
+      "reason": "Not implemented or connected; requires explicit implementation and evidence"
+    }
+  ],
+  "interpretation": "Passing reference tests do not establish atomic distributed execution, authentication, production isolation, feature parity, performance, or product-market fit."
+}

@@ -1,0 +1,2355 @@
+[
+  {
+    "id": "T001",
+    "title": "Repository and toolchain audit",
+    "phase": "F0",
+    "priority": "P0",
+    "owner_discipline": "lead",
+    "status": "todo",
+    "depends_on": [],
+    "specs": [
+      "docs/00_decisions_and_assumptions.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-001",
+      "REQ-002"
+    ],
+    "acceptance_ids": [
+      "AT-001",
+      "AT-002"
+    ],
+    "deliverable": "Inventory existing code; record selected exact toolchains and package-install capability.",
+    "definition_of_done": [
+      "A new engineer can reproduce the selected baseline from recorded commands and lockfiles.",
+      "Missing tools or external dependencies are reported as unavailable, never represented as tested.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T001.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T002",
+    "title": "Contract and fixture ownership",
+    "phase": "F0",
+    "priority": "P0",
+    "owner_discipline": "backend",
+    "status": "todo",
+    "depends_on": [
+      "T001"
+    ],
+    "specs": [
+      "docs/08_domain_and_state_machines.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-003",
+      "REQ-004"
+    ],
+    "acceptance_ids": [
+      "AT-003",
+      "AT-004"
+    ],
+    "deliverable": "Establish schema/golden-fixture generation and compatibility checks.",
+    "definition_of_done": [
+      "Rust/TypeScript serialization uses the same IDs, revisions, decimal sequences, and error contract.",
+      "A breaking payload or inconsistent generated OpenAPI fails the contract check.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T002.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T003",
+    "title": "GPUI bootstrap and native package pin",
+    "phase": "F0",
+    "priority": "P0",
+    "owner_discipline": "native",
+    "status": "todo",
+    "depends_on": [
+      "T001"
+    ],
+    "specs": [
+      "docs/06_gpui_desktop.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-005",
+      "REQ-006"
+    ],
+    "acceptance_ids": [
+      "AT-005",
+      "AT-006"
+    ],
+    "deliverable": "Build and run a minimal native application on the first supported platform.",
+    "definition_of_done": [
+      "The selected GPUI release, compiler, and native SDK produce a reproducible windowed release build.",
+      "Current-main and published-crate API differences cannot be silently mixed.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T003.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T004",
+    "title": "Composer, IME, and accessibility risk spike",
+    "phase": "F0",
+    "priority": "P0",
+    "owner_discipline": "native",
+    "status": "todo",
+    "depends_on": [
+      "T003"
+    ],
+    "specs": [
+      "docs/29_accessibility_and_internationalization.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-007",
+      "REQ-008"
+    ],
+    "acceptance_ids": [
+      "AT-007",
+      "AT-008"
+    ],
+    "deliverable": "Implement the hard native input and focus test surface before general UI polish.",
+    "definition_of_done": [
+      "IME composition, selection, clipboard, undo, and keyboard/screen-reader traversal work on the chosen matrix.",
+      "Enter during active IME composition never sends a message or loses input.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T004.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T005",
+    "title": "SQLite cache, drafts, and migrations",
+    "phase": "F0",
+    "priority": "P0",
+    "owner_discipline": "native",
+    "status": "todo",
+    "depends_on": [
+      "T002",
+      "T003"
+    ],
+    "specs": [
+      "docs/09_sync_offline_and_conflicts.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-009",
+      "REQ-010"
+    ],
+    "acceptance_ids": [
+      "AT-009",
+      "AT-010"
+    ],
+    "deliverable": "Create the real Rust-owned cache and migration layer with a single logical writer.",
+    "definition_of_done": [
+      "Drafts and message/search projections survive process restart and migrate without loss.",
+      "Account/workspace mixing, failed transactions, and revoked-content search leakage are rejected.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T005.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T006",
+    "title": "Threat model and authority boundaries",
+    "phase": "F0",
+    "priority": "P0",
+    "owner_discipline": "security",
+    "status": "todo",
+    "depends_on": [
+      "T001",
+      "T002"
+    ],
+    "specs": [
+      "docs/11_permissions_security_and_privacy.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-011",
+      "REQ-012"
+    ],
+    "acceptance_ids": [
+      "AT-011",
+      "AT-012"
+    ],
+    "deliverable": "Approve trust boundaries, source-use/publication rules, and execution disable gates.",
+    "definition_of_done": [
+      "Every privileged surface has an owner, threat model, policy source, and negative test plan.",
+      "A separate but unrestricted process is not accepted as a sandbox.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T006.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T007",
+    "title": "Verified identity, tenancy, and memberships",
+    "phase": "F1",
+    "priority": "P0",
+    "owner_discipline": "backend",
+    "status": "todo",
+    "depends_on": [
+      "T002",
+      "T006"
+    ],
+    "specs": [
+      "docs/11_permissions_security_and_privacy.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-013",
+      "REQ-014"
+    ],
+    "acceptance_ids": [
+      "AT-013",
+      "AT-014"
+    ],
+    "deliverable": "Integrate selected authentication and enforce current workspace/resource membership.",
+    "definition_of_done": [
+      "An authenticated human sees and mutates only permitted workspace resources across clients.",
+      "Cross-tenant IDs, revoked sessions, and forged actor/role fields cannot disclose or modify data.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T007.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T008",
+    "title": "Effect service runtime and typed errors",
+    "phase": "F0",
+    "priority": "P0",
+    "owner_discipline": "backend",
+    "status": "todo",
+    "depends_on": [
+      "T001",
+      "T002"
+    ],
+    "specs": [
+      "docs/07_effect_services.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-015",
+      "REQ-016"
+    ],
+    "acceptance_ids": [
+      "AT-015",
+      "AT-016"
+    ],
+    "deliverable": "Implement process-level Effect runtime, configuration, services, and adapter boundaries.",
+    "definition_of_done": [
+      "Startup validates configuration and services expose typed failures with scoped resource cleanup.",
+      "Missing secrets, interrupted work, and malformed requests fail closed without content leakage.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T008.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T009",
+    "title": "Native timeline and pending sends",
+    "phase": "F1",
+    "priority": "P0",
+    "owner_discipline": "native",
+    "status": "todo",
+    "depends_on": [
+      "T004",
+      "T005"
+    ],
+    "specs": [
+      "docs/03_experience_specification.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-017",
+      "REQ-018"
+    ],
+    "acceptance_ids": [
+      "AT-017",
+      "AT-018"
+    ],
+    "deliverable": "Implement channel navigation, composer, timeline, thread view, and pending-operation display.",
+    "definition_of_done": [
+      "Cached navigation and durable local sends work while the agent engine is stopped.",
+      "Slow network, oversized content, variable row heights, and failed sends do not freeze input or discard drafts.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T009.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T010",
+    "title": "Shared messaging transaction and outbox",
+    "phase": "F1",
+    "priority": "P0",
+    "owner_discipline": "backend",
+    "status": "todo",
+    "depends_on": [
+      "T007",
+      "T008"
+    ],
+    "specs": [
+      "docs/09_sync_offline_and_conflicts.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-019",
+      "REQ-020"
+    ],
+    "acceptance_ids": [
+      "AT-019",
+      "AT-020"
+    ],
+    "deliverable": "Implement authorized message create/edit/delete with durable idempotency and transactional outbox.",
+    "definition_of_done": [
+      "One operation produces one accepted message/revision and one consistent event history.",
+      "Lost responses, duplicate requests, changed idempotency payloads, and concurrent edits do not duplicate or overwrite work.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T010.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T011",
+    "title": "Resumable selective synchronization",
+    "phase": "F1",
+    "priority": "P0",
+    "owner_discipline": "backend",
+    "status": "todo",
+    "depends_on": [
+      "T009",
+      "T010"
+    ],
+    "specs": [
+      "docs/09_sync_offline_and_conflicts.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-021",
+      "REQ-022"
+    ],
+    "acceptance_ids": [
+      "AT-021",
+      "AT-022"
+    ],
+    "deliverable": "Connect native cache to authorized snapshots, scoped cursors, and live events.",
+    "definition_of_done": [
+      "Reconnect converges messages, read state, and pending intent without losing local drafts.",
+      "Expired cursors, revoked membership, late commits, duplicates, and tombstones cannot leak or resurrect content.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T011.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T012",
+    "title": "Task and versioned work-contract model",
+    "phase": "F1",
+    "priority": "P0",
+    "owner_discipline": "backend",
+    "status": "todo",
+    "depends_on": [
+      "T002",
+      "T006",
+      "T008"
+    ],
+    "specs": [
+      "docs/08_domain_and_state_machines.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-023",
+      "REQ-024"
+    ],
+    "acceptance_ids": [
+      "AT-023",
+      "AT-024"
+    ],
+    "deliverable": "Implement task lifecycle, immutable contract revisions, owners, criteria, and source references.",
+    "definition_of_done": [
+      "A message becomes a bounded task with a human-confirmed current contract.",
+      "Changing acceptance criteria or authority cannot mutate an already-bound contract invisibly.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T012.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T013",
+    "title": "Authoritative policy and dispatch guards",
+    "phase": "F1",
+    "priority": "P0",
+    "owner_discipline": "security",
+    "status": "todo",
+    "depends_on": [
+      "T007",
+      "T012"
+    ],
+    "specs": [
+      "docs/11_permissions_security_and_privacy.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-025",
+      "REQ-026"
+    ],
+    "acceptance_ids": [
+      "AT-025",
+      "AT-026"
+    ],
+    "deliverable": "Implement server/broker policy facts and command-specific guards beyond the pure reference.",
+    "definition_of_done": [
+      "Current owner, agent, source, action, environment, audience, and policy permissions intersect before dispatch.",
+      "Client-supplied approval flags or permission facts never become trusted authority.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T013.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T014",
+    "title": "Durable coordinator baseline and replay",
+    "phase": "F1",
+    "priority": "P0",
+    "owner_discipline": "backend",
+    "status": "todo",
+    "depends_on": [
+      "T008",
+      "T012"
+    ],
+    "specs": [
+      "docs/07_effect_services.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-027",
+      "REQ-028"
+    ],
+    "acceptance_ids": [
+      "AT-027",
+      "AT-028"
+    ],
+    "deliverable": "Select one shared durability backend and implement run coordination/versioning tests.",
+    "definition_of_done": [
+      "Run state survives worker restarts and durable approval waits with one current coordinator.",
+      "History replay, worker upgrade, and duplicate delivery cannot create a second authoritative run.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T014.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T015",
+    "title": "Deterministic simulated agent",
+    "phase": "F1",
+    "priority": "P0",
+    "owner_discipline": "backend",
+    "status": "todo",
+    "depends_on": [
+      "T012",
+      "T013"
+    ],
+    "specs": [
+      "docs/22_first_vertical_slice.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-029",
+      "REQ-030"
+    ],
+    "acceptance_ids": [
+      "AT-029",
+      "AT-030"
+    ],
+    "deliverable": "Implement a no-network/no-shell simulator with success, blocked, failed, and cancelled cases.",
+    "definition_of_done": [
+      "The simulator produces stable artifacts/evidence through the real task/run interfaces.",
+      "Simulation is visible and cannot accept credentials or perform actual external actions.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T015.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T016",
+    "title": "Native workroom and progress cards",
+    "phase": "F1",
+    "priority": "P0",
+    "owner_discipline": "native",
+    "status": "todo",
+    "depends_on": [
+      "T009",
+      "T012",
+      "T015"
+    ],
+    "specs": [
+      "docs/03_experience_specification.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-031",
+      "REQ-032"
+    ],
+    "acceptance_ids": [
+      "AT-031",
+      "AT-032"
+    ],
+    "deliverable": "Build task/workroom views with compact channel updates and optional detailed activity.",
+    "definition_of_done": [
+      "A teammate can see outcome, owner, environment, state, blockers, and artifacts without opening a terminal.",
+      "High-volume activity never floods the human timeline or steals scroll/focus.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T016.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T017",
+    "title": "Protected artifact upload and versions",
+    "phase": "F1",
+    "priority": "P0",
+    "owner_discipline": "backend",
+    "status": "todo",
+    "depends_on": [
+      "T007",
+      "T012"
+    ],
+    "specs": [
+      "docs/14_review_artifacts_and_previews.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-033",
+      "REQ-034"
+    ],
+    "acceptance_ids": [
+      "AT-033",
+      "AT-034"
+    ],
+    "deliverable": "Implement upload tickets, byte/digest verification, immutable versions, and audience policy.",
+    "definition_of_done": [
+      "Permitted users can inspect exact versioned artifacts and protected derivatives.",
+      "Incomplete, oversized, wrong-digest, cross-task, and unauthorized uploads do not become accepted artifacts.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T017.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T018",
+    "title": "Version-bound review and acceptance",
+    "phase": "F1",
+    "priority": "P0",
+    "owner_discipline": "backend",
+    "status": "todo",
+    "depends_on": [
+      "T013",
+      "T016",
+      "T017"
+    ],
+    "specs": [
+      "docs/14_review_artifacts_and_previews.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-035",
+      "REQ-036"
+    ],
+    "acceptance_ids": [
+      "AT-035",
+      "AT-036"
+    ],
+    "deliverable": "Implement review comments, evidence states, request-changes, and immutable human acceptance.",
+    "definition_of_done": [
+      "Acceptance names exact contract/artifact versions and preserves historical decisions.",
+      "Agent success, stale artifact versions, or unauthorized reviewers cannot auto-accept work.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T018.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T019",
+    "title": "Authenticated browser reviewer",
+    "phase": "F1",
+    "priority": "P0",
+    "owner_discipline": "web",
+    "status": "todo",
+    "depends_on": [
+      "T007",
+      "T018"
+    ],
+    "specs": [
+      "docs/15_browser_mobile_and_media.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-037",
+      "REQ-038"
+    ],
+    "acceptance_ids": [
+      "AT-037",
+      "AT-038"
+    ],
+    "deliverable": "Create a focused browser experience for permitted task context, artifacts, comments, and decisions.",
+    "definition_of_done": [
+      "A second person reviews work without installing the desktop app or relying on the initiator being online.",
+      "Forwarded/expired/revoked links and changed approval bindings cannot broaden access.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T019.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T020",
+    "title": "First complete two-human vertical slice",
+    "phase": "F1",
+    "priority": "P0",
+    "owner_discipline": "product",
+    "status": "todo",
+    "depends_on": [
+      "T011",
+      "T015",
+      "T019"
+    ],
+    "specs": [
+      "docs/22_first_vertical_slice.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-039",
+      "REQ-040"
+    ],
+    "acceptance_ids": [
+      "AT-039",
+      "AT-040"
+    ],
+    "deliverable": "Integrate and record the complete synthetic checkout request-to-accepted-result workflow.",
+    "definition_of_done": [
+      "Two users complete the flow without narrated assistance or manual database edits.",
+      "Offline/restart, failed-check, and changed-artifact variations remain clear and safe.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T020.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T021",
+    "title": "Authenticated broker capability protocol",
+    "phase": "F2",
+    "priority": "P0",
+    "owner_discipline": "security",
+    "status": "todo",
+    "depends_on": [
+      "T003",
+      "T006",
+      "T013"
+    ],
+    "specs": [
+      "docs/10_agent_execution_and_handoff.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-041",
+      "REQ-042"
+    ],
+    "acceptance_ids": [
+      "AT-041",
+      "AT-042"
+    ],
+    "deliverable": "Implement narrowly scoped broker grants, transport authentication, and request validation.",
+    "definition_of_done": [
+      "Every tool request is bound to run generation, permitted resources, expiry, and action intent.",
+      "Guessing a socket path, replaying a grant, or forging a session frame cannot execute a tool.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T021.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T022",
+    "title": "Local sandbox and process enforcement",
+    "phase": "F2",
+    "priority": "P0",
+    "owner_discipline": "security",
+    "status": "todo",
+    "depends_on": [
+      "T021"
+    ],
+    "specs": [
+      "docs/10_agent_execution_and_handoff.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-043",
+      "REQ-044"
+    ],
+    "acceptance_ids": [
+      "AT-043",
+      "AT-044"
+    ],
+    "deliverable": "Enforce filesystem, process, environment, network, output, and resource boundaries.",
+    "definition_of_done": [
+      "A disposable local run executes permitted commands without host-wide authority.",
+      "Symlink traversal, malicious repository scripts, secret inheritance, and broker bypass attempts are contained.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T022.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T023",
+    "title": "Connector credentials and installation",
+    "phase": "F2",
+    "priority": "P0",
+    "owner_discipline": "integrations",
+    "status": "todo",
+    "depends_on": [
+      "T007",
+      "T013"
+    ],
+    "specs": [
+      "docs/13_integrations_and_migration.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-045",
+      "REQ-046"
+    ],
+    "acceptance_ids": [
+      "AT-045",
+      "AT-046"
+    ],
+    "deliverable": "Implement a selected provider install with secret handles, scopes, rotation, and revocation.",
+    "definition_of_done": [
+      "Users can install the least-privilege integration required for one project and see data destinations.",
+      "Token expiry, webhook replay, revoked scopes, and unintended token audiences fail safely.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T023.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T024",
+    "title": "First real coding-agent adapter",
+    "phase": "F2",
+    "priority": "P0",
+    "owner_discipline": "integrations",
+    "status": "todo",
+    "depends_on": [
+      "T015",
+      "T022",
+      "T023"
+    ],
+    "specs": [
+      "docs/10_agent_execution_and_handoff.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-047",
+      "REQ-048"
+    ],
+    "acceptance_ids": [
+      "AT-047",
+      "AT-048"
+    ],
+    "deliverable": "Replace one simulated adapter with one tested real provider on a disposable project.",
+    "definition_of_done": [
+      "The real adapter produces bounded changes/artifacts through the same task/run contract.",
+      "Unsupported capabilities, malformed tool output, and requested privilege expansion are explicit and denied by default.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T024.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T025",
+    "title": "Transactional action intents and approvals",
+    "phase": "F2",
+    "priority": "P0",
+    "owner_discipline": "security",
+    "status": "todo",
+    "depends_on": [
+      "T013",
+      "T014",
+      "T017"
+    ],
+    "specs": [
+      "docs/11_permissions_security_and_privacy.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-049",
+      "REQ-050"
+    ],
+    "acceptance_ids": [
+      "AT-049",
+      "AT-050"
+    ],
+    "deliverable": "Implement exact action hashing, human decisions, atomic claim/consume, and provider reconciliation.",
+    "definition_of_done": [
+      "A valid current decision authorizes one specific publication/action with a stable operation ID.",
+      "Concurrent consumption, replay, changed destination/artifact, and uncertain provider results cannot duplicate or broaden effects.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T025.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T026",
+    "title": "Usage reservations and spending limits",
+    "phase": "F2",
+    "priority": "P0",
+    "owner_discipline": "backend",
+    "status": "todo",
+    "depends_on": [
+      "T008",
+      "T013"
+    ],
+    "specs": [
+      "docs/10_agent_execution_and_handoff.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-051",
+      "REQ-052"
+    ],
+    "acceptance_ids": [
+      "AT-051",
+      "AT-052"
+    ],
+    "deliverable": "Implement durable budget accounts, unique reservations, charge settlement, and cost visibility.",
+    "definition_of_done": [
+      "Budget checks reserve before dispatch and reconcile actual usage, including failed attempts.",
+      "Concurrent reservations, duplicate settlements, and estimate overruns cannot hide spend or continue unlimited work.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T026.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T027",
+    "title": "Cancellation and process lifecycle",
+    "phase": "F2",
+    "priority": "P0",
+    "owner_discipline": "security",
+    "status": "todo",
+    "depends_on": [
+      "T014",
+      "T024",
+      "T026"
+    ],
+    "specs": [
+      "docs/30_failure_and_recovery_playbook.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-053",
+      "REQ-054"
+    ],
+    "acceptance_ids": [
+      "AT-053",
+      "AT-054"
+    ],
+    "deliverable": "Implement requested/acknowledged/stopped cancellation with child process cleanup.",
+    "definition_of_done": [
+      "Users can stop new work and understand which in-flight operations are still reconciling.",
+      "A provider timeout or process signal does not falsely report already-completed external effects as undone.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T027.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T028",
+    "title": "Isolated hosted execution runner",
+    "phase": "F2",
+    "priority": "P0",
+    "owner_discipline": "infrastructure",
+    "status": "todo",
+    "depends_on": [
+      "T014",
+      "T021",
+      "T025",
+      "T026"
+    ],
+    "specs": [
+      "docs/10_agent_execution_and_handoff.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-055",
+      "REQ-056"
+    ],
+    "acceptance_ids": [
+      "AT-055",
+      "AT-056"
+    ],
+    "deliverable": "Implement disposable cloud environments with bounded resources, scoped secrets, and network controls.",
+    "definition_of_done": [
+      "Shared work can continue independently of a laptop under one durable coordinator.",
+      "Host sockets, cloud metadata, broad credentials, and noisy-neighbor resource escapes are unavailable.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T028.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T029",
+    "title": "Checkpoint handoff and generation fencing",
+    "phase": "F2",
+    "priority": "P0",
+    "owner_discipline": "backend",
+    "status": "todo",
+    "depends_on": [
+      "T027",
+      "T028"
+    ],
+    "specs": [
+      "docs/10_agent_execution_and_handoff.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-057",
+      "REQ-058"
+    ],
+    "acceptance_ids": [
+      "AT-057",
+      "AT-058"
+    ],
+    "deliverable": "Implement verified checkpoints, quiescence, ownership CAS, generation changes, and continuation.",
+    "definition_of_done": [
+      "Supported work resumes locally/cloud-side from a known checkpoint with resolved destination credentials.",
+      "Delayed old-runner output and unresolved external actions cannot create split authority or blind retries.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T029.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T030",
+    "title": "Inspectable context and source permissions",
+    "phase": "F2",
+    "priority": "P0",
+    "owner_discipline": "backend",
+    "status": "todo",
+    "depends_on": [
+      "T007",
+      "T012",
+      "T017"
+    ],
+    "specs": [
+      "docs/12_context_search_and_memory.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-059",
+      "REQ-060"
+    ],
+    "acceptance_ids": [
+      "AT-059",
+      "AT-060"
+    ],
+    "deliverable": "Implement source manifests, use-for-model/publish distinctions, and invalidation dependencies.",
+    "definition_of_done": [
+      "Users inspect/correct the sources a run uses and their model/output destinations.",
+      "Private source summaries, stale ACLs, and hidden source titles cannot leak into broader audiences.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T030.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T031",
+    "title": "Local and server permission-aware search",
+    "phase": "F2",
+    "priority": "P0",
+    "owner_discipline": "backend",
+    "status": "todo",
+    "depends_on": [
+      "T011",
+      "T030"
+    ],
+    "specs": [
+      "docs/12_context_search_and_memory.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-061",
+      "REQ-062"
+    ],
+    "acceptance_ids": [
+      "AT-061",
+      "AT-062"
+    ],
+    "deliverable": "Implement fast exact/keyword/scoped search with protected snippets and clear partial-result states.",
+    "definition_of_done": [
+      "Authorized cached results arrive promptly and server results extend them without disrupting selection.",
+      "Revoked/deleted content, autocomplete, result counts, and cross-account caches do not reveal private sources.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T031.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T032",
+    "title": "Decision-focused inbox and notifications",
+    "phase": "F2",
+    "priority": "P0",
+    "owner_discipline": "native",
+    "status": "todo",
+    "depends_on": [
+      "T011",
+      "T016"
+    ],
+    "specs": [
+      "docs/03_experience_specification.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-063",
+      "REQ-064"
+    ],
+    "acceptance_ids": [
+      "AT-063",
+      "AT-064"
+    ],
+    "deliverable": "Implement deduplicated mentions, review requests, blockers, and grouped run milestones.",
+    "definition_of_done": [
+      "Users can identify what needs action and still access chronological/unfiltered activity.",
+      "Repeated agent updates, reconnects, and muted channels do not create notification floods.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T032.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T033",
+    "title": "Adapter and model-destination conformance",
+    "phase": "F2",
+    "priority": "P0",
+    "owner_discipline": "integrations",
+    "status": "todo",
+    "depends_on": [
+      "T024",
+      "T030"
+    ],
+    "specs": [
+      "docs/10_agent_execution_and_handoff.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-065",
+      "REQ-066"
+    ],
+    "acceptance_ids": [
+      "AT-065",
+      "AT-066"
+    ],
+    "deliverable": "Create versioned capability tests and clear provider/model destination selection.",
+    "definition_of_done": [
+      "Supported adapters declare and pass their actual read/write/cancel/checkpoint/reporting capabilities.",
+      "An unsupported provider capability or unapproved model destination cannot silently fall back to broader behavior.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T033.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T034",
+    "title": "Isolated generated previews",
+    "phase": "F2",
+    "priority": "P0",
+    "owner_discipline": "security",
+    "status": "todo",
+    "depends_on": [
+      "T017",
+      "T021"
+    ],
+    "specs": [
+      "docs/14_review_artifacts_and_previews.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-067",
+      "REQ-068"
+    ],
+    "acceptance_ids": [
+      "AT-067",
+      "AT-068"
+    ],
+    "deliverable": "Implement protected preview origins, access controls, lifecycle, and isolated rendering.",
+    "definition_of_done": [
+      "Permitted reviewers inspect a generated preview without exposing privileged application interfaces.",
+      "Preview scripts cannot access broker routes, app cookies, arbitrary local ports, or forbidden network destinations.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T034.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T035",
+    "title": "Cross-component observability and safe diagnostics",
+    "phase": "F2",
+    "priority": "P0",
+    "owner_discipline": "infrastructure",
+    "status": "todo",
+    "depends_on": [
+      "T014",
+      "T026"
+    ],
+    "specs": [
+      "docs/17_infrastructure_operations_and_delivery.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-069",
+      "REQ-070"
+    ],
+    "acceptance_ids": [
+      "AT-069",
+      "AT-070"
+    ],
+    "deliverable": "Implement correlated metadata, metrics, alerts, and opt-in redacted diagnostics.",
+    "definition_of_done": [
+      "Operators trace a run/action and identify queues, costs, failures, and recovery state.",
+      "Default logs/telemetry never include raw prompts, source text, credentials, or sensitive URLs.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T035.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T036",
+    "title": "Native and system performance regression suite",
+    "phase": "F2",
+    "priority": "P0",
+    "owner_discipline": "quality",
+    "status": "todo",
+    "depends_on": [
+      "T020",
+      "T024",
+      "T031",
+      "T032"
+    ],
+    "specs": [
+      "docs/16_performance_and_capacity.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-071",
+      "REQ-072"
+    ],
+    "acceptance_ids": [
+      "AT-071",
+      "AT-072"
+    ],
+    "deliverable": "Build named-hardware release-mode benchmarks and streaming/load fixtures.",
+    "definition_of_done": [
+      "Launch, cached switch/search, input, and concurrent streams are measured against declared budgets.",
+      "Idle redraw loops, unbounded caches, log floods, and background work cannot hide behind average latency.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T036.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T037",
+    "title": "Native media risk spike",
+    "phase": "F0",
+    "priority": "P0",
+    "owner_discipline": "native",
+    "status": "todo",
+    "depends_on": [
+      "T003",
+      "T004"
+    ],
+    "specs": [
+      "docs/15_browser_mobile_and_media.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-073",
+      "REQ-074"
+    ],
+    "acceptance_ids": [
+      "AT-073",
+      "AT-074"
+    ],
+    "deliverable": "Verify selected media SDK, device permissions, and platform integration feasibility.",
+    "definition_of_done": [
+      "A reproducible test demonstrates basic native media capture/render/lifecycle on the first platform.",
+      "SDK availability alone is not accepted as proof of screen-sharing or accessibility support.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T037.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T038",
+    "title": "Calls and audio collaboration",
+    "phase": "F3",
+    "priority": "P1",
+    "owner_discipline": "native",
+    "status": "todo",
+    "depends_on": [
+      "T007",
+      "T037"
+    ],
+    "specs": [
+      "docs/15_browser_mobile_and_media.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-075",
+      "REQ-076"
+    ],
+    "acceptance_ids": [
+      "AT-075",
+      "AT-076"
+    ],
+    "deliverable": "Implement join/leave, mute, device selection, reconnect, and accessible call controls.",
+    "definition_of_done": [
+      "Native/browser participants maintain usable audio with clear device/capture state.",
+      "Device changes, sleep, network loss, and permission revocation do not leave hidden capture active.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T038.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T039",
+    "title": "Screen sharing and media privacy",
+    "phase": "F3",
+    "priority": "P1",
+    "owner_discipline": "native",
+    "status": "todo",
+    "depends_on": [
+      "T038"
+    ],
+    "specs": [
+      "docs/15_browser_mobile_and_media.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-077",
+      "REQ-078"
+    ],
+    "acceptance_ids": [
+      "AT-077",
+      "AT-078"
+    ],
+    "deliverable": "Implement source selection, visible sharing/stop, capture permissions, and degraded states.",
+    "definition_of_done": [
+      "Users know what is shared and can reliably stop it across the supported platform matrix.",
+      "Recording/transcription remains off without implemented consent, access, and retention controls.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T039.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T040",
+    "title": "Signed desktop updates and rollback",
+    "phase": "F2",
+    "priority": "P1",
+    "owner_discipline": "infrastructure",
+    "status": "todo",
+    "depends_on": [
+      "T003",
+      "T007"
+    ],
+    "specs": [
+      "docs/17_infrastructure_operations_and_delivery.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-079",
+      "REQ-080"
+    ],
+    "acceptance_ids": [
+      "AT-079",
+      "AT-080"
+    ],
+    "deliverable": "Build signed packages, update verification, staged rollout, and data-compatible recovery.",
+    "definition_of_done": [
+      "A client upgrades reproducibly while preserving drafts and compatible cache data.",
+      "Unsigned/corrupt updates and interrupted migrations do not execute or destroy user work.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T040.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T041",
+    "title": "Windows compatibility and native acceptance",
+    "phase": "F3",
+    "priority": "P1",
+    "owner_discipline": "native",
+    "status": "todo",
+    "depends_on": [
+      "T004",
+      "T040"
+    ],
+    "specs": [
+      "docs/06_gpui_desktop.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-081",
+      "REQ-082"
+    ],
+    "acceptance_ids": [
+      "AT-081",
+      "AT-082"
+    ],
+    "deliverable": "Complete Windows build/input/accessibility/notification/update acceptance for the supported baseline.",
+    "definition_of_done": [
+      "Published Windows support matches actual recorded build and behavior evidence.",
+      "Framework source support is not substituted for tested end-user workflows.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T041.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T042",
+    "title": "Linux compatibility and native acceptance",
+    "phase": "F3",
+    "priority": "P1",
+    "owner_discipline": "native",
+    "status": "todo",
+    "depends_on": [
+      "T004",
+      "T040"
+    ],
+    "specs": [
+      "docs/06_gpui_desktop.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-083",
+      "REQ-084"
+    ],
+    "acceptance_ids": [
+      "AT-083",
+      "AT-084"
+    ],
+    "deliverable": "Complete selected Linux display/input/accessibility/package acceptance.",
+    "definition_of_done": [
+      "Published Linux support names tested distributions/backends and known limitations.",
+      "Untested compositor/assistive-technology behavior is not presented as supported parity.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T042.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T043",
+    "title": "Staged migration and structured export",
+    "phase": "F3",
+    "priority": "P1",
+    "owner_discipline": "integrations",
+    "status": "todo",
+    "depends_on": [
+      "T011",
+      "T023",
+      "T031"
+    ],
+    "specs": [
+      "docs/13_integrations_and_migration.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-085",
+      "REQ-086"
+    ],
+    "acceptance_ids": [
+      "AT-085",
+      "AT-086"
+    ],
+    "deliverable": "Implement import preflight, permission/identity mapping, checkpoints, and reconciliation report.",
+    "definition_of_done": [
+      "Authorized content imports/export reproducibly with provenance and explicit omissions.",
+      "Private channels, inaccessible files, repeated pages, and malformed identities cannot silently leak or duplicate.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T043.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T044",
+    "title": "Narrow Slack coexistence bridge",
+    "phase": "F3",
+    "priority": "P1",
+    "owner_discipline": "integrations",
+    "status": "todo",
+    "depends_on": [
+      "T023",
+      "T025",
+      "T043"
+    ],
+    "specs": [
+      "docs/13_integrations_and_migration.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-087",
+      "REQ-088"
+    ],
+    "acceptance_ids": [
+      "AT-087",
+      "AT-088"
+    ],
+    "deliverable": "Bridge selected task requests/outcomes with origin tracking and loop prevention.",
+    "definition_of_done": [
+      "Teams can evaluate one project without moving all daily communication.",
+      "Mirrored edits/deletes, retries, and source revocation do not create loops or broaden access.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T044.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T045",
+    "title": "Saved items, reminders, and scheduled sends",
+    "phase": "F3",
+    "priority": "P1",
+    "owner_discipline": "backend",
+    "status": "todo",
+    "depends_on": [
+      "T011",
+      "T025",
+      "T032"
+    ],
+    "specs": [
+      "docs/04_communication_and_parity.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-089",
+      "REQ-090"
+    ],
+    "acceptance_ids": [
+      "AT-089",
+      "AT-090"
+    ],
+    "deliverable": "Implement durable attention utilities and scheduling with named-timezone semantics.",
+    "definition_of_done": [
+      "Users can save work and schedule permitted messages/reminders across devices.",
+      "Revoked access, DST changes, duplicate scheduling, and stale permissions cannot send unauthorized messages.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T045.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T046",
+    "title": "Profiles, status, and notification preferences",
+    "phase": "F3",
+    "priority": "P1",
+    "owner_discipline": "native",
+    "status": "todo",
+    "depends_on": [
+      "T011",
+      "T032"
+    ],
+    "specs": [
+      "docs/04_communication_and_parity.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-091",
+      "REQ-092"
+    ],
+    "acceptance_ids": [
+      "AT-091",
+      "AT-092"
+    ],
+    "deliverable": "Implement status/profile, focus schedules, per-channel preferences, and multi-workspace routing.",
+    "definition_of_done": [
+      "Ordinary team communication preferences work predictably across clients.",
+      "Muted/private content does not leak in push previews or cross-account notification routing.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T046.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T047",
+    "title": "Mobile messaging and safe review participation",
+    "phase": "F3",
+    "priority": "P1",
+    "owner_discipline": "mobile",
+    "status": "todo",
+    "depends_on": [
+      "T019",
+      "T025",
+      "T032"
+    ],
+    "specs": [
+      "docs/15_browser_mobile_and_media.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-093",
+      "REQ-094"
+    ],
+    "acceptance_ids": [
+      "AT-093",
+      "AT-094"
+    ],
+    "deliverable": "Deliver protected notifications, messaging/status, and understandable mobile decisions.",
+    "definition_of_done": [
+      "A teammate can participate in critical communication/review without the desktop app.",
+      "A small screen cannot obscure important approval details or allow stale/revoked decisions.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T047.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T048",
+    "title": "Daily communication edge-case completeness",
+    "phase": "F3",
+    "priority": "P1",
+    "owner_discipline": "native",
+    "status": "todo",
+    "depends_on": [
+      "T009",
+      "T010",
+      "T017"
+    ],
+    "specs": [
+      "docs/04_communication_and_parity.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-095",
+      "REQ-096"
+    ],
+    "acceptance_ids": [
+      "AT-095",
+      "AT-096"
+    ],
+    "deliverable": "Close threads, reactions, files, read state, navigation, formatting, and large-history gaps.",
+    "definition_of_done": [
+      "Target teams complete ordinary daily chat workflows with consistent semantics.",
+      "Deleted thread roots, group membership changes, long content, and concurrent edits preserve privacy and user intent.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T048.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T049",
+    "title": "Collaborative documents",
+    "phase": "F3",
+    "priority": "P1",
+    "owner_discipline": "backend",
+    "status": "todo",
+    "depends_on": [
+      "T011",
+      "T017",
+      "T018"
+    ],
+    "specs": [
+      "docs/04_communication_and_parity.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-097",
+      "REQ-098"
+    ],
+    "acceptance_ids": [
+      "AT-097",
+      "AT-098"
+    ],
+    "deliverable": "Add versioned collaborative documents with explicit permissions and CRDT scope.",
+    "definition_of_done": [
+      "Concurrent document editing converges without mixing document content with approval authority.",
+      "Offline merges cannot grant permissions, mutate accepted evidence versions, or bypass deletion policy.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T049.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T050",
+    "title": "Lightweight lists and work views",
+    "phase": "F3",
+    "priority": "P1",
+    "owner_discipline": "product",
+    "status": "todo",
+    "depends_on": [
+      "T011",
+      "T012"
+    ],
+    "specs": [
+      "docs/04_communication_and_parity.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-099",
+      "REQ-100"
+    ],
+    "acceptance_ids": [
+      "AT-099",
+      "AT-100"
+    ],
+    "deliverable": "Add useful list/board views over existing tasks rather than a competing task database.",
+    "definition_of_done": [
+      "Teams organize work with shared task identity and current permissions.",
+      "View-specific edits cannot diverge from task state or expose hidden tasks.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T050.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T051",
+    "title": "Versioned reusable workflow recipes",
+    "phase": "F4",
+    "priority": "P2",
+    "owner_discipline": "backend",
+    "status": "todo",
+    "depends_on": [
+      "T024",
+      "T025",
+      "T030",
+      "T035"
+    ],
+    "specs": [
+      "docs/28_developer_platform_and_workflows.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-101",
+      "REQ-102"
+    ],
+    "acceptance_ids": [
+      "AT-101",
+      "AT-102"
+    ],
+    "deliverable": "Turn reviewed successful work into owned, versioned, permission-declared recipes.",
+    "definition_of_done": [
+      "An installed recipe revalidates input, policy, budget, and approvals on every run.",
+      "Recipe updates and schedules cannot auto-grant new tools or continue under revoked ownership.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T051.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T052",
+    "title": "Guests and externally shared spaces",
+    "phase": "F4",
+    "priority": "P2",
+    "owner_discipline": "security",
+    "status": "todo",
+    "depends_on": [
+      "T007",
+      "T025",
+      "T043"
+    ],
+    "specs": [
+      "docs/27_enterprise_and_admin.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-103",
+      "REQ-104"
+    ],
+    "acceptance_ids": [
+      "AT-103",
+      "AT-104"
+    ],
+    "deliverable": "Implement explicit external membership, history-sharing, artifact, and revocation rules.",
+    "definition_of_done": [
+      "Permitted outside reviewers collaborate without obtaining general workspace access.",
+      "Joining a group or forwarding a link cannot reveal previously private history by accident.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T052.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T053",
+    "title": "Enterprise SSO integration",
+    "phase": "F4",
+    "priority": "P2",
+    "owner_discipline": "backend",
+    "status": "todo",
+    "depends_on": [
+      "T007"
+    ],
+    "specs": [
+      "docs/27_enterprise_and_admin.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-105",
+      "REQ-106"
+    ],
+    "acceptance_ids": [
+      "AT-105",
+      "AT-106"
+    ],
+    "deliverable": "Add enterprise identity configuration and audited administrative controls.",
+    "definition_of_done": [
+      "Organization identity policy applies across native/browser/mobile sessions.",
+      "Misconfigured issuer/audience, account linking, and admin role changes do not widen access.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T053.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T054",
+    "title": "Provisioning and deprovisioning",
+    "phase": "F4",
+    "priority": "P2",
+    "owner_discipline": "backend",
+    "status": "todo",
+    "depends_on": [
+      "T025",
+      "T030",
+      "T053"
+    ],
+    "specs": [
+      "docs/27_enterprise_and_admin.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-107",
+      "REQ-108"
+    ],
+    "acceptance_ids": [
+      "AT-107",
+      "AT-108"
+    ],
+    "deliverable": "Implement idempotent provisioning, role/group changes, offboarding, and owned-agent handling.",
+    "definition_of_done": [
+      "Removing a user stops future authority and identifies agents/workflows requiring reassignment.",
+      "Out-of-order provisioning and stale sessions cannot resurrect revoked access.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T054.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T055",
+    "title": "Retention, holds, and deletion propagation",
+    "phase": "F4",
+    "priority": "P2",
+    "owner_discipline": "security",
+    "status": "todo",
+    "depends_on": [
+      "T007",
+      "T017",
+      "T031",
+      "T043"
+    ],
+    "specs": [
+      "docs/27_enterprise_and_admin.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-109",
+      "REQ-110"
+    ],
+    "acceptance_ids": [
+      "AT-109",
+      "AT-110"
+    ],
+    "deliverable": "Implement owner-approved content lifecycle and qualified-review boundaries for holds/discovery.",
+    "definition_of_done": [
+      "Deletion affects permitted stores, indexes, derivatives, and export rules with documented limitations.",
+      "Immutable logs, offline devices, and backups are not falsely represented as instantly purged.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T055.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T056",
+    "title": "Audit exports and privileged support access",
+    "phase": "F4",
+    "priority": "P2",
+    "owner_discipline": "security",
+    "status": "todo",
+    "depends_on": [
+      "T025",
+      "T035",
+      "T055"
+    ],
+    "specs": [
+      "docs/27_enterprise_and_admin.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-111",
+      "REQ-112"
+    ],
+    "acceptance_ids": [
+      "AT-111",
+      "AT-112"
+    ],
+    "deliverable": "Implement content-minimal audit history, authorized exports, and scoped support workflows.",
+    "definition_of_done": [
+      "Admins can investigate authorized events without default access to every private message.",
+      "Support tools or exports cannot bypass resource policy or leak secrets/source text.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T056.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T057",
+    "title": "Company-managed runners",
+    "phase": "F4",
+    "priority": "P2",
+    "owner_discipline": "infrastructure",
+    "status": "todo",
+    "depends_on": [
+      "T028",
+      "T029",
+      "T053"
+    ],
+    "specs": [
+      "docs/27_enterprise_and_admin.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-113",
+      "REQ-114"
+    ],
+    "acceptance_ids": [
+      "AT-113",
+      "AT-114"
+    ],
+    "deliverable": "Implement registration, outbound control, credential rotation, revocation, and image policy.",
+    "definition_of_done": [
+      "Customer infrastructure executes bounded shared work with clear data/model destinations.",
+      "A local runner is not marketed as full self-hosting or allowed to create its own shared authority.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T057.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T058",
+    "title": "Enterprise execution-policy console",
+    "phase": "F4",
+    "priority": "P2",
+    "owner_discipline": "product",
+    "status": "todo",
+    "depends_on": [
+      "T013",
+      "T026",
+      "T054"
+    ],
+    "specs": [
+      "docs/27_enterprise_and_admin.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-115",
+      "REQ-116"
+    ],
+    "acceptance_ids": [
+      "AT-115",
+      "AT-116"
+    ],
+    "deliverable": "Expose scoped model/tool/destination/budget/approval policies with revisions and audit.",
+    "definition_of_done": [
+      "Admins understand and change enforced execution policy with safe preview and rollout.",
+      "Policy edits cannot silently preserve stale approvals or leave forbidden work running unchecked.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T058.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T059",
+    "title": "Regional data placement and restore strategy",
+    "phase": "F4",
+    "priority": "P2",
+    "owner_discipline": "infrastructure",
+    "status": "todo",
+    "depends_on": [
+      "T028",
+      "T055",
+      "T057"
+    ],
+    "specs": [
+      "docs/27_enterprise_and_admin.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-117",
+      "REQ-118"
+    ],
+    "acceptance_ids": [
+      "AT-117",
+      "AT-118"
+    ],
+    "deliverable": "Design and validate selected region/residency options across all data-bearing systems.",
+    "definition_of_done": [
+      "Claims match databases, artifacts, workflow histories, backups, telemetry, and model routing.",
+      "Single-region labels cannot hide cross-region or external-provider transfers.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T059.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T060",
+    "title": "Public SDK and webhook platform",
+    "phase": "F4",
+    "priority": "P2",
+    "owner_discipline": "integrations",
+    "status": "todo",
+    "depends_on": [
+      "T002",
+      "T023",
+      "T025"
+    ],
+    "specs": [
+      "docs/28_developer_platform_and_workflows.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-119",
+      "REQ-120"
+    ],
+    "acceptance_ids": [
+      "AT-119",
+      "AT-120"
+    ],
+    "deliverable": "Publish versioned scoped APIs, SDK fixtures, webhook delivery/replay, and developer sandbox.",
+    "definition_of_done": [
+      "Third parties build safe task/artifact/approval integrations using stable contracts.",
+      "API clients have no privileged back door around the same human/agent permissions.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T060.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T061",
+    "title": "Reviewed integration marketplace",
+    "phase": "F5",
+    "priority": "P2",
+    "owner_discipline": "security",
+    "status": "todo",
+    "depends_on": [
+      "T051",
+      "T056",
+      "T060"
+    ],
+    "specs": [
+      "docs/28_developer_platform_and_workflows.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-121",
+      "REQ-122"
+    ],
+    "acceptance_ids": [
+      "AT-121",
+      "AT-122"
+    ],
+    "deliverable": "Implement publisher/version trust, manifests, review, quarantine, and revocation.",
+    "definition_of_done": [
+      "Installed extensions disclose and stay within their permitted execution/data scope.",
+      "Popularity or connector text cannot substitute for executable-code review and isolation.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T061.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T062",
+    "title": "Bounded multi-agent delegation",
+    "phase": "F5",
+    "priority": "P2",
+    "owner_discipline": "backend",
+    "status": "todo",
+    "depends_on": [
+      "T029",
+      "T033",
+      "T051"
+    ],
+    "specs": [
+      "docs/28_developer_platform_and_workflows.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-123",
+      "REQ-124"
+    ],
+    "acceptance_ids": [
+      "AT-123",
+      "AT-124"
+    ],
+    "deliverable": "Implement tested implementer/reviewer or alternative-attempt patterns with child budgets.",
+    "definition_of_done": [
+      "Parallel work improves accepted outcomes after accounting for review and cost.",
+      "Recursive delegation and shared working-copy mutations cannot escape authority or budget limits.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T062.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T063",
+    "title": "Privacy-aware activation and outcome analytics",
+    "phase": "F2",
+    "priority": "P0",
+    "owner_discipline": "product",
+    "status": "todo",
+    "depends_on": [
+      "T020",
+      "T035"
+    ],
+    "specs": [
+      "docs/20_adoption_pricing_and_metrics.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-125",
+      "REQ-126"
+    ],
+    "acceptance_ids": [
+      "AT-125",
+      "AT-126"
+    ],
+    "deliverable": "Implement content-free product events and definitions for accepted shared outcomes.",
+    "definition_of_done": [
+      "Teams can measure activation, retention, review effort, rework, and cost consistently.",
+      "Task splitting, failed-run exclusion, or content-bearing telemetry cannot inflate or leak metrics.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T063.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T064",
+    "title": "Transparent usage and pricing experiment",
+    "phase": "F3",
+    "priority": "P1",
+    "owner_discipline": "product",
+    "status": "todo",
+    "depends_on": [
+      "T026",
+      "T063"
+    ],
+    "specs": [
+      "docs/20_adoption_pricing_and_metrics.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-127",
+      "REQ-128"
+    ],
+    "acceptance_ids": [
+      "AT-127",
+      "AT-128"
+    ],
+    "deliverable": "Expose reconciled usage and run controlled pricing tests without unlimited-cost promises.",
+    "definition_of_done": [
+      "Customers understand human collaboration charges versus execution usage and estimates.",
+      "Provider overages, duplicate charges, and failed attempts are not hidden from accounting.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T064.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T065",
+    "title": "Design-partner onboarding and paid pilots",
+    "phase": "F2",
+    "priority": "P0",
+    "owner_discipline": "product",
+    "status": "todo",
+    "depends_on": [
+      "T019",
+      "T020",
+      "T063"
+    ],
+    "specs": [
+      "docs/20_adoption_pricing_and_metrics.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-129",
+      "REQ-130"
+    ],
+    "acceptance_ids": [
+      "AT-129",
+      "AT-130"
+    ],
+    "deliverable": "Run one-project onboarding, reviewer invitations, baseline workflow comparisons, and feedback.",
+    "definition_of_done": [
+      "Teams repeatedly return without founder narration and identify measurable useful outcomes.",
+      "Demo praise alone is not treated as retention or willingness to switch.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T065.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T066",
+    "title": "Backup, restore, and disaster rehearsal",
+    "phase": "F2",
+    "priority": "P0",
+    "owner_discipline": "infrastructure",
+    "status": "todo",
+    "depends_on": [
+      "T010",
+      "T014",
+      "T017"
+    ],
+    "specs": [
+      "docs/17_infrastructure_operations_and_delivery.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-131",
+      "REQ-132"
+    ],
+    "acceptance_ids": [
+      "AT-131",
+      "AT-132"
+    ],
+    "deliverable": "Implement protected backups and rehearsed recovery of data/artifacts/workflow authority.",
+    "definition_of_done": [
+      "Recovery objectives are supported by actual restore evidence and owner approval.",
+      "Restored old workers and leases cannot resume as current owners without reconciliation.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T066.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T067",
+    "title": "Independent execution security review",
+    "phase": "F2",
+    "priority": "P0",
+    "owner_discipline": "security",
+    "status": "todo",
+    "depends_on": [
+      "T024",
+      "T025",
+      "T028",
+      "T030",
+      "T034",
+      "T040"
+    ],
+    "specs": [
+      "docs/18_testing_and_evaluation.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-133",
+      "REQ-134"
+    ],
+    "acceptance_ids": [
+      "AT-133",
+      "AT-134"
+    ],
+    "deliverable": "Perform cross-surface adversarial review with actual implementation and negative tests.",
+    "definition_of_done": [
+      "Critical authorization, isolation, update, and publication controls have independent evidence.",
+      "Unexecuted tests, reference functions, or simulated paths cannot be marked as production security coverage.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T067.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T068",
+    "title": "Replacement release candidate",
+    "phase": "F3",
+    "priority": "P1",
+    "owner_discipline": "lead",
+    "status": "todo",
+    "depends_on": [
+      "T036",
+      "T039",
+      "T040",
+      "T043",
+      "T045",
+      "T046",
+      "T047",
+      "T048",
+      "T065",
+      "T066",
+      "T067",
+      "T069",
+      "T070"
+    ],
+    "specs": [
+      "docs/19_roadmap_and_team.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-135",
+      "REQ-136"
+    ],
+    "acceptance_ids": [
+      "AT-135",
+      "AT-136"
+    ],
+    "deliverable": "Assemble a supported release candidate with evidence, rollback, support, and known limits.",
+    "definition_of_done": [
+      "Target teams can conduct daily work without critical prior-workspace blockers.",
+      "Marketing does not claim unsupported platforms, full parity, or certifications without evidence.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T068.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T069",
+    "title": "Distribution license and dependency audit",
+    "phase": "F2",
+    "priority": "P1",
+    "owner_discipline": "security",
+    "status": "todo",
+    "depends_on": [
+      "T001",
+      "T003",
+      "T023",
+      "T037"
+    ],
+    "specs": [
+      "docs/24_dependency_and_license_policy.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-137",
+      "REQ-138"
+    ],
+    "acceptance_ids": [
+      "AT-137",
+      "AT-138"
+    ],
+    "deliverable": "Complete SBOM, license notices, exact pins, supply-chain review, and signing prerequisites.",
+    "definition_of_done": [
+      "Every redistributed component and executable dependency has recorded provenance and permitted use.",
+      "One framework license is not generalized to unrelated repository code or bundled assets.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T069.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T070",
+    "title": "Communication replacement gap audit",
+    "phase": "F3",
+    "priority": "P1",
+    "owner_discipline": "product",
+    "status": "todo",
+    "depends_on": [
+      "T039",
+      "T043",
+      "T045",
+      "T046",
+      "T047",
+      "T048"
+    ],
+    "specs": [
+      "docs/04_communication_and_parity.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-139",
+      "REQ-140"
+    ],
+    "acceptance_ids": [
+      "AT-139",
+      "AT-140"
+    ],
+    "deliverable": "Reconcile the parity register against current sources and observed pilot switching blockers.",
+    "definition_of_done": [
+      "Each supported parity claim names tested behavior, plan/platform scope, and evidence.",
+      "A candidate inventory or webhook endpoint is not presented as exhaustive Slack equivalence.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T070.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T071",
+    "title": "Independent end-to-end acceptance",
+    "phase": "F2",
+    "priority": "P0",
+    "owner_discipline": "quality",
+    "status": "todo",
+    "depends_on": [
+      "T020",
+      "T067"
+    ],
+    "specs": [
+      "docs/18_testing_and_evaluation.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-141",
+      "REQ-142"
+    ],
+    "acceptance_ids": [
+      "AT-141",
+      "AT-142"
+    ],
+    "deliverable": "Have reviewers outside the implementation workstream exercise real workflows and faults.",
+    "definition_of_done": [
+      "A non-initiator confidently reviews current artifacts and understands evidence/limitations.",
+      "A narrated founder demo or manually edited backend is not accepted as a working product flow.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T071.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  },
+  {
+    "id": "T072",
+    "title": "Leadership benchmark and expansion decision",
+    "phase": "F5",
+    "priority": "P2",
+    "owner_discipline": "product",
+    "status": "todo",
+    "depends_on": [
+      "T059",
+      "T060",
+      "T062",
+      "T068",
+      "T071"
+    ],
+    "specs": [
+      "docs/20_adoption_pricing_and_metrics.md",
+      "AGENTS.md"
+    ],
+    "requirement_ids": [
+      "REQ-143",
+      "REQ-144"
+    ],
+    "acceptance_ids": [
+      "AT-143",
+      "AT-144"
+    ],
+    "deliverable": "Compare retained use, accepted quality, human effort, cost, and operational trust against alternatives.",
+    "definition_of_done": [
+      "Expansion decisions are supported by measured user value and clear economics.",
+      "Feature count, native rendering, or agent activity alone is not treated as industry leadership.",
+      "Record actual implementation evidence and obtain appropriate review; a scaffold/reference alone is insufficient."
+    ],
+    "evidence_path": "implementation/evidence/T072.md",
+    "scope_rule": "Implement this bounded ticket; shared contract or authority changes require coordinator review."
+  }
+]

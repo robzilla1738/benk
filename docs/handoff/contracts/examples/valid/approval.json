@@ -1,0 +1,14 @@
+{
+  "id": "appr_openpr01",
+  "workspace_id": "ws_alpha",
+  "action_id": "act_openpr01",
+  "action_digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "artifact_version_id": "av_checkout01",
+  "contract_revision": 1,
+  "policy_revision": 1,
+  "decision": "approved",
+  "decider_id": "usr_reviewer",
+  "decider_kind": "human",
+  "expires_at": "2026-10-08T15:12:00Z",
+  "consumed_at": null
+}

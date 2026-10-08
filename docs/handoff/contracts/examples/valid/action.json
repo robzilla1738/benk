@@ -1,0 +1,19 @@
+{
+  "id": "act_openpr01",
+  "workspace_id": "ws_alpha",
+  "task_id": "task_checkout",
+  "run_id": "run_checkout",
+  "contract_revision": 1,
+  "generation": 1,
+  "kind": "pull_request.create",
+  "resource_ids": [
+    "repo_checkout"
+  ],
+  "destination_id": "repo_checkout",
+  "artifact_version_id": "av_checkout01",
+  "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "policy_revision": 1,
+  "status": "awaiting_approval",
+  "requires_approval": true,
+  "expires_at": "2026-10-08T15:15:00Z"
+}

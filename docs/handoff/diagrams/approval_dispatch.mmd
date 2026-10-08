@@ -1,0 +1,21 @@
+sequenceDiagram
+  participant H as Human
+  participant C as Coordinator
+  participant D as Transactional store
+  participant B as Broker
+  participant P as External provider
+  C->>D: Persist exact action intent + digest + versions
+  H->>C: Approve exact proposal
+  C->>D: Record authorized human decision
+  C->>D: Revalidate and atomically claim intent/reservation
+  C->>B: Dispatch generation-bound approved request
+  B->>B: Check current grant, lease, resource, isolation
+  B->>P: Submit with stable provider idempotency key where supported
+  alt Receipt confirmed
+    P-->>B: Receipt
+    B-->>C: Confirmed result
+    C->>D: Commit receipt + usage + outbox
+  else Outcome uncertain
+    B-->>C: Unknown outcome
+    C->>D: Mark reconciling, block blind retry
+  end

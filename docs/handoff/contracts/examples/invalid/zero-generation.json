@@ -1,0 +1,20 @@
+{
+  "id": "run_checkout",
+  "workspace_id": "ws_alpha",
+  "task_id": "task_checkout",
+  "contract_revision": 1,
+  "agent_id": "agt_simulator",
+  "state": "running",
+  "revision": 3,
+  "authority_kind": "cloud_shared",
+  "coordinator_id": "coord_cloud01",
+  "generation": 0,
+  "lease_expires_at": "2026-10-08T15:10:00Z",
+  "cancellation_requested": false,
+  "environment": {
+    "id": "env_local001",
+    "execution_location": "local",
+    "model_destination": "simulator:no-network",
+    "isolation_profile": "simulated-no-execution"
+  }
+}

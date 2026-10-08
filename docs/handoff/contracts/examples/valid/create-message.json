@@ -1,0 +1,18 @@
+{
+  "client_id": "msg_report01",
+  "thread_root_id": null,
+  "body": {
+    "format": "workspace_richtext_v1",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Please clarify the checkout error."
+          }
+        ]
+      }
+    ]
+  }
+}

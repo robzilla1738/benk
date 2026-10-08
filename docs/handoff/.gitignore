@@ -1,0 +1,12 @@
+# For subsequent implementation. The prebuilt reference output is intentionally included.
+node_modules/
+**/target/
+**/__pycache__/
+.env
+.env.local
+*.pem
+*.key
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+.DS_Store

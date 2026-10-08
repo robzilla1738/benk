@@ -1,0 +1,11 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+import {InMemoryIdempotencyLedger} from "../dist/idempotency.js";
+const scope={workspaceId:"ws_alpha",actorId:"usr_owner",operation:"message.send"};
+test("claim then replay persisted result",()=>{const l=new InMemoryIdempotencyLedger();assert.equal(l.claim(scope,"key","digest","worker1").kind,"acquired");assert.equal(l.complete(scope,"key","worker1","result"),true);assert.deepEqual(l.claim(scope,"key","digest","worker2"),{kind:"replay",result:"result"});});
+test("concurrent duplicate remains pending",()=>{const l=new InMemoryIdempotencyLedger();l.claim(scope,"key","digest","a");assert.equal(l.claim(scope,"key","digest","b").kind,"pending");});
+test("different payload under same key conflicts",()=>{const l=new InMemoryIdempotencyLedger();l.claim(scope,"key","digest","a");assert.equal(l.claim(scope,"key","other","a").kind,"conflict");});
+test("unknown outcome cannot reacquire and blindly retry",()=>{const l=new InMemoryIdempotencyLedger();l.claim(scope,"key","digest","a");l.markUnknown(scope,"key","a");assert.equal(l.claim(scope,"key","digest","b").kind,"unknown");});
+test("unrelated owner cannot complete claim",()=>{const l=new InMemoryIdempotencyLedger();l.claim(scope,"key","digest","a");assert.equal(l.complete(scope,"key","b","result"),false);});
+test("scope separates tenants and actors",()=>{const l=new InMemoryIdempotencyLedger();l.claim(scope,"key","digest","a");assert.equal(l.claim({...scope,workspaceId:"ws_beta"},"key","digest","b").kind,"acquired");assert.equal(l.claim({...scope,actorId:"usr_other"},"key","digest","b").kind,"acquired");});
+test("completion is not overwriteable",()=>{const l=new InMemoryIdempotencyLedger();l.claim(scope,"key","digest","a");l.complete(scope,"key","a","first");assert.equal(l.complete(scope,"key","a","second"),false);});

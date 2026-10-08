@@ -1,0 +1,21 @@
+test_account_isolation (__main__.CacheTests.test_account_isolation) ... ok
+test_decimal_sequence_sort_without_float (__main__.CacheTests.test_decimal_sequence_sort_without_float) ... ok
+test_deleted_row_cannot_keep_source_text (__main__.CacheTests.test_deleted_row_cannot_keep_source_text) ... ok
+test_draft_survives_ordinary_query (__main__.CacheTests.test_draft_survives_ordinary_query) ... ok
+test_duplicate_message_rejected (__main__.CacheTests.test_duplicate_message_rejected) ... ok
+test_index_and_row_rollback_together (__main__.CacheTests.test_index_and_row_rollback_together) ... ok
+test_initial_index (__main__.CacheTests.test_initial_index) ... ok
+test_invalid_json_rejected (__main__.CacheTests.test_invalid_json_rejected) ... ok
+test_pending_operation_id_is_unique (__main__.CacheTests.test_pending_operation_id_is_unique) ... ok
+test_physical_delete_removes_fts (__main__.CacheTests.test_physical_delete_removes_fts) ... ok
+test_purge_cascades_into_index (__main__.CacheTests.test_purge_cascades_into_index) ... ok
+test_revoked_channel_hidden_before_purge (__main__.CacheTests.test_revoked_channel_hidden_before_purge) ... ok
+test_tombstone_removes_fts (__main__.CacheTests.test_tombstone_removes_fts) ... ok
+test_unknown_channel_rejected (__main__.CacheTests.test_unknown_channel_rejected) ... ok
+test_update_removes_old_terms (__main__.CacheTests.test_update_removes_old_terms) ... ok
+test_workspace_isolation (__main__.CacheTests.test_workspace_isolation) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.017s
+
+OK

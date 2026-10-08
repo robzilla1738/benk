@@ -1,0 +1,26 @@
+{
+  "id": "msg_report01",
+  "workspace_id": "ws_alpha",
+  "channel_id": "chn_checkout",
+  "author_id": "usr_product",
+  "thread_root_id": null,
+  "body": {
+    "format": "workspace_richtext_v1",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Please clarify the checkout error."
+          }
+        ]
+      }
+    ]
+  },
+  "revision": 1,
+  "sequence": "1",
+  "created_at": "2026-10-08T15:00:00Z",
+  "edited_at": null,
+  "deleted_at": null
+}

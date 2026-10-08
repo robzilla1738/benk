@@ -1,0 +1,14 @@
+flowchart TB
+  Human[Human] --> GPUI[GPUI native UI]
+  GPUI --> Rust[Rust client core]
+  Rust --> SQLite[(Account-scoped SQLite cache)]
+  Rust --> Cloud[Effect collaboration API]
+  Rust --> Engine[Effect local agent engine]
+  Engine --> Broker[Rust capability broker]
+  Broker --> Sandbox[Isolated tools and processes]
+  Cloud --> PG[(PostgreSQL authority + outbox)]
+  Cloud --> Blob[(Versioned artifact storage)]
+  Cloud --> Workflow[Durable run coordinator]
+  Workflow --> Hosted[Hosted or company-managed runner]
+  Browser[Browser reviewer] --> Cloud
+  Mobile[Mobile participant] --> Cloud

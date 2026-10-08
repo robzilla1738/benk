@@ -1,0 +1,27 @@
+{
+  "product": "Benk",
+  "date": "2026-10-08",
+  "stage": "simulation-first scaffold",
+  "production_ready": false,
+  "external_execution_enabled": false,
+  "original_handoff_files": 203,
+  "gpui_rust": "source supplied; not compiled or visually tested here",
+  "effect_services": "source/tests supplied; not dependency-built here",
+  "postgresql": "reference schema supplied; not executed here",
+  "dependency_locks": "generate authentic package-lock.json and Cargo.lock on connected host",
+  "ci": "workflow supplied; no successful CI run claimed",
+  "github_publication": "stopped at user request; use this local folder",
+  "next_ticket": "BENK-001",
+  "local_verification": {
+    "typescript_core_build": "passed with TypeScript 5.8.3 / Node 22.16.0",
+    "reference_core_tests_passed": 232,
+    "new_simulator_tests_passed": 17,
+    "original_sqlite_tests_passed": 16,
+    "original_schema_fixtures_passed": 22,
+    "original_handoff_coherence": "passed",
+    "original_files_byte_exact": 203,
+    "javascript_syntax_checks": "passed",
+    "effect_tests": "not run; dependencies unavailable",
+    "rust_tests_and_gpui_compile": "not run; toolchain unavailable"
+  }
+}

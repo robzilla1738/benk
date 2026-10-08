@@ -1,0 +1,182 @@
+[
+  {
+    "id": "S01",
+    "title": "Effect 4.0 release",
+    "url": "https://effect.website/blog/releases/effect/40",
+    "accessed": "2026-10-08",
+    "supports": "Release post last updated 2026-09-30; supports stable v4 baseline.",
+    "qualification": "Do not reuse vendor benchmark figures as this product’s performance.",
+    "kind": "primary_source"
+  },
+  {
+    "id": "S02",
+    "title": "Effect Context API reference",
+    "url": "https://effect.website/docs/v4/api/effect/Context",
+    "accessed": "2026-10-08",
+    "supports": "Checked page displayed effect 4.0.2 and Context.Service.",
+    "qualification": "Observed documentation version; npm installation not verified here.",
+    "kind": "primary_source"
+  },
+  {
+    "id": "S03",
+    "title": "Effect core API",
+    "url": "https://effect.website/docs/v4/api/effect/Effect",
+    "accessed": "2026-10-08",
+    "supports": "Effect programming model and core API reference.",
+    "qualification": "Verify exact signatures against installed package.",
+    "kind": "primary_source"
+  },
+  {
+    "id": "S04",
+    "title": "Published GPUI 0.2.2 documentation",
+    "url": "https://docs.rs/gpui/0.2.2/gpui/",
+    "accessed": "2026-10-08",
+    "supports": "Published API and pre-1.0 development caveat.",
+    "qualification": "Do not infer all current-main platform behavior from this release page.",
+    "kind": "primary_source"
+  },
+  {
+    "id": "S05",
+    "title": "GPUI upstream bootstrap example",
+    "url": "https://raw.githubusercontent.com/zed-industries/zed/main/crates/gpui/examples/hello_world.rs",
+    "accessed": "2026-10-08",
+    "supports": "Current-main example uses a platform bootstrap different from the published tutorial.",
+    "qualification": "Mutable upstream; do not mix with an incompatible pinned release.",
+    "kind": "primary_source"
+  },
+  {
+    "id": "S06",
+    "title": "GPUI package metadata",
+    "url": "https://github.com/zed-industries/zed/blob/main/crates/gpui/Cargo.toml",
+    "accessed": "2026-10-08",
+    "supports": "Checked GPUI package metadata declares Apache-2.0.",
+    "qualification": "Does not license all other Zed components under the same terms.",
+    "kind": "primary_source"
+  },
+  {
+    "id": "S07",
+    "title": "Temporal TypeScript developer guide",
+    "url": "https://docs.temporal.io/develop/typescript",
+    "accessed": "2026-10-08",
+    "supports": "Workflow/Activity/worker development guidance.",
+    "qualification": "Implementation and replay tests are still required.",
+    "kind": "primary_source"
+  },
+  {
+    "id": "S08",
+    "title": "Temporal Activity execution",
+    "url": "https://docs.temporal.io/activity-execution",
+    "accessed": "2026-10-08",
+    "supports": "Activity execution and retry semantics.",
+    "qualification": "Retries are not an exactly-once guarantee for external side effects.",
+    "kind": "primary_source"
+  },
+  {
+    "id": "S09",
+    "title": "SQLite write-ahead logging",
+    "url": "https://www.sqlite.org/wal.html",
+    "accessed": "2026-10-08",
+    "supports": "WAL concurrency and operational characteristics.",
+    "qualification": "The product’s persistence/performance still needs testing.",
+    "kind": "primary_source"
+  },
+  {
+    "id": "S10",
+    "title": "SQLite FTS5",
+    "url": "https://www.sqlite.org/fts5.html",
+    "accessed": "2026-10-08",
+    "supports": "Full-text indexing/query/maintenance mechanisms.",
+    "qualification": "Permission filtering and deletion consistency are application obligations.",
+    "kind": "primary_source"
+  },
+  {
+    "id": "S11",
+    "title": "PostgreSQL row security",
+    "url": "https://www.postgresql.org/docs/current/ddl-rowsecurity.html",
+    "accessed": "2026-10-08",
+    "supports": "RLS policies and bypass/owner considerations.",
+    "qualification": "Tenant filtering is not full resource authorization.",
+    "kind": "primary_source"
+  },
+  {
+    "id": "S12",
+    "title": "Agent Client Protocol introduction",
+    "url": "https://agentclientprotocol.com/get-started/introduction",
+    "accessed": "2026-10-08",
+    "supports": "Local/remote protocol scope; checked text notes full remote support remains in progress.",
+    "qualification": "Test adapter/version capabilities; avoid universal compatibility claims.",
+    "kind": "primary_source"
+  },
+  {
+    "id": "S13",
+    "title": "MCP security best practices",
+    "url": "https://modelcontextprotocol.io/specification/latest/basic/security_best_practices",
+    "accessed": "2026-10-08",
+    "supports": "Connector/token/SSRF/local-server security considerations.",
+    "qualification": "Protocol adoption alone is not a sandbox or policy engine.",
+    "kind": "primary_source"
+  },
+  {
+    "id": "S14",
+    "title": "Development containers",
+    "url": "https://containers.dev/",
+    "accessed": "2026-10-08",
+    "supports": "Open development-environment configuration specification.",
+    "qualification": "Configuration portability is not transparent process migration.",
+    "kind": "primary_source"
+  },
+  {
+    "id": "S15",
+    "title": "LiveKit Rust SDK repository",
+    "url": "https://github.com/livekit/rust-sdks",
+    "accessed": "2026-10-08",
+    "supports": "Rust realtime/server SDK availability.",
+    "qualification": "Native media behavior/platform support requires a selected-version spike.",
+    "kind": "primary_source"
+  },
+  {
+    "id": "S16",
+    "title": "Slack feature overview",
+    "url": "https://slack.com/features",
+    "accessed": "2026-10-08",
+    "supports": "Broad feature categories informing parity inventory.",
+    "qualification": "Inventory is not a complete audited equivalence claim across all plans.",
+    "kind": "primary_source"
+  },
+  {
+    "id": "S17",
+    "title": "Slack Web API rate limits",
+    "url": "https://docs.slack.dev/apis/web-api/rate-limits/",
+    "accessed": "2026-10-08",
+    "supports": "Current integration rate-limit rules and distribution considerations.",
+    "qualification": "Check exact rules again before implementation; avoid hard-coded assumed allowances.",
+    "kind": "primary_source"
+  },
+  {
+    "id": "S18",
+    "title": "WCAG 2.2",
+    "url": "https://www.w3.org/TR/WCAG22/",
+    "accessed": "2026-10-08",
+    "supports": "Web accessibility acceptance reference.",
+    "qualification": "Native semantics need platform-specific tests; no conformance claim here.",
+    "kind": "primary_source"
+  },
+  {
+    "id": "S19",
+    "title": "RFC 8785 JSON Canonicalization Scheme",
+    "url": "https://datatracker.ietf.org/doc/html/rfc8785",
+    "accessed": "2026-10-08",
+    "supports": "Candidate canonical serialization for action hashing.",
+    "qualification": "Use a reviewed implementation; this package does not implement cryptographic approvals.",
+    "kind": "primary_source"
+  },
+  {
+    "id": "S20",
+    "title": "OpenID Connect Core",
+    "url": "https://openid.net/specs/openid-connect-core-1_0.html",
+    "accessed": "2026-10-08",
+    "supports": "Identity protocol reference for an authentication adapter.",
+    "qualification": "No identity provider or authentication service is implemented in the handoff.",
+    "kind": "primary_source"
+  }
+]

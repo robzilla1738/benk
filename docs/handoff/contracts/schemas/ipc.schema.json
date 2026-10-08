@@ -1,0 +1,177 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://spec.workspace.invalid/v1/ipc.schema.json",
+  "title": "Local IPC frame v1",
+  "$defs": {
+    "Id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{5,127}$"
+    },
+    "UnsignedDecimal": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]{0,18})$"
+    }
+  },
+  "oneOf": [
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "hello"
+        },
+        "protocol_version": {
+          "const": 1
+        },
+        "session_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "capabilities": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 80
+          },
+          "minItems": 0,
+          "maxItems": 100
+        }
+      },
+      "required": [
+        "kind",
+        "protocol_version",
+        "session_id",
+        "capabilities"
+      ]
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "request"
+        },
+        "request_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "session_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "method": {
+          "type": "string",
+          "enum": [
+            "engine.status",
+            "run.propose",
+            "run.cancel",
+            "run.checkpoint",
+            "stream.subscribe"
+          ]
+        },
+        "payload_ref": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 512
+        }
+      },
+      "required": [
+        "kind",
+        "request_id",
+        "session_id",
+        "method",
+        "payload_ref"
+      ]
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "response"
+        },
+        "request_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "ok": {
+          "type": "boolean"
+        },
+        "payload_ref": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 512
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "error_code": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "kind",
+        "request_id",
+        "ok",
+        "payload_ref",
+        "error_code"
+      ]
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "stream"
+        },
+        "subscription_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "sequence": {
+          "$ref": "#/$defs/UnsignedDecimal"
+        },
+        "payload_ref": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 512
+        }
+      },
+      "required": [
+        "kind",
+        "subscription_id",
+        "sequence",
+        "payload_ref"
+      ]
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "cancel"
+        },
+        "request_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "session_id": {
+          "$ref": "#/$defs/Id"
+        }
+      },
+      "required": [
+        "kind",
+        "request_id",
+        "session_id"
+      ]
+    }
+  ]
+}

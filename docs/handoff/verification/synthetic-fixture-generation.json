@@ -1,0 +1,10 @@
+{
+  "synthetic": true,
+  "seed": 4108,
+  "messages": 100000,
+  "indexed_rows": 100000,
+  "channels": 50,
+  "sqlite_version": "3.46.1",
+  "sha256": "1bd5ad1488265b83e215173899f1a3eb4c9a6331f776a417bc48179d1031d8d1",
+  "note": "Workload fixture only; no native UI performance measurement is claimed."
+}

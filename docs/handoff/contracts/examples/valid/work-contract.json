@@ -1,0 +1,43 @@
+{
+  "task_id": "task_checkout",
+  "workspace_id": "ws_alpha",
+  "revision": 1,
+  "goal": "Produce a reviewed checkout wording change, without deployment.",
+  "owner_id": "usr_product",
+  "criteria": [
+    {
+      "id": "crit_wording",
+      "description": "Product reviewer accepts the revised wording.",
+      "evidence_kind": "human_review"
+    },
+    {
+      "id": "crit_tests01",
+      "description": "The defined checkout tests pass in the stated environment.",
+      "evidence_kind": "automated_check"
+    }
+  ],
+  "source_refs": [],
+  "allowed_actions": [
+    "repo.read",
+    "repo.write",
+    "test.run"
+  ],
+  "resource_ids": [
+    "repo_checkout"
+  ],
+  "publish_audience_ids": [
+    "chn_checkout"
+  ],
+  "environment": {
+    "id": "env_local001",
+    "execution_location": "local",
+    "model_destination": "simulator:no-network",
+    "isolation_profile": "simulated-no-execution"
+  },
+  "budget": {
+    "currency": "USD",
+    "amount_micros": "5000000"
+  },
+  "approval_policy_id": "pol_standard",
+  "policy_revision": 1
+}

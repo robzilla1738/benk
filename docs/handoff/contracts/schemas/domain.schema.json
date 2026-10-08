@@ -1,0 +1,2470 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://spec.workspace.invalid/v1/domain.schema.json",
+  "title": "Human–Agent Workspace v1 contract library",
+  "$comment": "Reserved .invalid identifier; resolve locally. Definitions are vertical-slice scope, not every future parity API.",
+  "$defs": {
+    "Id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{5,127}$"
+    },
+    "Revision": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 2147483647
+    },
+    "UnsignedDecimal": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]{0,18})$"
+    },
+    "Timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "Digest": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "PrincipalKind": {
+      "type": "string",
+      "enum": [
+        "human",
+        "agent",
+        "integration",
+        "system"
+      ]
+    },
+    "TaskState": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "ready",
+        "active",
+        "blocked",
+        "awaiting_review",
+        "accepted",
+        "cancelled"
+      ]
+    },
+    "RunState": {
+      "type": "string",
+      "enum": [
+        "queued",
+        "preparing",
+        "running",
+        "awaiting_approval",
+        "paused",
+        "reconciling",
+        "cancelling",
+        "succeeded",
+        "failed",
+        "cancelled"
+      ]
+    },
+    "ActionKind": {
+      "type": "string",
+      "enum": [
+        "repo.read",
+        "repo.write",
+        "test.run",
+        "artifact.publish",
+        "pull_request.create",
+        "message.send",
+        "deployment.create"
+      ]
+    },
+    "Money": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "currency": {
+          "const": "USD"
+        },
+        "amount_micros": {
+          "$ref": "#/$defs/UnsignedDecimal"
+        }
+      },
+      "required": [
+        "currency",
+        "amount_micros"
+      ]
+    },
+    "InlineNode": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "const": "text"
+            },
+            "text": {
+              "type": "string",
+              "minLength": 0,
+              "maxLength": 40000
+            },
+            "marks": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "bold",
+                  "italic",
+                  "strike",
+                  "code"
+                ]
+              },
+              "minItems": 0,
+              "maxItems": 4
+            }
+          },
+          "required": [
+            "type",
+            "text"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "const": "mention"
+            },
+            "principal_id": {
+              "$ref": "#/$defs/Id"
+            },
+            "label": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 120
+            }
+          },
+          "required": [
+            "type",
+            "principal_id",
+            "label"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "const": "link"
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2048
+            },
+            "href": {
+              "type": "string",
+              "maxLength": 4096,
+              "pattern": "^(https?://|mailto:).+"
+            }
+          },
+          "required": [
+            "type",
+            "text",
+            "href"
+          ]
+        }
+      ]
+    },
+    "BlockNode": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "const": "paragraph"
+            },
+            "content": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/InlineNode"
+              },
+              "minItems": 0,
+              "maxItems": 1000
+            }
+          },
+          "required": [
+            "type",
+            "content"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "const": "code_block"
+            },
+            "language": {
+              "type": "string",
+              "minLength": 0,
+              "maxLength": 40
+            },
+            "text": {
+              "type": "string",
+              "minLength": 0,
+              "maxLength": 40000
+            }
+          },
+          "required": [
+            "type",
+            "language",
+            "text"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "const": "list"
+            },
+            "ordered": {
+              "type": "boolean"
+            },
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 2000
+              },
+              "minItems": 1,
+              "maxItems": 100
+            }
+          },
+          "required": [
+            "type",
+            "ordered",
+            "items"
+          ]
+        }
+      ]
+    },
+    "RichText": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "format": {
+          "const": "workspace_richtext_v1"
+        },
+        "blocks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/BlockNode"
+          },
+          "minItems": 1,
+          "maxItems": 100
+        }
+      },
+      "required": [
+        "format",
+        "blocks"
+      ]
+    },
+    "Principal": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/Id"
+        },
+        "workspace_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "kind": {
+          "$ref": "#/$defs/PrincipalKind"
+        },
+        "display_name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "active",
+            "deactivated"
+          ]
+        },
+        "accountable_human_id": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Id"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "workspace_id",
+        "kind",
+        "display_name",
+        "status",
+        "accountable_human_id"
+      ]
+    },
+    "Workspace": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/Id"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120
+        },
+        "home_region": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80
+        },
+        "policy_revision": {
+          "$ref": "#/$defs/Revision"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "home_region",
+        "policy_revision"
+      ]
+    },
+    "Channel": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/Id"
+        },
+        "workspace_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "public",
+            "private",
+            "dm",
+            "group_dm"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120
+        },
+        "revision": {
+          "$ref": "#/$defs/Revision"
+        },
+        "archived": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "workspace_id",
+        "kind",
+        "name",
+        "revision",
+        "archived"
+      ]
+    },
+    "Message": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/Id"
+        },
+        "workspace_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "channel_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "author_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "thread_root_id": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Id"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "body": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/RichText"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "revision": {
+          "$ref": "#/$defs/Revision"
+        },
+        "sequence": {
+          "$ref": "#/$defs/UnsignedDecimal"
+        },
+        "created_at": {
+          "$ref": "#/$defs/Timestamp"
+        },
+        "edited_at": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Timestamp"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "deleted_at": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Timestamp"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "workspace_id",
+        "channel_id",
+        "author_id",
+        "thread_root_id",
+        "body",
+        "revision",
+        "sequence",
+        "created_at",
+        "edited_at",
+        "deleted_at"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "deleted_at": {
+                "type": "null"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "body": {
+                "$ref": "#/$defs/RichText"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "body": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "SourceRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "resource_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "resource_version": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "digest": {
+          "$ref": "#/$defs/Digest"
+        },
+        "permission_epoch": {
+          "$ref": "#/$defs/Revision"
+        },
+        "use_for_model": {
+          "type": "boolean"
+        },
+        "allowed_audience_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Id"
+          },
+          "minItems": 1,
+          "maxItems": 100
+        }
+      },
+      "required": [
+        "resource_id",
+        "resource_version",
+        "digest",
+        "permission_epoch",
+        "use_for_model",
+        "allowed_audience_ids"
+      ]
+    },
+    "AcceptanceCriterion": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/Id"
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "evidence_kind": {
+          "type": "string",
+          "enum": [
+            "automated_check",
+            "human_review",
+            "source_reference",
+            "external_receipt"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "description",
+        "evidence_kind"
+      ]
+    },
+    "EnvironmentRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/Id"
+        },
+        "execution_location": {
+          "type": "string",
+          "enum": [
+            "local",
+            "hosted",
+            "company_managed"
+          ]
+        },
+        "model_destination": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "isolation_profile": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        }
+      },
+      "required": [
+        "id",
+        "execution_location",
+        "model_destination",
+        "isolation_profile"
+      ]
+    },
+    "WorkContract": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "task_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "workspace_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "revision": {
+          "$ref": "#/$defs/Revision"
+        },
+        "goal": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 8000
+        },
+        "owner_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "criteria": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/AcceptanceCriterion"
+          },
+          "minItems": 1,
+          "maxItems": 30
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/SourceRef"
+          },
+          "minItems": 0,
+          "maxItems": 100
+        },
+        "allowed_actions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ActionKind"
+          },
+          "minItems": 1,
+          "maxItems": 20
+        },
+        "resource_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Id"
+          },
+          "minItems": 1,
+          "maxItems": 100
+        },
+        "publish_audience_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Id"
+          },
+          "minItems": 0,
+          "maxItems": 100
+        },
+        "environment": {
+          "$ref": "#/$defs/EnvironmentRef"
+        },
+        "budget": {
+          "$ref": "#/$defs/Money"
+        },
+        "approval_policy_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "policy_revision": {
+          "$ref": "#/$defs/Revision"
+        }
+      },
+      "required": [
+        "task_id",
+        "workspace_id",
+        "revision",
+        "goal",
+        "owner_id",
+        "criteria",
+        "source_refs",
+        "allowed_actions",
+        "resource_ids",
+        "publish_audience_ids",
+        "environment",
+        "budget",
+        "approval_policy_id",
+        "policy_revision"
+      ]
+    },
+    "Task": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/Id"
+        },
+        "workspace_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "channel_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        },
+        "owner_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "state": {
+          "$ref": "#/$defs/TaskState"
+        },
+        "revision": {
+          "$ref": "#/$defs/Revision"
+        },
+        "contract_revision": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Revision"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "created_at": {
+          "$ref": "#/$defs/Timestamp"
+        }
+      },
+      "required": [
+        "id",
+        "workspace_id",
+        "channel_id",
+        "title",
+        "owner_id",
+        "state",
+        "revision",
+        "contract_revision",
+        "created_at"
+      ]
+    },
+    "Run": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/Id"
+        },
+        "workspace_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "task_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "contract_revision": {
+          "$ref": "#/$defs/Revision"
+        },
+        "agent_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "state": {
+          "$ref": "#/$defs/RunState"
+        },
+        "revision": {
+          "$ref": "#/$defs/Revision"
+        },
+        "authority_kind": {
+          "type": "string",
+          "enum": [
+            "local_private",
+            "cloud_shared"
+          ]
+        },
+        "coordinator_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "generation": {
+          "$ref": "#/$defs/Revision"
+        },
+        "lease_expires_at": {
+          "$ref": "#/$defs/Timestamp"
+        },
+        "cancellation_requested": {
+          "type": "boolean"
+        },
+        "environment": {
+          "$ref": "#/$defs/EnvironmentRef"
+        }
+      },
+      "required": [
+        "id",
+        "workspace_id",
+        "task_id",
+        "contract_revision",
+        "agent_id",
+        "state",
+        "revision",
+        "authority_kind",
+        "coordinator_id",
+        "generation",
+        "lease_expires_at",
+        "cancellation_requested",
+        "environment"
+      ]
+    },
+    "ArtifactVersion": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "artifact_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "id": {
+          "$ref": "#/$defs/Id"
+        },
+        "workspace_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "task_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "run_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "version": {
+          "$ref": "#/$defs/Revision"
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "patch",
+            "document",
+            "preview",
+            "report",
+            "test_log",
+            "external_receipt"
+          ]
+        },
+        "digest": {
+          "$ref": "#/$defs/Digest"
+        },
+        "blob_ref": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 512
+        },
+        "mime_type": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120
+        },
+        "size_bytes": {
+          "$ref": "#/$defs/UnsignedDecimal"
+        },
+        "audience_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Id"
+          },
+          "minItems": 1,
+          "maxItems": 100
+        },
+        "created_at": {
+          "$ref": "#/$defs/Timestamp"
+        }
+      },
+      "required": [
+        "artifact_id",
+        "id",
+        "workspace_id",
+        "task_id",
+        "run_id",
+        "version",
+        "kind",
+        "digest",
+        "blob_ref",
+        "mime_type",
+        "size_bytes",
+        "audience_ids",
+        "created_at"
+      ]
+    },
+    "Evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/Id"
+        },
+        "criterion_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "artifact_version_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "automated_check",
+            "human_review",
+            "source_reference",
+            "external_receipt"
+          ]
+        },
+        "result": {
+          "type": "string",
+          "enum": [
+            "passed",
+            "failed",
+            "not_run",
+            "inconclusive"
+          ]
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4000
+        },
+        "recorded_at": {
+          "$ref": "#/$defs/Timestamp"
+        }
+      },
+      "required": [
+        "id",
+        "criterion_id",
+        "artifact_version_id",
+        "kind",
+        "result",
+        "summary",
+        "recorded_at"
+      ]
+    },
+    "ActionIntent": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/Id"
+        },
+        "workspace_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "task_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "run_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "contract_revision": {
+          "$ref": "#/$defs/Revision"
+        },
+        "generation": {
+          "$ref": "#/$defs/Revision"
+        },
+        "kind": {
+          "$ref": "#/$defs/ActionKind"
+        },
+        "resource_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Id"
+          },
+          "minItems": 1,
+          "maxItems": 100
+        },
+        "destination_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "artifact_version_id": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Id"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "digest": {
+          "$ref": "#/$defs/Digest"
+        },
+        "policy_revision": {
+          "$ref": "#/$defs/Revision"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "proposed",
+            "awaiting_approval",
+            "ready",
+            "dispatching",
+            "succeeded",
+            "failed",
+            "unknown",
+            "cancelled"
+          ]
+        },
+        "requires_approval": {
+          "type": "boolean"
+        },
+        "expires_at": {
+          "$ref": "#/$defs/Timestamp"
+        }
+      },
+      "required": [
+        "id",
+        "workspace_id",
+        "task_id",
+        "run_id",
+        "contract_revision",
+        "generation",
+        "kind",
+        "resource_ids",
+        "destination_id",
+        "artifact_version_id",
+        "digest",
+        "policy_revision",
+        "status",
+        "requires_approval",
+        "expires_at"
+      ]
+    },
+    "Approval": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/Id"
+        },
+        "workspace_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "action_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "action_digest": {
+          "$ref": "#/$defs/Digest"
+        },
+        "artifact_version_id": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Id"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "contract_revision": {
+          "$ref": "#/$defs/Revision"
+        },
+        "policy_revision": {
+          "$ref": "#/$defs/Revision"
+        },
+        "decision": {
+          "type": "string",
+          "enum": [
+            "approved",
+            "rejected"
+          ]
+        },
+        "decider_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "decider_kind": {
+          "const": "human"
+        },
+        "expires_at": {
+          "$ref": "#/$defs/Timestamp"
+        },
+        "consumed_at": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Timestamp"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "workspace_id",
+        "action_id",
+        "action_digest",
+        "artifact_version_id",
+        "contract_revision",
+        "policy_revision",
+        "decision",
+        "decider_id",
+        "decider_kind",
+        "expires_at",
+        "consumed_at"
+      ]
+    },
+    "Acceptance": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/Id"
+        },
+        "workspace_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "task_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "contract_revision": {
+          "$ref": "#/$defs/Revision"
+        },
+        "artifact_version_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Id"
+          },
+          "minItems": 1,
+          "maxItems": 100
+        },
+        "reviewer_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "evidence_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Id"
+          },
+          "minItems": 1,
+          "maxItems": 100
+        },
+        "created_at": {
+          "$ref": "#/$defs/Timestamp"
+        }
+      },
+      "required": [
+        "id",
+        "workspace_id",
+        "task_id",
+        "contract_revision",
+        "artifact_version_ids",
+        "reviewer_id",
+        "evidence_ids",
+        "created_at"
+      ]
+    },
+    "Checkpoint": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/Id"
+        },
+        "workspace_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "run_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "contract_revision": {
+          "$ref": "#/$defs/Revision"
+        },
+        "source_generation": {
+          "$ref": "#/$defs/Revision"
+        },
+        "adapter_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "adapter_version": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80
+        },
+        "environment_definition_ref": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 512
+        },
+        "artifact_version_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Id"
+          },
+          "minItems": 0,
+          "maxItems": 100
+        },
+        "context_manifest_ref": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 512
+        },
+        "pending_action_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Id"
+          },
+          "minItems": 0,
+          "maxItems": 100
+        },
+        "required_secret_handles": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "minItems": 0,
+          "maxItems": 30
+        },
+        "safe_to_resume": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "workspace_id",
+        "run_id",
+        "contract_revision",
+        "source_generation",
+        "adapter_id",
+        "adapter_version",
+        "environment_definition_ref",
+        "artifact_version_ids",
+        "context_manifest_ref",
+        "pending_action_ids",
+        "required_secret_handles",
+        "safe_to_resume"
+      ]
+    },
+    "Purge": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "resource_kind": {
+          "type": "string",
+          "enum": [
+            "message",
+            "channel",
+            "artifact",
+            "context",
+            "workspace"
+          ]
+        },
+        "resource_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Id"
+          },
+          "minItems": 1,
+          "maxItems": 1000
+        },
+        "authorization_epoch": {
+          "$ref": "#/$defs/Revision"
+        }
+      },
+      "required": [
+        "resource_kind",
+        "resource_ids",
+        "authorization_epoch"
+      ]
+    },
+    "ApiError": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "type": "string",
+          "enum": [
+            "UNAUTHENTICATED",
+            "NOT_FOUND",
+            "PERMISSION_DENIED",
+            "VALIDATION_ERROR",
+            "REVISION_CONFLICT",
+            "IDEMPOTENCY_CONFLICT",
+            "STALE_GENERATION",
+            "LEASE_EXPIRED",
+            "APPROVAL_REQUIRED",
+            "APPROVAL_STALE",
+            "BUDGET_EXCEEDED",
+            "RUN_STOPPED",
+            "RECONCILIATION_REQUIRED",
+            "RATE_LIMITED",
+            "CURSOR_EXPIRED",
+            "UNAVAILABLE"
+          ]
+        },
+        "message": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000
+        },
+        "request_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "retryable": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "code",
+        "message",
+        "request_id",
+        "retryable"
+      ]
+    },
+    "PageInfo": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "next_cursor": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2048
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "has_more": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "next_cursor",
+        "has_more"
+      ]
+    },
+    "CreateChannel": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "client_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "public",
+            "private",
+            "dm",
+            "group_dm"
+          ]
+        },
+        "member_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Id"
+          },
+          "minItems": 0,
+          "maxItems": 100
+        }
+      },
+      "required": [
+        "client_id",
+        "name",
+        "kind",
+        "member_ids"
+      ]
+    },
+    "CreateMessage": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "client_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "thread_root_id": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Id"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "body": {
+          "$ref": "#/$defs/RichText"
+        }
+      },
+      "required": [
+        "client_id",
+        "thread_root_id",
+        "body"
+      ]
+    },
+    "EditMessage": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "expected_revision": {
+          "$ref": "#/$defs/Revision"
+        },
+        "body": {
+          "$ref": "#/$defs/RichText"
+        }
+      },
+      "required": [
+        "expected_revision",
+        "body"
+      ]
+    },
+    "DeleteMessage": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "expected_revision": {
+          "$ref": "#/$defs/Revision"
+        }
+      },
+      "required": [
+        "expected_revision"
+      ]
+    },
+    "CreateTask": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "client_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "channel_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        },
+        "owner_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "source_message_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Id"
+          },
+          "minItems": 0,
+          "maxItems": 30
+        }
+      },
+      "required": [
+        "client_id",
+        "channel_id",
+        "title",
+        "owner_id",
+        "source_message_ids"
+      ]
+    },
+    "ProposeContract": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "expected_task_revision": {
+          "$ref": "#/$defs/Revision"
+        },
+        "goal": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 8000
+        },
+        "criteria": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/AcceptanceCriterion"
+          },
+          "minItems": 1,
+          "maxItems": 30
+        },
+        "requested_actions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ActionKind"
+          },
+          "minItems": 1,
+          "maxItems": 20
+        },
+        "requested_resource_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Id"
+          },
+          "minItems": 1,
+          "maxItems": 100
+        },
+        "requested_environment_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "requested_budget": {
+          "$ref": "#/$defs/Money"
+        }
+      },
+      "required": [
+        "expected_task_revision",
+        "goal",
+        "criteria",
+        "requested_actions",
+        "requested_resource_ids",
+        "requested_environment_id",
+        "requested_budget"
+      ]
+    },
+    "CreateRun": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "client_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "expected_task_revision": {
+          "$ref": "#/$defs/Revision"
+        },
+        "contract_revision": {
+          "$ref": "#/$defs/Revision"
+        },
+        "agent_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "environment_id": {
+          "$ref": "#/$defs/Id"
+        }
+      },
+      "required": [
+        "client_id",
+        "expected_task_revision",
+        "contract_revision",
+        "agent_id",
+        "environment_id"
+      ]
+    },
+    "CancelRun": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "expected_revision": {
+          "$ref": "#/$defs/Revision"
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000
+        }
+      },
+      "required": [
+        "expected_revision",
+        "reason"
+      ]
+    },
+    "RequestHandoff": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "expected_generation": {
+          "$ref": "#/$defs/Revision"
+        },
+        "checkpoint_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "target_environment_id": {
+          "$ref": "#/$defs/Id"
+        }
+      },
+      "required": [
+        "expected_generation",
+        "checkpoint_id",
+        "target_environment_id"
+      ]
+    },
+    "CreateApprovalDecision": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "action_digest": {
+          "$ref": "#/$defs/Digest"
+        },
+        "artifact_version_id": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Id"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "contract_revision": {
+          "$ref": "#/$defs/Revision"
+        },
+        "policy_revision": {
+          "$ref": "#/$defs/Revision"
+        },
+        "decision": {
+          "type": "string",
+          "enum": [
+            "approved",
+            "rejected"
+          ]
+        }
+      },
+      "required": [
+        "action_digest",
+        "artifact_version_id",
+        "contract_revision",
+        "policy_revision",
+        "decision"
+      ]
+    },
+    "CreateAcceptance": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "expected_task_revision": {
+          "$ref": "#/$defs/Revision"
+        },
+        "contract_revision": {
+          "$ref": "#/$defs/Revision"
+        },
+        "artifact_version_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Id"
+          },
+          "minItems": 1,
+          "maxItems": 100
+        },
+        "evidence_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Id"
+          },
+          "minItems": 1,
+          "maxItems": 100
+        }
+      },
+      "required": [
+        "expected_task_revision",
+        "contract_revision",
+        "artifact_version_ids",
+        "evidence_ids"
+      ]
+    },
+    "ReadState": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "channel_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "last_read_sequence": {
+          "$ref": "#/$defs/UnsignedDecimal"
+        }
+      },
+      "required": [
+        "channel_id",
+        "last_read_sequence"
+      ]
+    },
+    "CreateUpload": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "artifact_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "expected_previous_version": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Revision"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "task_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "run_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "generation": {
+          "$ref": "#/$defs/Revision"
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "patch",
+            "document",
+            "preview",
+            "report",
+            "test_log",
+            "external_receipt"
+          ]
+        },
+        "mime_type": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120
+        },
+        "expected_size_bytes": {
+          "$ref": "#/$defs/UnsignedDecimal"
+        },
+        "expected_digest": {
+          "$ref": "#/$defs/Digest"
+        }
+      },
+      "required": [
+        "artifact_id",
+        "expected_previous_version",
+        "task_id",
+        "run_id",
+        "generation",
+        "kind",
+        "mime_type",
+        "expected_size_bytes",
+        "expected_digest"
+      ]
+    },
+    "UploadTicket": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "upload_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "upload_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "expires_at": {
+          "$ref": "#/$defs/Timestamp"
+        },
+        "max_size_bytes": {
+          "$ref": "#/$defs/UnsignedDecimal"
+        }
+      },
+      "required": [
+        "upload_id",
+        "upload_url",
+        "expires_at",
+        "max_size_bytes"
+      ]
+    },
+    "CompleteUpload": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "upload_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "generation": {
+          "$ref": "#/$defs/Revision"
+        }
+      },
+      "required": [
+        "upload_id",
+        "generation"
+      ]
+    },
+    "ProposeAction": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "client_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "task_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "run_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "generation": {
+          "$ref": "#/$defs/Revision"
+        },
+        "contract_revision": {
+          "$ref": "#/$defs/Revision"
+        },
+        "kind": {
+          "$ref": "#/$defs/ActionKind"
+        },
+        "resource_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Id"
+          },
+          "minItems": 1,
+          "maxItems": 100
+        },
+        "destination_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "artifact_version_id": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Id"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "client_id",
+        "task_id",
+        "run_id",
+        "generation",
+        "contract_revision",
+        "kind",
+        "resource_ids",
+        "destination_id",
+        "artifact_version_id"
+      ]
+    },
+    "Event": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "event_id": {
+              "$ref": "#/$defs/Id"
+            },
+            "workspace_id": {
+              "$ref": "#/$defs/Id"
+            },
+            "sequence": {
+              "$ref": "#/$defs/UnsignedDecimal"
+            },
+            "schema_version": {
+              "const": 1
+            },
+            "occurred_at": {
+              "$ref": "#/$defs/Timestamp"
+            },
+            "correlation_id": {
+              "$ref": "#/$defs/Id"
+            },
+            "causation_id": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/Id"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "type": {
+              "const": "message.upserted"
+            },
+            "payload": {
+              "$ref": "#/$defs/Message"
+            }
+          },
+          "required": [
+            "event_id",
+            "workspace_id",
+            "sequence",
+            "schema_version",
+            "occurred_at",
+            "correlation_id",
+            "causation_id",
+            "type",
+            "payload"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "event_id": {
+              "$ref": "#/$defs/Id"
+            },
+            "workspace_id": {
+              "$ref": "#/$defs/Id"
+            },
+            "sequence": {
+              "$ref": "#/$defs/UnsignedDecimal"
+            },
+            "schema_version": {
+              "const": 1
+            },
+            "occurred_at": {
+              "$ref": "#/$defs/Timestamp"
+            },
+            "correlation_id": {
+              "$ref": "#/$defs/Id"
+            },
+            "causation_id": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/Id"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "type": {
+              "const": "message.purged"
+            },
+            "payload": {
+              "$ref": "#/$defs/Purge"
+            }
+          },
+          "required": [
+            "event_id",
+            "workspace_id",
+            "sequence",
+            "schema_version",
+            "occurred_at",
+            "correlation_id",
+            "causation_id",
+            "type",
+            "payload"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "event_id": {
+              "$ref": "#/$defs/Id"
+            },
+            "workspace_id": {
+              "$ref": "#/$defs/Id"
+            },
+            "sequence": {
+              "$ref": "#/$defs/UnsignedDecimal"
+            },
+            "schema_version": {
+              "const": 1
+            },
+            "occurred_at": {
+              "$ref": "#/$defs/Timestamp"
+            },
+            "correlation_id": {
+              "$ref": "#/$defs/Id"
+            },
+            "causation_id": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/Id"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "type": {
+              "const": "channel.upserted"
+            },
+            "payload": {
+              "$ref": "#/$defs/Channel"
+            }
+          },
+          "required": [
+            "event_id",
+            "workspace_id",
+            "sequence",
+            "schema_version",
+            "occurred_at",
+            "correlation_id",
+            "causation_id",
+            "type",
+            "payload"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "event_id": {
+              "$ref": "#/$defs/Id"
+            },
+            "workspace_id": {
+              "$ref": "#/$defs/Id"
+            },
+            "sequence": {
+              "$ref": "#/$defs/UnsignedDecimal"
+            },
+            "schema_version": {
+              "const": 1
+            },
+            "occurred_at": {
+              "$ref": "#/$defs/Timestamp"
+            },
+            "correlation_id": {
+              "$ref": "#/$defs/Id"
+            },
+            "causation_id": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/Id"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "type": {
+              "const": "task.upserted"
+            },
+            "payload": {
+              "$ref": "#/$defs/Task"
+            }
+          },
+          "required": [
+            "event_id",
+            "workspace_id",
+            "sequence",
+            "schema_version",
+            "occurred_at",
+            "correlation_id",
+            "causation_id",
+            "type",
+            "payload"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "event_id": {
+              "$ref": "#/$defs/Id"
+            },
+            "workspace_id": {
+              "$ref": "#/$defs/Id"
+            },
+            "sequence": {
+              "$ref": "#/$defs/UnsignedDecimal"
+            },
+            "schema_version": {
+              "const": 1
+            },
+            "occurred_at": {
+              "$ref": "#/$defs/Timestamp"
+            },
+            "correlation_id": {
+              "$ref": "#/$defs/Id"
+            },
+            "causation_id": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/Id"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "type": {
+              "const": "run.upserted"
+            },
+            "payload": {
+              "$ref": "#/$defs/Run"
+            }
+          },
+          "required": [
+            "event_id",
+            "workspace_id",
+            "sequence",
+            "schema_version",
+            "occurred_at",
+            "correlation_id",
+            "causation_id",
+            "type",
+            "payload"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "event_id": {
+              "$ref": "#/$defs/Id"
+            },
+            "workspace_id": {
+              "$ref": "#/$defs/Id"
+            },
+            "sequence": {
+              "$ref": "#/$defs/UnsignedDecimal"
+            },
+            "schema_version": {
+              "const": 1
+            },
+            "occurred_at": {
+              "$ref": "#/$defs/Timestamp"
+            },
+            "correlation_id": {
+              "$ref": "#/$defs/Id"
+            },
+            "causation_id": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/Id"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "type": {
+              "const": "artifact.version_created"
+            },
+            "payload": {
+              "$ref": "#/$defs/ArtifactVersion"
+            }
+          },
+          "required": [
+            "event_id",
+            "workspace_id",
+            "sequence",
+            "schema_version",
+            "occurred_at",
+            "correlation_id",
+            "causation_id",
+            "type",
+            "payload"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "event_id": {
+              "$ref": "#/$defs/Id"
+            },
+            "workspace_id": {
+              "$ref": "#/$defs/Id"
+            },
+            "sequence": {
+              "$ref": "#/$defs/UnsignedDecimal"
+            },
+            "schema_version": {
+              "const": 1
+            },
+            "occurred_at": {
+              "$ref": "#/$defs/Timestamp"
+            },
+            "correlation_id": {
+              "$ref": "#/$defs/Id"
+            },
+            "causation_id": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/Id"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "type": {
+              "const": "action.upserted"
+            },
+            "payload": {
+              "$ref": "#/$defs/ActionIntent"
+            }
+          },
+          "required": [
+            "event_id",
+            "workspace_id",
+            "sequence",
+            "schema_version",
+            "occurred_at",
+            "correlation_id",
+            "causation_id",
+            "type",
+            "payload"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "event_id": {
+              "$ref": "#/$defs/Id"
+            },
+            "workspace_id": {
+              "$ref": "#/$defs/Id"
+            },
+            "sequence": {
+              "$ref": "#/$defs/UnsignedDecimal"
+            },
+            "schema_version": {
+              "const": 1
+            },
+            "occurred_at": {
+              "$ref": "#/$defs/Timestamp"
+            },
+            "correlation_id": {
+              "$ref": "#/$defs/Id"
+            },
+            "causation_id": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/Id"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "type": {
+              "const": "approval.recorded"
+            },
+            "payload": {
+              "$ref": "#/$defs/Approval"
+            }
+          },
+          "required": [
+            "event_id",
+            "workspace_id",
+            "sequence",
+            "schema_version",
+            "occurred_at",
+            "correlation_id",
+            "causation_id",
+            "type",
+            "payload"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "event_id": {
+              "$ref": "#/$defs/Id"
+            },
+            "workspace_id": {
+              "$ref": "#/$defs/Id"
+            },
+            "sequence": {
+              "$ref": "#/$defs/UnsignedDecimal"
+            },
+            "schema_version": {
+              "const": 1
+            },
+            "occurred_at": {
+              "$ref": "#/$defs/Timestamp"
+            },
+            "correlation_id": {
+              "$ref": "#/$defs/Id"
+            },
+            "causation_id": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/Id"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "type": {
+              "const": "task.accepted"
+            },
+            "payload": {
+              "$ref": "#/$defs/Acceptance"
+            }
+          },
+          "required": [
+            "event_id",
+            "workspace_id",
+            "sequence",
+            "schema_version",
+            "occurred_at",
+            "correlation_id",
+            "causation_id",
+            "type",
+            "payload"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "event_id": {
+              "$ref": "#/$defs/Id"
+            },
+            "workspace_id": {
+              "$ref": "#/$defs/Id"
+            },
+            "sequence": {
+              "$ref": "#/$defs/UnsignedDecimal"
+            },
+            "schema_version": {
+              "const": 1
+            },
+            "occurred_at": {
+              "$ref": "#/$defs/Timestamp"
+            },
+            "correlation_id": {
+              "$ref": "#/$defs/Id"
+            },
+            "causation_id": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/Id"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "type": {
+              "const": "authorization.purged"
+            },
+            "payload": {
+              "$ref": "#/$defs/Purge"
+            }
+          },
+          "required": [
+            "event_id",
+            "workspace_id",
+            "sequence",
+            "schema_version",
+            "occurred_at",
+            "correlation_id",
+            "causation_id",
+            "type",
+            "payload"
+          ]
+        }
+      ]
+    },
+    "EventPage": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "events": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Event"
+          },
+          "minItems": 0,
+          "maxItems": 200
+        },
+        "next_cursor": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2048
+        },
+        "authorization_epoch": {
+          "$ref": "#/$defs/Revision"
+        },
+        "has_more": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "events",
+        "next_cursor",
+        "authorization_epoch",
+        "has_more"
+      ]
+    },
+    "MessagePage": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Message"
+          },
+          "minItems": 0,
+          "maxItems": 200
+        },
+        "page": {
+          "$ref": "#/$defs/PageInfo"
+        }
+      },
+      "required": [
+        "items",
+        "page"
+      ]
+    },
+    "ChannelPage": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Channel"
+          },
+          "minItems": 0,
+          "maxItems": 200
+        },
+        "page": {
+          "$ref": "#/$defs/PageInfo"
+        }
+      },
+      "required": [
+        "items",
+        "page"
+      ]
+    },
+    "WorkspacePage": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Workspace"
+          },
+          "minItems": 0,
+          "maxItems": 100
+        },
+        "page": {
+          "$ref": "#/$defs/PageInfo"
+        }
+      },
+      "required": [
+        "items",
+        "page"
+      ]
+    },
+    "Me": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "principal": {
+          "$ref": "#/$defs/Principal"
+        },
+        "workspace": {
+          "$ref": "#/$defs/Workspace"
+        }
+      },
+      "required": [
+        "principal",
+        "workspace"
+      ]
+    },
+    "Health": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "const": "ok"
+        }
+      },
+      "required": [
+        "status"
+      ]
+    },
+    "Acknowledgment": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "operation_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "accepted": {
+          "const": true
+        }
+      },
+      "required": [
+        "operation_id",
+        "accepted"
+      ]
+    }
+  }
+}

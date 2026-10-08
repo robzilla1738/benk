@@ -1,0 +1,64 @@
+[
+  {
+    "component": "GPUI",
+    "selected_baseline": "0.2.2",
+    "status": "observed_published_api_not_compiled",
+    "source_ids": [
+      "S04",
+      "S05",
+      "S06"
+    ],
+    "first_action": "Reproduce a native build and pin compatible Rust/native SDK versions."
+  },
+  {
+    "component": "Effect",
+    "selected_baseline": "4.0.2",
+    "status": "observed_api_version_not_installed",
+    "source_ids": [
+      "S01",
+      "S02",
+      "S03"
+    ],
+    "first_action": "Install exact packages, commit lockfile, typecheck scaffold, review unstable modules."
+  },
+  {
+    "component": "TypeScript reference compiler",
+    "selected_baseline": "5.8.3",
+    "status": "installed_and_used_for_reference_checks",
+    "first_action": "Keep reference build reproducible; choose product toolchain deliberately."
+  },
+  {
+    "component": "Node reference runtime",
+    "selected_baseline": "22.16.0",
+    "status": "preparation_environment_only",
+    "first_action": "Select a maintained patched runtime for distribution and package it with the desktop engine."
+  },
+  {
+    "component": "Temporal",
+    "selected_baseline": "version_to_select_in_T014",
+    "status": "accepted_architecture_baseline_not_installed",
+    "source_ids": [
+      "S07",
+      "S08"
+    ],
+    "first_action": "Run durability/versioning spike and choose one backend."
+  },
+  {
+    "component": "PostgreSQL",
+    "selected_baseline": "version_and_image_digest_to_select",
+    "status": "reference_DDL_not_executed",
+    "source_ids": [
+      "S11"
+    ],
+    "first_action": "Test schema/migrations/RLS/concurrency in a disposable database."
+  },
+  {
+    "component": "LiveKit Rust SDK",
+    "selected_baseline": "version_to_select_in_T037",
+    "status": "candidate_not_installed",
+    "source_ids": [
+      "S15"
+    ],
+    "first_action": "Validate native media/platform capability and license/deployment requirements."
+  }
+]

@@ -1,0 +1,163 @@
+[
+  {
+    "id": "G-F0",
+    "phase": "F0",
+    "name": "Native and trust foundations",
+    "required_ticket_ids": [
+      "T001",
+      "T002",
+      "T003",
+      "T004",
+      "T005",
+      "T006",
+      "T008",
+      "T037"
+    ],
+    "status": "not_passed",
+    "evidence_requirement": "Actual application evidence for applicable tickets; no inference from this specification or reference library.",
+    "reviewers": [
+      "lead",
+      "quality",
+      "security"
+    ],
+    "waiver_policy": "Safety, tenant isolation, and truthful support claims cannot be waived. Scope reductions must change the public release claim and be recorded."
+  },
+  {
+    "id": "G-F1",
+    "phase": "F1",
+    "name": "Complete simulated collaboration",
+    "required_ticket_ids": [
+      "T007",
+      "T009",
+      "T010",
+      "T011",
+      "T012",
+      "T013",
+      "T014",
+      "T015",
+      "T016",
+      "T017",
+      "T018",
+      "T019",
+      "T020"
+    ],
+    "status": "not_passed",
+    "evidence_requirement": "Actual application evidence for applicable tickets; no inference from this specification or reference library.",
+    "reviewers": [
+      "lead",
+      "quality"
+    ],
+    "waiver_policy": "Safety, tenant isolation, and truthful support claims cannot be waived. Scope reductions must change the public release claim and be recorded."
+  },
+  {
+    "id": "G-F2",
+    "phase": "F2",
+    "name": "Trusted real team execution",
+    "required_ticket_ids": [
+      "T021",
+      "T022",
+      "T023",
+      "T024",
+      "T025",
+      "T026",
+      "T027",
+      "T028",
+      "T029",
+      "T030",
+      "T031",
+      "T032",
+      "T033",
+      "T034",
+      "T035",
+      "T036",
+      "T040",
+      "T063",
+      "T065",
+      "T066",
+      "T067",
+      "T069",
+      "T071"
+    ],
+    "status": "not_passed",
+    "evidence_requirement": "Actual application evidence for applicable tickets; no inference from this specification or reference library.",
+    "reviewers": [
+      "lead",
+      "quality",
+      "security"
+    ],
+    "waiver_policy": "Safety, tenant isolation, and truthful support claims cannot be waived. Scope reductions must change the public release claim and be recorded.",
+    "note": "T067 depends on T040 signed-update control; deliver that control early for an externally distributed real-execution pilot. Phase labels indicate product grouping, not permission to defer a prerequisite."
+  },
+  {
+    "id": "G-F3",
+    "phase": "F3",
+    "name": "Daily workspace replacement",
+    "required_ticket_ids": [
+      "T038",
+      "T039",
+      "T041",
+      "T042",
+      "T043",
+      "T044",
+      "T045",
+      "T046",
+      "T047",
+      "T048",
+      "T049",
+      "T050",
+      "T064",
+      "T068",
+      "T070"
+    ],
+    "status": "not_passed",
+    "evidence_requirement": "Actual application evidence for applicable tickets; no inference from this specification or reference library.",
+    "reviewers": [
+      "lead",
+      "quality"
+    ],
+    "waiver_policy": "Safety, tenant isolation, and truthful support claims cannot be waived. Scope reductions must change the public release claim and be recorded."
+  },
+  {
+    "id": "G-F4",
+    "phase": "F4",
+    "name": "Enterprise and developer platform",
+    "required_ticket_ids": [
+      "T051",
+      "T052",
+      "T053",
+      "T054",
+      "T055",
+      "T056",
+      "T057",
+      "T058",
+      "T059",
+      "T060"
+    ],
+    "status": "not_passed",
+    "evidence_requirement": "Actual application evidence for applicable tickets; no inference from this specification or reference library.",
+    "reviewers": [
+      "lead",
+      "quality",
+      "security"
+    ],
+    "waiver_policy": "Safety, tenant isolation, and truthful support claims cannot be waived. Scope reductions must change the public release claim and be recorded."
+  },
+  {
+    "id": "G-F5",
+    "phase": "F5",
+    "name": "Ecosystem and measured leadership",
+    "required_ticket_ids": [
+      "T061",
+      "T062",
+      "T072"
+    ],
+    "status": "not_passed",
+    "evidence_requirement": "Actual application evidence for applicable tickets; no inference from this specification or reference library.",
+    "reviewers": [
+      "lead",
+      "quality",
+      "security"
+    ],
+    "waiver_policy": "Safety, tenant isolation, and truthful support claims cannot be waived. Scope reductions must change the public release claim and be recorded."
+  }
+]

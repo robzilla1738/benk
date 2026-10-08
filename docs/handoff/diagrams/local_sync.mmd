@@ -1,0 +1,14 @@
+sequenceDiagram
+  participant U as Native UI
+  participant L as SQLite owner
+  participant S as Server
+  participant D as PostgreSQL
+  U->>L: Save draft/pending operation
+  L-->>U: Locally saved, not server accepted
+  L->>S: Send mutation with stable operation ID
+  S->>D: Authorize + mutate + idempotency + outbox transaction
+  D-->>S: Committed authoritative revision
+  S-->>L: Scoped resumable event
+  L->>L: Atomically apply row + FTS effects + cursor
+  L-->>U: Server accepted
+  Note over L,S: Revocation triggers purge/resnapshot; filtered streams define their own cursor semantics

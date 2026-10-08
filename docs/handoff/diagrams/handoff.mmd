@@ -1,0 +1,15 @@
+sequenceDiagram
+  participant O as Old runner
+  participant C as Coordinator
+  participant D as Authority store
+  participant N as New runner
+  C->>O: Pause at safe checkpoint
+  O-->>C: Verified checkpoint, no uncertain in-flight action
+  C->>D: CAS ownership generation N to N+1
+  D-->>C: Transfer committed
+  C->>N: Grant generation N+1 and checkpoint
+  N->>N: Verify adapter/environment/artifacts
+  N-->>C: Ready to continue
+  O->>C: Late event from generation N
+  C-->>O: Reject stale generation
+  Note over O,N: Not arbitrary live process migration

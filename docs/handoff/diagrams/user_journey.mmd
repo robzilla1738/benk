@@ -1,0 +1,9 @@
+flowchart LR
+  Request[Customer request] --> Discuss[Human discussion]
+  Discuss --> Contract[Bounded work contract]
+  Contract --> Run[Local or cloud run]
+  Run --> Evidence[Versioned review package]
+  Evidence --> Review[Second human review]
+  Review -->|Changes needed| Contract
+  Review -->|Criteria satisfied| Accept[Explicit acceptance]
+  Accept --> Publish[Separately authorized external action]

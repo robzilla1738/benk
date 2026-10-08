@@ -1,0 +1,12 @@
+
+> benk@0.1.0 build:core
+> npm run build -w @benk/domain && npm run build -w @benk/simulator
+
+
+> @benk/domain@0.1.0 build
+> tsc -p tsconfig.json
+
+
+> @benk/simulator@0.1.0 build
+> tsc -p tsconfig.json
+

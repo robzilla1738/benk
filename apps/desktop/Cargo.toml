@@ -1,0 +1,12 @@
+[package]
+name = "benk-desktop"
+version.workspace = true
+edition = "2024"
+publish.workspace = true
+
+[dependencies]
+gpui = "=0.2.2"
+benk-domain = { path = "../../crates/domain" }
+
+[lints]
+workspace = true
