@@ -31,6 +31,27 @@ benk-desktop on an actual graphical host. Linux and Windows desktop readiness is
 not claimed: follow that release's platform prerequisites and test independently.
 Do not replace GPUI because an SDK/library is missing.
 
+Known macOS specifics on the current development host:
+- GPUI 0.2.2 compiles Metal shaders via `xcrun metal`, which ships with full
+  Xcode, not Command Line Tools alone. If `xcrun metal` is missing, set
+  `DEVELOPER_DIR=/Applications/Xcode-beta.app/Contents/Developer` (or the
+  installed Xcode path) before cargo builds of `benk-desktop`.
+- `npm run dev:desktop` / `cargo run -p benk-desktop` launches the shell.
+
+Headless UI tests: `cargo test -p benk-desktop` uses GPUI `test-support`
+(`TestAppContext`/`VisualTestContext`; dev-dependency feature). `simulate_input`
+and `simulate_keystrokes` drive the real dispatch path — keymap, actions, focus
+and the platform input handler — without a real window server. Prefer them over
+OS-level keystroke injection (assistive access/frontmost-app state makes
+synthetic input nondeterministic).
+
+GPUI dispatch reentrancy: while a window dispatches an event, GPUI checks it out
+of `cx.windows`; `AnyWindowHandle::update` inside an `App::on_action` handler
+then fails with "window not found". Handlers that need `&mut Window` (e.g.
+focus) must defer via `cx.defer` + handle update — see `deferred_window_update`
+in `apps/desktop/src/main.rs`. Element-level `.on_action` handlers are a valid
+alternative but only receive actions on the focused dispatch path.
+
 ## Command scope
 npm run demo: pure TypeScript fixture; no model, tools, database or cloud service.
 npm run demo:reference: original standalone demo using its preserved built files.
@@ -69,3 +90,5 @@ main. Missing tools are failures/unverified status, not passing checks.
 Composer IME, selection, accessibility, focus, notification behavior, sleep/wake
 and scroll position require real platform evidence. None is complete because a
 window compiles. Record those separately from unit tests and benchmarks.
+Headless tests cover the logical input path; assistive-technology behavior
+(VoiceOver etc.) still needs live evidence.

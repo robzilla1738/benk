@@ -16,6 +16,13 @@ right-to-left text, large pastes and keyboard-only navigation. Acceptance: no lo
 input or accidental submission during composition; actual assistive-technology
 behavior evidence. The seed's composer description is not an input control.
 
+Status (2026-10-08, see docs/PROGRESS.md): the composer is now a real
+`EntityInputHandler` — selection, clipboard, undo/redo, multiline, IME marked
+text, Enter/Shift+Enter, per-channel drafts — with 4 headless GPUI tests over
+the real dispatch path. Still open: soft-wrap for long lines, durable draft
+recovery (in-memory only today), CJK/RTL/large-paste tests, keyboard-only
+navigation audit, and live assistive-technology evidence.
+
 ## BENK-003 — Virtualized timeline and durable local state
 Introduce bounded rendering, selective SQLite reads off the interaction path,
 schema migrations, account/workspace scope, drafts and outbox. Preserve scroll

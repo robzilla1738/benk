@@ -64,13 +64,16 @@ python3 -m pip install -r docs/handoff/requirements-qa.txt
 npm run check
 npm run check:handoff
 cargo test
+cargo test -p benk-desktop   # headless UI tests; desktop is not a default member
 cargo check -p benk-desktop
 ```
 
 Read [DEVELOPMENT.md](docs/DEVELOPMENT.md) for exact command scope, lockfile policy
-and platform requirements. Rust/GPUI and Effect integrations have source and
-tests but were not compiled in the preparation environment. Latency numbers in
-the handoff are targets, not measured results. No release gate is marked complete.
+and platform requirements (including the `DEVELOPER_DIR` Metal toolchain note).
+The Rust/GPUI desktop and Effect services now compile and test on macOS arm64 —
+see [docs/PROGRESS.md](docs/PROGRESS.md) for the evidence ledger. Latency numbers
+in the handoff are targets, not measured results. No release gate is marked
+complete.
 
 ## Product priority
 A customer request becomes a bounded task, a reviewable artifact and an accepted

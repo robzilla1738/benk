@@ -30,3 +30,9 @@ older Node/TypeScript toolchain and does not certify those dependency integratio
 
 Logs are included here; original historical verification remains under
 `docs/handoff/verification/`. No production credentials or real execution are enabled.
+
+Later evidence (8 October 2026, development host): the items listed above as
+"supplied, not verified" have since been compiled and tested — Effect build +
+HTTP tests, Rust crates, GPUI 0.2.2 compile/launch, and headless UI tests of
+the native composer. See docs/PROGRESS.md for the dated ledger; this file
+continues to describe only the original download verification.
