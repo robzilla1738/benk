@@ -1,134 +1,296 @@
-use benk_domain::{TaskState, transition_task};
+//! Benk desktop shell — native GPUI application entry point.
+//!
+//! Owns the Application, embedded assets, theme, keymap, and the single
+//! window. All state lives in the `Ui` global (`state.rs`); views read it.
+mod app;
+mod assets;
+mod components;
+mod composer;
+mod fixture;
+mod icons;
+mod nav;
+mod state;
+mod theme;
+mod views;
+
+use app::BenkView;
+use composer as composer_actions;
 use gpui::{
-    App, Application, Bounds, Context, SharedString, Window, WindowBounds, WindowOptions, div,
-    prelude::*, px, rgb, size,
+    App, Application, Bounds, KeyBinding, TitlebarOptions, Window, WindowBounds, WindowOptions,
+    actions, point, prelude::*, px, size,
 };
-struct Benk {
-    section: usize,
-    task: TaskState,
-    feedback: SharedString,
+use state::{Section, Ui};
+use theme::Theme;
+
+actions!(
+    benk,
+    [
+        Quit,
+        ToggleTheme,
+        Compose,
+        SearchNav,
+        GoInbox,
+        GoChannels,
+        GoProjects,
+        GoWork
+    ]
+);
+
+fn quit(_: &Quit, cx: &mut App) {
+    cx.quit();
 }
-impl Benk {
-    fn advance(&mut self, cx: &mut Context<Self>) {
-        let to = match self.task {
-            TaskState::Draft => TaskState::Ready,
-            TaskState::Ready => TaskState::Active,
-            TaskState::Active => TaskState::AwaitingReview,
-            _ => return,
-        };
-        if let Ok(next) = transition_task(self.task, to) {
-            self.task = next;
-            self.feedback = "Simulation advanced. No external action performed.".into();
-        }
-        cx.notify();
-    }
-    fn review(&mut self, cx: &mut Context<Self>) {
-        if self.task == TaskState::AwaitingReview {
-            if let Ok(next) = transition_task(self.task, TaskState::Accepted) {
-                self.task = next;
-            }
-            self.feedback =
-                "Accepted by a simulated second human. Not an authenticated approval.".into();
-        } else {
-            self.feedback = "A review package is not ready yet.".into();
-        }
-        cx.notify();
-    }
+
+fn toggle_theme(_: &ToggleTheme, cx: &mut App) {
+    let next = match theme::theme(cx).mode {
+        theme::ThemeMode::Light => theme::ThemeMode::Dark,
+        theme::ThemeMode::Dark => theme::ThemeMode::Light,
+    };
+    cx.set_global(Theme::for_mode(next));
+    cx.refresh_windows();
 }
-impl Render for Benk {
-    fn render(&mut self, _: &mut Window, cx: &mut Context<Self>) -> impl IntoElement {
-        let mut nav = div()
-            .flex()
-            .flex_col()
-            .gap_2()
-            .w(px(220.0))
-            .h_full()
-            .p_5()
-            .bg(rgb(0x121920))
-            .child(div().text_xl().child("Benk"))
-            .child(div().text_sm().child("Humans + agents, together"));
-        for (index, label) in ["Inbox", "Channels", "Projects", "Work"]
-            .into_iter()
-            .enumerate()
-        {
-            nav = nav.child(
-                div()
-                    .id(SharedString::from(format!("nav-{index}")))
-                    .p_3()
-                    .rounded_md()
-                    .bg(rgb(if self.section == index {
-                        0x253540
-                    } else {
-                        0x121920
-                    }))
-                    .cursor_pointer()
-                    .child(label)
-                    .on_click(cx.listener(move |this, _, _, cx| {
-                        this.section = index;
-                        cx.notify();
-                    })),
-            );
-        }
-        let title = ["Inbox", "Channels", "Projects", "Work"][self.section];
-        let mut content=div().flex().flex_col().gap_4().flex_1().h_full().p_6()
-            .child(div().text_xl().child(title))
-            .child(div().p_3().rounded_md().bg(rgb(0x3a3021)).text_color(rgb(0xf5d399))
-                .child("FOUNDATION PREVIEW — synthetic data; no models, tools or authenticated users"));
-        content=match self.section {
-            0=>content.child("Your review queue").child(format!("Checkout wording: {}",self.task.as_str()))
-                .child("Live notifications are not implemented."),
-            1=>content.child("# checkout")
-                .child("Requester: Customers cannot tell how to recover after a payment error.")
-                .child("Teammate: Prepare clearer wording and a reviewable result.")
-                .child("Agent: I can prepare a bounded simulation. No production access.")
-                .child(div().p_4().border_1().border_color(rgb(0x34424f)).rounded_md()
-                    .child("Composer not implemented. IME, selection, accessibility and drafts are next.")),
-            2=>content.child("Checkout experience")
-                .child("Scope: synthetic checkout task only")
-                .child("Repositories: none | Model destination: none | Execution: disabled"),
-            _=>content.child("Improve the checkout error")
-                .child(format!("Task: {}",self.task.as_str()))
-                .child("Contract: synthetic wording proposal; no external capabilities.")
-                .child(div().flex().gap_3()
-                    .child(div().id("advance").p_3().rounded_md().bg(rgb(0x254c50)).cursor_pointer()
-                        .child("Advance simulation").on_click(cx.listener(|this,_,_,cx|this.advance(cx))))
-                    .child(div().id("review").p_3().rounded_md().bg(rgb(0x33445b)).cursor_pointer()
-                        .child("Review as simulated teammate").on_click(cx.listener(|this,_,_,cx|this.review(cx)))))
-                .child(if matches!(self.task,TaskState::AwaitingReview|TaskState::Accepted) {
-                    "Review package: synthetic wording ready. No repository changed or real tests executed."
-                } else { "Advance through ready and active to produce the synthetic review package." })
-                .child(self.feedback.clone()),
-        };
-        div()
-            .flex()
-            .size_full()
-            .bg(rgb(0x19222c))
-            .text_color(rgb(0xe9edf0))
-            .child(nav)
-            .child(content)
-    }
+
+fn go(section: Section, cx: &mut App) {
+    cx.global_mut::<Ui>().section = section;
+    cx.refresh_windows();
 }
-fn main() {
-    Application::new().run(|cx: &mut App| {
-        let bounds = Bounds::centered(None, size(px(1160.0), px(760.0)), cx);
-        let result = cx.open_window(
-            WindowOptions {
-                window_bounds: Some(WindowBounds::Windowed(bounds)),
-                ..Default::default()
-            },
-            |_, cx| {
-                cx.new(|_| Benk {
-                    section: 3,
-                    task: TaskState::Draft,
-                    feedback: "Safe simulation ready.".into(),
-                })
-            },
-        );
-        if let Err(error) = result {
-            eprintln!("Benk could not open its native window: {error}");
-            cx.quit();
-            return;
+
+/// Run `f` against the first open window (the app has exactly one), deferred
+/// until the current dispatch finishes — during event dispatch the window is
+/// checked out of `cx.windows` for reentrancy.
+fn deferred_window_update(cx: &mut App, f: impl FnOnce(&mut Window, &mut App) + 'static) {
+    let Some(handle) = cx.windows().first().copied() else {
+        return;
+    };
+    cx.defer(move |cx| {
+        if let Err(error) = handle.update(cx, |_, window, cx| f(window, cx)) {
+            eprintln!("deferred_window_update: {error}");
         }
-        cx.activate(true);
     });
+}
+
+fn compose(_: &Compose, cx: &mut App) {
+    cx.global_mut::<Ui>().section = Section::Channels;
+    cx.refresh_windows();
+    deferred_window_update(cx, BenkView::focus_composer);
+}
+
+fn search_nav(_: &SearchNav, cx: &mut App) {
+    deferred_window_update(cx, BenkView::focus_search);
+}
+
+/// Keymap and action handlers — shared by `main` and the headless tests.
+fn install(cx: &mut App) {
+    use composer_actions::*;
+    cx.bind_keys([
+        // Window-level shortcuts (any context).
+        KeyBinding::new("cmd-q", Quit, None),
+        KeyBinding::new("cmd-shift-l", ToggleTheme, None),
+        KeyBinding::new("cmd-k", SearchNav, None),
+        KeyBinding::new("cmd-shift-c", Compose, None),
+        KeyBinding::new("cmd-1", GoInbox, None),
+        KeyBinding::new("cmd-2", GoChannels, None),
+        KeyBinding::new("cmd-3", GoProjects, None),
+        KeyBinding::new("cmd-4", GoWork, None),
+    ]);
+    // Composer editing keys — active only while a Composer is focused.
+    cx.bind_keys([
+        KeyBinding::new("enter", Enter, Some("Composer")),
+        KeyBinding::new("shift-enter", InsertNewline, Some("Composer")),
+        KeyBinding::new("backspace", Backspace, Some("Composer")),
+        KeyBinding::new("delete", Delete, Some("Composer")),
+        KeyBinding::new("left", MoveLeft, Some("Composer")),
+        KeyBinding::new("right", MoveRight, Some("Composer")),
+        KeyBinding::new("up", MoveUp, Some("Composer")),
+        KeyBinding::new("down", MoveDown, Some("Composer")),
+        KeyBinding::new("alt-left", MoveWordLeft, Some("Composer")),
+        KeyBinding::new("alt-right", MoveWordRight, Some("Composer")),
+        KeyBinding::new("shift-left", SelectLeft, Some("Composer")),
+        KeyBinding::new("shift-right", SelectRight, Some("Composer")),
+        KeyBinding::new("shift-up", SelectUp, Some("Composer")),
+        KeyBinding::new("shift-down", SelectDown, Some("Composer")),
+        KeyBinding::new("alt-shift-left", SelectWordLeft, Some("Composer")),
+        KeyBinding::new("alt-shift-right", SelectWordRight, Some("Composer")),
+        KeyBinding::new("home", Home, Some("Composer")),
+        KeyBinding::new("end", End, Some("Composer")),
+        KeyBinding::new("cmd-left", Home, Some("Composer")),
+        KeyBinding::new("cmd-right", End, Some("Composer")),
+        KeyBinding::new("cmd-up", DocStart, Some("Composer")),
+        KeyBinding::new("cmd-down", DocEnd, Some("Composer")),
+        KeyBinding::new("cmd-shift-left", SelectToLineStart, Some("Composer")),
+        KeyBinding::new("cmd-shift-right", SelectToLineEnd, Some("Composer")),
+        KeyBinding::new("cmd-shift-up", SelectToDocStart, Some("Composer")),
+        KeyBinding::new("cmd-shift-down", SelectToDocEnd, Some("Composer")),
+        KeyBinding::new("cmd-a", SelectAll, Some("Composer")),
+        KeyBinding::new("cmd-x", Cut, Some("Composer")),
+        KeyBinding::new("cmd-c", Copy, Some("Composer")),
+        KeyBinding::new("cmd-v", Paste, Some("Composer")),
+        KeyBinding::new("cmd-z", Undo, Some("Composer")),
+        KeyBinding::new("cmd-shift-z", Redo, Some("Composer")),
+    ]);
+    cx.on_action(quit);
+    cx.on_action(toggle_theme);
+    cx.on_action(compose);
+    cx.on_action(search_nav);
+    cx.on_action(|_: &GoInbox, cx| go(Section::Inbox, cx));
+    cx.on_action(|_: &GoChannels, cx| go(Section::Channels, cx));
+    cx.on_action(|_: &GoProjects, cx| go(Section::Projects, cx));
+    cx.on_action(|_: &GoWork, cx| go(Section::Work, cx));
+}
+
+fn main() {
+    Application::new()
+        .with_assets(assets::EmbeddedAssets)
+        .run(|cx: &mut App| {
+            cx.set_global(Theme::light());
+            let ui = Ui::init(cx);
+            cx.set_global(ui);
+
+            install(cx);
+
+            let bounds = Bounds::centered(None, size(px(1240.0), px(800.0)), cx);
+            let result = cx.open_window(
+                WindowOptions {
+                    window_bounds: Some(WindowBounds::Windowed(bounds)),
+                    titlebar: Some(TitlebarOptions {
+                        title: Some("Benk".into()),
+                        appears_transparent: true,
+                        traffic_light_position: Some(point(px(14.), px(14.))),
+                    }),
+                    ..Default::default()
+                },
+                |_, cx| cx.new(BenkView::new),
+            );
+            if let Err(error) = result {
+                eprintln!("Benk could not open its native window: {error}");
+                cx.quit();
+                return;
+            }
+            cx.activate(true);
+        });
+}
+
+#[cfg(test)]
+mod tests {
+    //! Headless integration tests. `simulate_input`/`simulate_keystrokes` drive
+    //! the same dispatch path as the OS: keymap → actions → the platform input
+    //! handler registered by the focused composer element.
+    use super::*;
+    use gpui::{EntityInputHandler, TestAppContext};
+
+    fn app() -> TestAppContext {
+        let cx = TestAppContext::single();
+        cx.update(|cx| {
+            cx.set_global(Theme::light());
+            let ui = Ui::init(cx);
+            cx.set_global(ui);
+            install(cx);
+        });
+        cx
+    }
+
+    #[test]
+    fn nav_shortcuts_and_theme_toggle() {
+        let mut app = app();
+        let (_view, cx) = app.add_window_view(|_, cx| BenkView::new(cx));
+
+        cx.simulate_keystrokes("cmd-1");
+        cx.update(|_, cx| assert_eq!(cx.global::<Ui>().section, Section::Inbox));
+        cx.simulate_keystrokes("cmd-3");
+        cx.update(|_, cx| assert_eq!(cx.global::<Ui>().section, Section::Projects));
+        cx.simulate_keystrokes("cmd-2");
+        cx.update(|_, cx| assert_eq!(cx.global::<Ui>().section, Section::Channels));
+
+        cx.simulate_keystrokes("cmd-shift-l");
+        cx.update(|_, cx| assert!(theme::theme(cx).is_dark()));
+        cx.simulate_keystrokes("cmd-shift-l");
+        cx.update(|_, cx| assert!(!theme::theme(cx).is_dark()));
+    }
+
+    #[test]
+    fn composer_typing_and_submit() {
+        let mut app = app();
+        let (_view, cx) = app.add_window_view(|_, cx| BenkView::new(cx));
+
+        cx.simulate_keystrokes("cmd-shift-c");
+        cx.update(|window, cx| {
+            let handle = cx.global::<Ui>().composer.read(cx).focus_handle();
+            assert!(handle.is_focused(window));
+        });
+
+        cx.simulate_input("hello benk");
+        cx.update(|_, cx| {
+            assert_eq!(cx.global::<Ui>().composer.read(cx).text(), "hello benk");
+            assert_eq!(cx.global::<Ui>().drafts["checkout"], "hello benk");
+        });
+
+        cx.simulate_keystrokes("enter");
+        cx.update(|_, cx| {
+            let ui = cx.global::<Ui>();
+            assert_eq!(ui.composer.read(cx).text(), "");
+            let messages = &ui.messages["checkout"];
+            assert_eq!(messages.len(), 5);
+            let sent = messages
+                .last()
+                .map(|m| (m.author.as_ref(), m.body.as_ref()));
+            assert_eq!(sent, Some(("you", "hello benk")));
+            assert_eq!(ui.drafts["checkout"], "");
+        });
+    }
+
+    #[test]
+    fn channel_switch_preserves_drafts() {
+        let mut app = app();
+        let (_view, cx) = app.add_window_view(|_, cx| BenkView::new(cx));
+
+        cx.simulate_keystrokes("cmd-shift-c");
+        cx.simulate_input("checkout draft");
+        cx.update(|_, cx| Ui::select_channel("general", cx));
+        cx.update(|_, cx| {
+            assert_eq!(cx.global::<Ui>().composer.read(cx).text(), "");
+            assert_eq!(cx.global::<Ui>().unread["general"], 0);
+        });
+
+        cx.simulate_input("general note");
+        cx.simulate_keystrokes("enter");
+        cx.update(|_, cx| {
+            let ui = cx.global::<Ui>();
+            let sent = ui.messages["general"].last().map(|m| m.body.as_ref());
+            assert_eq!(sent, Some("general note"));
+            assert_eq!(ui.messages["checkout"].len(), 4);
+        });
+
+        cx.update(|_, cx| Ui::select_channel("checkout", cx));
+        cx.update(|_, cx| {
+            assert_eq!(cx.global::<Ui>().composer.read(cx).text(), "checkout draft");
+        });
+    }
+
+    #[test]
+    fn ime_enter_does_not_submit() {
+        let mut app = app();
+        let (_view, cx) = app.add_window_view(|_, cx| BenkView::new(cx));
+
+        cx.simulate_keystrokes("cmd-shift-c");
+        cx.update(|window, cx| {
+            let composer = cx.global::<Ui>().composer.clone();
+            composer.update(cx, |c, ctx| {
+                c.replace_and_mark_text_in_range(None, "ko", None, window, ctx)
+            });
+        });
+        cx.simulate_keystrokes("enter");
+        cx.update(|_, cx| {
+            let ui = cx.global::<Ui>();
+            assert_eq!(ui.composer.read(cx).text(), "ko");
+            assert_eq!(ui.messages["checkout"].len(), 4);
+        });
+
+        cx.update(|window, cx| {
+            let composer = cx.global::<Ui>().composer.clone();
+            composer.update(cx, |c, ctx| c.unmark_text(window, ctx));
+        });
+        cx.simulate_keystrokes("enter");
+        cx.update(|_, cx| {
+            assert_eq!(cx.global::<Ui>().messages["checkout"].len(), 5);
+        });
+    }
 }

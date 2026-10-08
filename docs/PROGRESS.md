@@ -54,3 +54,59 @@ deps (`block 0.1.6`, `proc-macro-error2 2.0.1`) noted, not failures.
 Next ready task: finish BENK-001 launch evidence by running `npm run
 dev:desktop` interactively and recording navigation/close behavior; then
 BENK-002 composer/accessibility.
+
+## 2026-10-08 — Native UI + composer implementation (BENK-002 partial)
+Built the full simulation shell in GPUI 0.2.2 and replaced the placeholder
+window with the spec IA. Same tool env as above (node@24 PATH, DEVELOPER_DIR).
+
+Files added/changed under `apps/desktop/src/`: `theme.rs` (light/dark design
+tokens, `Theme` global), `icons.rs` + `assets.rs` (`EmbeddedAssets`, Lucide
+SVG set tinted via text color), `components/` (card, controls, stat, avatar,
+message, sparkline via `canvas`), `fixture.rs` (synthetic data), `state.rs`
+(`Ui` global: section, per-channel messages/unread/drafts, composer+search
+entities, retained subscriptions), `nav.rs` (sidebar: workspace header,
+collapsible channels, unread badges, user footer), `views/` (inbox stat row +
+review requests; channel timeline + checkout-only agent card + composer;
+projects; work task header/decide/activity; search over all channel
+messages), `composer.rs` (`EntityInputHandler`: UTF-8 storage with UTF-16
+selection ranges for the platform contract, IME marked text, clipboard,
+mouse/word/line selection, undo/redo snapshots, multiline paragraphs,
+Enter=submit / Shift+Enter=newline, paint-phase `handle_input` only while
+focused), `app.rs` (`BenkView` shell + focus helpers), `main.rs` (transparent
+titlebar window, keymap + actions, headless tests). `Cargo.toml` gained
+dev-dep `gpui` `test-support` for `TestAppContext`.
+
+Verification, all passing:
+- `cargo fmt --check`, `cargo clippy -p benk-desktop --all-targets` — clean
+- `cargo test -p benk-desktop` — 4 headless tests: nav shortcuts + theme
+  toggle; `cmd-shift-c` focus → `simulate_input` → Enter submit (composer
+  cleared, message appended to selected channel, draft cleared); per-channel
+  draft preservation + unread clearing; IME marked-text Enter guard.
+  Simulated input exercises the real dispatch path (keymap → action →
+  platform input handler).
+- `cargo test --locked` — 7 workspace tests pass
+- `npm test` — 232 + 17 + 7 pass; `cargo build -p benk-desktop` — clean
+- Live launch: window renders light+dark themes, sidebar, sim chips,
+  Work/Channels/Inbox views (screenshots). Live keystroke injection was NOT
+  used as evidence — frontmost-app contention and no assistive access made
+  it unreliable; headless tests are the authoritative input evidence.
+
+Bugs found and fixed during verification:
+- Channel state was not channel-scoped: one shared message vec rendered the
+  checkout conversation under every channel, placeholder was hardcoded, sent
+  messages could append under the wrong channel. `Ui.messages`/`unread` are
+  now `HashMap`s keyed by channel, drafts restore per channel, composer
+  placeholder follows selection, checkout agent card only under `#checkout`,
+  search flattens all channels.
+- GPUI reentrancy: `App::on_action` handlers run while the window is checked
+  out of `cx.windows` during dispatch, so `AnyWindowHandle::update` fails
+  ("window not found") and focus silently never lands — this is why live
+  `cmd-shift-c` produced no focus ring. Fixed via `cx.defer` + window-handle
+  update (`deferred_window_update` in `main.rs`); headless test reproduces
+  and verifies the path.
+
+Boundaries preserved: all content remains labeled synthetic/simulation;
+broker still denies everything; no credentials, models, real external
+actions, or reviewer web surface. Remaining for BENK-002: soft-wrap for long
+composer lines (documented), SQLite draft persistence + FTS (T005/BENK-003),
+accessibility roles audit.

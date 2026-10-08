@@ -8,5 +8,8 @@ publish.workspace = true
 gpui = "=0.2.2"
 benk-domain = { path = "../../crates/domain" }
 
+[dev-dependencies]
+gpui = { version = "=0.2.2", features = ["test-support"] }
+
 [lints]
 workspace = true
