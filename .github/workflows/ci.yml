@@ -1,0 +1,13 @@
+name: Benk CI
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  foundation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Bootstrap status
+        run: echo 'Benk foundation is being assembled; implementation checks are added with the scaffold.'
